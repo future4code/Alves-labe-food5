@@ -25,6 +25,9 @@ export const Container = styled.div`
 export const Title = styled.div`
 `
 
+export const Title2 = styled.div`
+`
+
 export const Form = styled.form`
   display: flex;
   flex-direction: column;

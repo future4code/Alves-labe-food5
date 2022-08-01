@@ -25,6 +25,10 @@ export default function LoginPage() {
           <h1>Future Eats</h1>
         </s.Title>
 
+        <s.Title2>
+          <h3>Entrar</h3>
+        </s.Title2>
+
         <s.Form onSubmit={register}>
           <s.Input
             name={"email"}
