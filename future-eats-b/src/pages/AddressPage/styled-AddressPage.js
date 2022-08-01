@@ -12,6 +12,7 @@ export const General = styled.div`
 
 export const Container = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 375px;
@@ -19,4 +20,19 @@ export const Container = styled.div`
   border-radius: 20px;
   background-color: lightgreen;
   box-shadow: 0 5px 5px 0 rgba(0,0,0,0.2), 0 10px 10px 0 rgba(0,0,0,0.15);
+`
+
+export const Title = styled.div`
+`
+
+export const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
+export const Input = styled.input`
+`
+
+export const ButtonSave = styled.button`
 `

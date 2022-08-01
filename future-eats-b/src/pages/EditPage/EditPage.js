@@ -1,8 +1,8 @@
 import React from "react";
-import * as s from './styled-SignUpPage';
+import * as s from './styled-EditPage';
 import useForm from "./../../hooks/useForm";
 
-export default function SignUpPage() {
+export default function EditPage() {
 
   const { form, onChange, cleanFields } = useForm({
     name: "",
@@ -14,19 +14,15 @@ export default function SignUpPage() {
 
   const register = (event) => {
     event.preventDefault();
-    console.log('Foi clicacado no botão enviar do cadastro');
+    console.log('Foi clicacado no botão salvar do editar');
   }
 
   return (
     <s.General>
       <s.Container>
         <s.Title>
-          <h1>Future Eats</h1>
+          <h3>Editar</h3>
         </s.Title>
-
-        <s.Title2>
-          <h2>Cadastrar</h2>
-        </s.Title2>
 
         <s.Form onSubmit={register}>
           <s.Input
@@ -53,23 +49,7 @@ export default function SignUpPage() {
             required
             type={"number"}
           />
-          <s.Input
-            name={"password"}
-            value={form.password}
-            onChange={onChange}
-            placeholder="Senha"
-            required
-            type={"password"}
-          />
-          <s.Input
-            name={"confirmPassword"}
-            value={form.confirmPassword}
-            onChange={onChange}
-            placeholder="Confirmar Senha"
-            required
-            type={"password"}
-          />
-          <s.ButtonSignUp type={'submit'}>Cadastrar</s.ButtonSignUp>
+          <s.ButtonSave type={'submit'}>Salvar</s.ButtonSave>
         </s.Form>
 
       </s.Container>

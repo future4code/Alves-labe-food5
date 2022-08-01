@@ -7,6 +7,7 @@ import FeedPage from './../pages/FeedPage/FeedPage'
 import ProfilePage from './../pages/ProfilePage/ProfilePage'
 import RestaurantDetailsPage from './../pages/RestaurantDetailsPage/RestaurantDetailsPage'
 import SignUpPage from './../pages/SignUpPage/SignUpPage'
+import EditPage from './../pages/EditPage/EditPage'
 import ErrorPage from './../pages/ErrorPage/ErrorPage'
 
 export const Router = () => {
@@ -20,6 +21,7 @@ export const Router = () => {
         <Route path="cart" element={<CartPage/>}/>
         <Route path="profile" element={<ProfilePage/>}/>
         <Route path="restaurantdetails" element={<RestaurantDetailsPage/>}/>
+        <Route path="edit" element={<EditPage/>}/>
         <Route path="*" element={<ErrorPage/>}/>
       </Routes>
     </BrowserRouter>

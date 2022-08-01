@@ -25,9 +25,6 @@ export const Container = styled.div`
 export const Title = styled.div`
 `
 
-export const Title2 = styled.div`
-`
-
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
@@ -37,5 +34,5 @@ export const Form = styled.form`
 export const Input = styled.input`
 `
 
-export const ButtonSignUp = styled.button`
+export const ButtonSave = styled.button`
 `
