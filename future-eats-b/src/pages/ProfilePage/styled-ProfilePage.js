@@ -47,9 +47,6 @@ export const Line2 = styled.div`
   background-color: lightgreen;
 `
 
-export const Search = styled.input`
-`
-
 export const Line3 = styled.div`
   display: flex;
   align-items: center;
@@ -58,38 +55,10 @@ export const Line3 = styled.div`
   background-color: lightcoral;
 `
 
-export const Category = styled.div`
-  margin: 0 10px;
-`
-
 export const Line4 = styled.div`
   background-color: lightpink;
 
 `
-export const Ship = styled.div`
-  display: flex;
-  justify-content: end;
-`
-export const Total = styled.div`
-  display: flex;
-  justify-content: space-between;
-`
-export const Payment = styled.div`
-  display: flex;
-  flex-direction: column;
-
-`
-export const Money = styled.div`
-  /* display: flex;
-  flex-direction: column; */
-
-`
-export const Credit = styled.div`
-  /* display: flex;
-  flex-direction: column; */
-
-`
-
 export const Line5 = styled.div`
   display: flex;
   justify-content: space-around;
@@ -104,10 +73,6 @@ export const ImgFooter = styled.img`
 export const Left = styled.div`
 
 `
-export const Right = styled.div`
-
-`
-
 export const Img_edit = styled.img`
   width: 20px;
 `
