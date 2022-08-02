@@ -18,6 +18,8 @@ export default function LoginPage() {
   const login = (body) => {
     axios.post(`${BASE_URL}/login`, body)
     .then((res)=>{
+      console.log(res)
+      localStorage.setItem("token", res.data.token)
       if (res.data.user.hasAddress) {
         goToFeedPage(navigate)
       } else {
