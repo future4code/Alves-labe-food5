@@ -1,17 +1,39 @@
 import React from "react";
 import * as s from './styled-LoginPage';
 import useForm from "./../../hooks/useForm";
+import axios from "axios";
+import { BASE_URL } from "../../constants/BASE_URL";
+import { goToAddressPage, goToFeedPage } from "../../routes/coordinator";
+import {useNavigate} from "react-router-dom"
+
 
 export default function LoginPage() {
+  const navigate = useNavigate()
 
   const { form, onChange, cleanFields } = useForm({
     email: "",
     password: "",
   })
 
+  const login = (body) => {
+    axios.post(`${BASE_URL}/login`, body)
+    .then((res)=>{
+      if (res.data.user.hasAddress) {
+        goToFeedPage(navigate)
+      } else {
+        goToAddressPage(navigate)
+      }
+    })
+    .catch((err)=>{
+      console.log("Deu errado o login")
+      console.log(err.response.data)
+    })
+  }
+
   const register = (event) => {
     event.preventDefault();
-    console.log('Foi clicacado no botão enviar do formulário');
+    login(form)
+    
   }
 
   const botaoCadastrar = () => {
