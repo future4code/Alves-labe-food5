@@ -23,6 +23,7 @@ export default function SignUpPage() {
     .then((res)=>{
       console.log("Deu certo o cadastro")
       console.log(res)
+      localStorage.setItem("token", res.data.token)
       goToAddressPage(navigate)
     })
     .catch((err)=>{
