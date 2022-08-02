@@ -1,9 +1,15 @@
 import React from "react";
 import * as s from './styled-SignUpPage';
 import useForm from "./../../hooks/useForm";
+import axios from "axios";
+import { BASE_URL } from "../../constants/BASE_URL";
+import { goToAddressPage } from "../../routes/coordinator";
+import {useNavigate} from "react-router-dom"
+
 
 export default function SignUpPage() {
-
+  const navigate = useNavigate()
+  
   const { form, onChange, cleanFields } = useForm({
     name: "",
     email: "",
@@ -12,9 +18,22 @@ export default function SignUpPage() {
     confirmPassword: "",
   })
 
+  const signUp = (body) => {
+    axios.post(`${BASE_URL}/signup`, body)
+    .then((res)=>{
+      console.log("Deu certo o cadastro")
+      console.log(res)
+      goToAddressPage(navigate)
+    })
+    .catch((err)=>{
+      console.log("Deu errado o cadastro")
+      console.log(err.response.data)
+    })
+  }
+
   const register = (event) => {
     event.preventDefault();
-    console.log('Foi clicacado no botão enviar do cadastro');
+    signUp(form)
   }
 
   return (
