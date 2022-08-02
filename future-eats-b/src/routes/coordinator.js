@@ -5,3 +5,7 @@ export const goToAddressPage = (navigate) => {
 export const goToFeedPage = (navigate) => {
     navigate("/")
 }
+
+export const goToEditPage = (navigate) => {
+    navigate("/edit")
+}

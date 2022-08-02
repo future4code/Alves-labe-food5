@@ -25,7 +25,7 @@ export const Grid = styled.div`
   height: 667px;
   display: grid;
   border-radius: 20px;
-  grid-template-rows: 60px 40px 80px 1fr 60px;
+  grid-template-rows: 60px 60px 80px 1fr 60px;
   /* min-width: 100vw; */
   /* min-width: 100%; */
   /* min-height: 100vh; */
@@ -70,6 +70,15 @@ export const ImgFooter = styled.img`
   width: 30px
 `
 
+export const NomeProfile = styled.div`
+
+`
+export const EmailProfile = styled.div`
+
+`
+export const CpfProfile = styled.div`
+
+`
 export const Left = styled.div`
 
 `
