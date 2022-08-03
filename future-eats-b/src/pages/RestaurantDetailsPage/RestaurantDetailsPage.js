@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import * as s from './styled-RestaurantDetailsPage';
-import { useParams } from 'react-router-dom'
-import axios from 'axios'
-import { BASE_URL } from '../../constants/BASE_URL'
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
+import { BASE_URL } from '../../constants/BASE_URL';
+import CardRestaurantDetail from "../../components/cardRestaurantDetail/CardRestaurantDetail";
 
 export default function RestaurantDetailsPage() {
   const token = localStorage.getItem('token')
@@ -16,7 +17,7 @@ export default function RestaurantDetailsPage() {
       }
     })
       .then(res => {
-        console.log('Detalhes do restaurante aparecem!', res);
+        // console.log('Detalhes do restaurante aparecem!', res);
         setRestaurantDetails(res.data.restaurant)
       })
       .catch(err => console.log("Deu errado pegar os detalhes do restaurante", err.response.data))
@@ -26,35 +27,37 @@ export default function RestaurantDetailsPage() {
     getRestaurantDetails()
   }, [])
 
-  const restDet = restaurantDetails.products?.map((element) => {
-    return <div>
-      <p>{element.category}</p>
-      <p>{element.name}</p>
-    </div>
-  })
-
-
+  const restDet = restaurantDetails.products;
+  console.log('restDet=', restDet);
   const categoryDif = []
 
-  // if(restDet){
-  //   for (let i=0; i < restDet.length; i++){
-  //     if(categoryDif.length === 0){ 
-  //       categoryDif.push(restDet[i].category)
-  //     } else{
-  //       for (let j = 0; j < categoryDif.length; j++){
-  //         if(restDet[i].category === categoryDif[j]){
-  //           categoryDif.push(restDet[i].category)
-  //           console.log(restDet)
-  //         }
-  //       }
+  if (restDet) {
+    for (let i = 0; i < restDet.length; i++) {
+      if (categoryDif.length === 0) {
+        categoryDif.push(restDet[i].category)
+      } else {
+        let add = true;
+        for (let j = 0; j < categoryDif.length; j++) {
+          if (restDet[i].category === categoryDif[j]) {
+            add = false;
+          }
+        }
+        if (add === true) {
+          categoryDif.push(restDet[i].category)
+        }
+      }
+    }
+    // console.log(categoryDif);
+  }
 
-  //     }
-  //   }
-  //   console.log(categoryDif)
-  // }
-
-
-
+  for (let i = 0; i < categoryDif.length; i++) {
+    <h2>{categoryDif[i]}</h2>
+    for (let j = 0; j < restDet.length; j++) {
+      if (categoryDif[i] === restDet[j].category) {
+        <p>{restDet.name}</p>
+      }
+    }
+  }
 
   return (
     <s.General>
@@ -77,8 +80,16 @@ export default function RestaurantDetailsPage() {
         </s.Line3>
 
         <s.Line4>
-          Categorias
-          {restDet}
+          {
+            categoryDif.map( cat => {
+              return (
+                <CardRestaurantDetail
+                  cat={cat}
+                  restDet={restDet}
+                />
+              )
+            })
+          }
         </s.Line4>
       </s.Grid>
     </s.General>

@@ -65,8 +65,8 @@ export const Category = styled.div`
 `
 
 export const Line4 = styled.div`
-  background-color: lightpink;
-
+  background-color: white;
+  overflow-y: auto;
 `
 export const Img_edit = styled.img`
   width: 100px;
