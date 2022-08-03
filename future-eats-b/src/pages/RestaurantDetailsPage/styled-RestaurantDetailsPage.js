@@ -53,7 +53,8 @@ export const Search = styled.input`
 
 export const Line3 = styled.div`
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: left;
   justify-content: space-between;
   overflow-x: auto;
   background-color: lightcoral;
@@ -68,5 +69,10 @@ export const Line4 = styled.div`
 
 `
 export const Img_edit = styled.img`
-  width: 20px;
+  width: 100px;
+`
+
+export const ShippingDiv = styled.div`
+  display: flex;
+  justify-content: space-evenly;
 `
