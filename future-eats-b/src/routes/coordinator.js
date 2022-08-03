@@ -9,3 +9,7 @@ export const goToFeedPage = (navigate) => {
 export const goToEditPage = (navigate) => {
     navigate("/edit")
 }
+
+export const goToRestaurantDetailsPage = (navigate, id) => {
+    navigate(`/restaurantdetails/${id}`)
+}
