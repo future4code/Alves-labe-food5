@@ -12,11 +12,11 @@ export default function FeedPage() {
         <s.Line1>
           <h3>Future Eats</h3>
         </s.Line1>
-        
+
         <s.Line2>
           <s.Search></s.Search>
         </s.Line2>
-        
+
         <s.Line3>
           <s.Category>Árabe</s.Category>
           <s.Category>Asiática</s.Category>
@@ -28,15 +28,15 @@ export default function FeedPage() {
           <s.Category>Petiscos</s.Category>
           <s.Category>Mexicana</s.Category>
         </s.Line3>
-        
+
         <s.Line4>
           Linha 4
         </s.Line4>
-        
+
         <s.Line5>
-          <s.ImgFooter src={img_home} alt="Home"/>
-          <s.ImgFooter src={img_cart} alt="Home"/>
-          <s.ImgFooter src={img_perfil} alt="Home"/>
+          <s.ImgFooter src={img_home} alt="Home" />
+          <s.ImgFooter src={img_cart} alt="Home" />
+          <s.ImgFooter src={img_perfil} alt="Home" />
         </s.Line5>
       </s.Grid>
     </s.General>
