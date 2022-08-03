@@ -4,8 +4,12 @@ import useForm from "./../../hooks/useForm";
 import axios from "axios";
 import { GlobalContext } from "../../components/global/GlobalContext";
 import { BASE_URL } from "../../constants/BASE_URL";
+import img_buttonBack from "./../../assets/img/buttomBack.png"
+import {useNavigate} from "react-router-dom"
+import { goToProfilePage } from "../../routes/coordinator";
 
 export default function EditPage() {
+  const navigate = useNavigate()
   const token = localStorage.getItem("token")
   const { currentUser } = useContext(GlobalContext)
   console.log("Console Edit Page:", currentUser)
@@ -39,9 +43,13 @@ export default function EditPage() {
   return (
     <s.General>
       <s.Container>
-        <s.Title>
-          <h3>Editar</h3>
-        </s.Title>
+        <s.Line1>
+          <s.BoxImg>
+            <s.ButtonBack src={img_buttonBack} onClick={()=>goToProfilePage(navigate)} alt="Botão voltar" />
+          </s.BoxImg>
+          <s.Title>Editar</s.Title>
+        </s.Line1>
+        
         {
           Object.keys(currentUser).length !== 0 ?
 

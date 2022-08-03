@@ -4,8 +4,12 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { BASE_URL } from '../../constants/BASE_URL';
 import CardRestaurantDetail from "../../components/cardRestaurantDetail/CardRestaurantDetail";
+import img_buttonBack from "./../../assets/img/buttomBack.png"
+import { goToFeedPage } from "../../routes/coordinator";
+import {useNavigate} from "react-router-dom"
 
 export default function RestaurantDetailsPage() {
+  const navigate = useNavigate()
   const token = localStorage.getItem('token')
   const params = useParams()
   const [restaurantDetails, setRestaurantDetails] = useState({})
@@ -63,8 +67,12 @@ export default function RestaurantDetailsPage() {
     <s.General>
       <s.Grid>
         <s.Line1>
-          <h3>Restaurante</h3>
+          <s.BoxImg>
+            <s.ButtonBack src={img_buttonBack} onClick={()=>goToFeedPage(navigate)} alt="Botão voltar" />
+          </s.BoxImg>
+          <s.Title>Restaurante</s.Title>
         </s.Line1>
+
         <s.Line2>
           <s.Img_edit src={restaurantDetails.logoUrl} alt="imagem-editar" />
         </s.Line2>

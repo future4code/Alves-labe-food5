@@ -1,10 +1,13 @@
 import React from "react";
 import * as s from './styled-CartPage';
+import {goToFeedPage, goToProfilePage} from '../../routes/coordinator'
 import img_home from "./../../assets/img/home.png";
 import img_cart from "./../../assets/img/cart.png";
 import img_perfil from "./../../assets/img/perfil.png";
+import { useNavigate } from "react-router-dom";
 
 export default function CartPage() {
+  const navigate = useNavigate()
 
   return (
     <s.General>
@@ -55,9 +58,9 @@ export default function CartPage() {
         </s.Line6>
 
         <s.Line7>
-          <s.ImgFooter src={img_home} alt="Home" />
+          <s.ImgFooter src={img_home} onClick={()=>goToFeedPage(navigate)} alt="Home" />
           <s.ImgFooter src={img_cart} alt="Home" />
-          <s.ImgFooter src={img_perfil} alt="Home" />
+          <s.ImgFooter src={img_perfil} onClick={()=>goToProfilePage(navigate)} alt="Home" />
         </s.Line7>
       </s.Grid>
     </s.General>

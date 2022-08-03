@@ -3,7 +3,7 @@ import * as s from './styled-LoginPage';
 import useForm from "./../../hooks/useForm";
 import axios from "axios";
 import { BASE_URL } from "../../constants/BASE_URL";
-import { goToAddressPage, goToFeedPage } from "../../routes/coordinator";
+import { goToAddressPage, goToFeedPage, goToSignUpPage } from "../../routes/coordinator";
 import {useNavigate} from "react-router-dom"
 
 import { GlobalContext } from "../../components/global/GlobalContext";
@@ -41,10 +41,6 @@ export default function LoginPage() {
     
   }
 
-  const botaoCadastrar = () => {
-    console.log('O botão de cadastrar foi clicado');
-  }
-
   return (
     <s.General>
       <s.Container>
@@ -80,7 +76,7 @@ export default function LoginPage() {
           <s.Text>
             Não possui cadastro?
           </s.Text>
-          <s.DivCadastro onClick={botaoCadastrar}>
+          <s.DivCadastro onClick={()=>goToSignUpPage(navigate)}>
             Clique aqui
           </s.DivCadastro>
 

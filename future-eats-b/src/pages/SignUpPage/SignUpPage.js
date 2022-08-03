@@ -3,9 +3,9 @@ import * as s from './styled-SignUpPage';
 import useForm from "./../../hooks/useForm";
 import axios from "axios";
 import { BASE_URL } from "../../constants/BASE_URL";
-import { goToAddressPage } from "../../routes/coordinator";
+import { goToAddressPage, goToLoginPage } from "../../routes/coordinator";
 import {useNavigate} from "react-router-dom"
-
+import img_buttonBack from "./../../assets/img/buttomBack.png"
 import { GlobalContext } from "../../components/global/GlobalContext";
 
 export default function SignUpPage() {
@@ -43,6 +43,10 @@ export default function SignUpPage() {
   return (
     <s.General>
       <s.Container>
+        <s.Header>
+          <s.ButtonBack src={img_buttonBack} onClick={()=>goToLoginPage(navigate)} alt="Botão voltar" />
+        </s.Header>
+
         <s.Title>
           <h1>Future Eats</h1>
         </s.Title>
