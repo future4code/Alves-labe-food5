@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useContext} from "react";
 import * as s from './styled-SignUpPage';
 import useForm from "./../../hooks/useForm";
 import axios from "axios";
@@ -6,9 +6,11 @@ import { BASE_URL } from "../../constants/BASE_URL";
 import { goToAddressPage } from "../../routes/coordinator";
 import {useNavigate} from "react-router-dom"
 
+import { GlobalContext } from "../../components/global/GlobalContext";
 
 export default function SignUpPage() {
   const navigate = useNavigate()
+  const { currentUser, setCurrentUser } = useContext(GlobalContext)
   
   const { form, onChange, cleanFields } = useForm({
     name: "",
@@ -23,6 +25,7 @@ export default function SignUpPage() {
     .then((res)=>{
       console.log("Deu certo o cadastro")
       console.log(res)
+      setCurrentUser(res.data)
       localStorage.setItem("token", res.data.token)
       goToAddressPage(navigate)
     })
