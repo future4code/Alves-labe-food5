@@ -27,9 +27,6 @@ export const Grid = styled.div`
   display: grid;
   border-radius: 20px;
   grid-template-rows: 60px 120px 80px 1fr;
-  /* min-width: 100vw; */
-  /* min-width: 100%; */
-  /* min-height: 100vh; */
   box-sizing: border-box;
   box-shadow: 0 5px 5px 0 rgba(0,0,0,0.2), 0 10px 10px 0 rgba(0,0,0,0.15);
 `
@@ -39,6 +36,25 @@ export const Line1 = styled.div`
   justify-content: center;
   align-items: center;
   background-color: lightblue;
+`
+
+export const BoxImg = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 10%;
+`
+
+export const ButtonBack = styled.img`
+  width: 25px;
+`
+
+export const Title = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 90%;
+  height: 100%;
 `
 
 export const Line2 = styled.div`

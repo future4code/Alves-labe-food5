@@ -5,7 +5,7 @@ import img_cart from "./../../assets/img/cart.png";
 import img_perfil from "./../../assets/img/perfil.png";
 import axios from 'axios'
 import {BASE_URL} from '../../constants/BASE_URL'
-import {goToRestaurantDetailsPage} from '../../routes/coordinator'
+import {goToRestaurantDetailsPage, goToCartPage, goToProfilePage} from '../../routes/coordinator'
 import { useNavigate } from "react-router-dom";
 
 export default function FeedPage() {
@@ -68,7 +68,7 @@ export default function FeedPage() {
         </s.Line1>
 
         <s.Line2>
-          <s.Search onChange={onChangeSearch}></s.Search>
+          <s.Search onChange={onChangeSearch} placeholder="Restaurante..."></s.Search>
         </s.Line2>
 
         <s.Line3>
@@ -90,8 +90,8 @@ export default function FeedPage() {
 
         <s.Line5>
           <s.ImgFooter src={img_home} alt="Home" />
-          <s.ImgFooter src={img_cart} alt="Home" />
-          <s.ImgFooter src={img_perfil} alt="Home" />
+          <s.ImgFooter src={img_cart} onClick={()=>goToCartPage(navigate)} alt="Home" />
+          <s.ImgFooter src={img_perfil} onClick={()=>goToProfilePage(navigate)} alt="Home" />
         </s.Line5>
       </s.Grid>
     </s.General>

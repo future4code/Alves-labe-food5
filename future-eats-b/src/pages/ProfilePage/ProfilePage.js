@@ -5,7 +5,7 @@ import img_cart from "./../../assets/img/cart.png";
 import img_perfil from "./../../assets/img/perfil.png";
 import img_edit from "./../../assets/img/edit.png"
 import { useNavigate } from "react-router";
-import { goToAddressPage, goToEditPage } from "../../routes/coordinator";
+import { goToAddressPage, goToEditPage, goToFeedPage, goToCartPage } from "../../routes/coordinator";
 import { GlobalContext } from "../../components/global/GlobalContext";
 
 export default function ProfilePage() {
@@ -42,8 +42,8 @@ export default function ProfilePage() {
         </s.Line4>
 
         <s.Line5>
-          <s.ImgFooter src={img_home} alt="Home" />
-          <s.ImgFooter src={img_cart} alt="Home" />
+          <s.ImgFooter src={img_home} onClick={()=>goToFeedPage(navigate)} alt="Home" />
+          <s.ImgFooter src={img_cart} onClick={()=>goToCartPage(navigate)} alt="Home" />
           <s.ImgFooter src={img_perfil} alt="Home" />
         </s.Line5>
       </s.Grid>

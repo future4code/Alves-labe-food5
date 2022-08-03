@@ -4,8 +4,12 @@ import useForm from "./../../hooks/useForm";
 import axios from "axios";
 import { BASE_URL } from "../../constants/BASE_URL";
 import { GlobalContext } from "../../components/global/GlobalContext";
+import img_buttonBack from "./../../assets/img/buttomBack.png"
+import { goToFeedPage } from "../../routes/coordinator";
+import {useNavigate} from "react-router-dom"
 
 export default function AddressPage() {
+  const navigate = useNavigate()
   const token = localStorage.getItem("token")
   const { currentUser } = useContext(GlobalContext)
   const [currentAddress, setCurrentAddress] = useState({})
@@ -84,9 +88,13 @@ export default function AddressPage() {
   return (
     <s.General>
       <s.Container>
-        <s.Title>
-          <h2>Endereço</h2>
-        </s.Title>
+        
+        <s.Line1>
+          <s.BoxImg>
+            <s.ButtonBack src={img_buttonBack} onClick={()=>goToFeedPage(navigate)} alt="Botão voltar" />
+          </s.BoxImg>
+          <s.Title>Endereço</s.Title>
+        </s.Line1>
 
         {/* { mostrarForm === true ? */}
         {Object.keys(currentUser).length !== 0 && (currentUser.hasAddress === true ? Object.keys(currentAddress).length !== 0 : true) ?

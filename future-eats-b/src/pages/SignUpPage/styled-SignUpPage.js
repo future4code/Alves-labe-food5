@@ -11,21 +11,35 @@ export const General = styled.div`
 `
 
 export const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   width: 375px;
   height: 667px;
+  display: grid;
   border-radius: 20px;
-  background-color: lightskyblue;
+  grid-template-rows: 60px 60px 80px 1fr;
+  background-color: white;
   box-shadow: 0 5px 5px 0 rgba(0,0,0,0.2), 0 10px 10px 0 rgba(0,0,0,0.15);
 `
 
+export const Header = styled.div`
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  border-bottom: solid 1px gray;
+`
+
+export const ButtonBack = styled.img`
+  width: 20px;
+  margin: 0 0 0 20px;
+`
+
 export const Title = styled.div`
+  display: flex;
+  justify-content: center;
 `
 
 export const Title2 = styled.div`
+  display: flex;
+  justify-content: center;
 `
 
 export const Form = styled.form`
