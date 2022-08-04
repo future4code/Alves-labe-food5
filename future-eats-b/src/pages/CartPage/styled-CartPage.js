@@ -68,8 +68,8 @@ export const Total = styled.div`
   justify-content: space-between;
 `
 export const Payment = styled.div`
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
 
 `
 export const Money = styled.div`
