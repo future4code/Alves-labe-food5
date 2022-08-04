@@ -107,7 +107,6 @@ export default function RestaurantDetailsPage() {
     },
   };
 
-  // console.log(restaurantDetails)
   const updateCart = () => {
     const novoProduto = {
       photo: currentProduct.photoUrl,
@@ -118,6 +117,7 @@ export default function RestaurantDetailsPage() {
       idRestaurant: Number(params.id),
       nameRestaurant: restaurantDetails.name,
       shippingRestaurant: restaurantDetails.shipping,
+      idProduct: currentProduct.id,
     }
     const novoCarrinho = [...cart, novoProduto]
     localStorage.setItem("cart", JSON.stringify(novoCarrinho));

@@ -1,5 +1,7 @@
 import React, {useState, useContext} from "react";
+import axios from "axios";
 import * as s from './styled-CartPage';
+import { BASE_URL } from "../../constants/BASE_URL";
 import {goToFeedPage, goToProfilePage} from '../../routes/coordinator'
 import img_home from "./../../assets/img/home.png";
 import img_cart from "./../../assets/img/cart.png";
@@ -9,10 +11,24 @@ import { GlobalContext } from "./../../components/global/GlobalContext";
 import CardCart from "./../../components/cardCart/CardCart";
 
 export default function CartPage() {
+  const token = localStorage.getItem('token')
   const navigate = useNavigate()
   const { currentUser } = useContext(GlobalContext)
   let cart = JSON.parse(localStorage.getItem("cart")) || []
   const [ cart2, setCart2 ] = useState(true);
+  const [ metPag, setMetPag ] = useState('money');
+
+  const placeOrder = (body) => {
+    axios.post(`${BASE_URL}/restaurants/${cart[0].idRestaurant}/order`, body,
+    {
+      headers: 
+      {
+        auth: token
+      }
+    })
+    .then( res => console.log('deu certo fazer pedido', res))
+    .catch( err => console.log("deu errado fazer pedido", err.response.data))
+  }
 
   const changeCart = (name) => {
     setCart2(!cart2);
@@ -22,11 +38,29 @@ export default function CartPage() {
     cart = novoCarrinho;
     localStorage.setItem("cart", JSON.stringify(novoCarrinho));
   }
-  
+
   let soma = 0;
-  cart.forEach( item => {
+  let arrayBody = [];
+  cart.forEach( (item,index) => {
+    const newObj = {
+      id: item.idProduct,
+      quantity: item.qtd
+    }
+    arrayBody.push(newObj); 
     soma = soma + item.qtd * item.price;
   })
+
+  const onClickPay = () => {
+    const body = {
+      products: arrayBody,
+      paymentMethod: metPag
+    }
+    placeOrder(body);
+  }
+
+  const onChangeMetPag = (event) => {
+    setMetPag(event.target.value);
+  }
 
   return (
     <s.General>
@@ -65,7 +99,6 @@ export default function CartPage() {
         </s.Line4>
 
         <s.Line5>
-        
           <s.Ship>Frete R$: {cart.length === 0 ? "" : cart[0].shippingRestaurant}</s.Ship>
           <s.Total>
             <div>Subtotal</div>
@@ -73,20 +106,20 @@ export default function CartPage() {
           </s.Total>
           <div>Forma de pagamento</div>
           <hr></hr>
-          <s.Payment>
+          <s.Payment onChange={onChangeMetPag}>
             <s.Money>
-              <input type="checkbox"></input>
-              <label>Dinheiro</label>
+              <input checked="checked" name="metPag" value="money" type="radio" /> Dinheiro
+              {/* <label>Dinheiro</label> */}
             </s.Money>
             <s.Credit>
-              <input type="checkbox"></input>
-              <label>Cartão de Crédito</label>
+              <input  name="metPag" value="creditcard" type="radio" /> Cartão de Crédito
+              {/* <label>Cartão de Crédito</label> */}
             </s.Credit>
           </s.Payment>
         </s.Line5>
 
         <s.Line6>
-          <button>Confirmar</button>
+          <button onClick={onClickPay}>Confirmar</button>
         </s.Line6>
 
         <s.Line7>
