@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import * as s from './styled-RestaurantDetailsPage';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
@@ -6,13 +6,31 @@ import { BASE_URL } from '../../constants/BASE_URL';
 import CardRestaurantDetail from "../../components/cardRestaurantDetail/CardRestaurantDetail";
 import img_buttonBack from "./../../assets/img/buttomBack.png"
 import { goToFeedPage } from "../../routes/coordinator";
-import {useNavigate} from "react-router-dom"
+import { useNavigate } from "react-router-dom"
+import { GlobalContext } from "../../components/global/GlobalContext";
 
+//------------------------------
+import Modal from 'react-modal';
+//------------------------------
 export default function RestaurantDetailsPage() {
   const navigate = useNavigate()
   const token = localStorage.getItem('token')
   const params = useParams()
   const [restaurantDetails, setRestaurantDetails] = useState({})
+  const [valueSelect, setValueSelect] = useState()
+  const { cart, setCart } = useContext(GlobalContext)
+  const [ currentProduct, setCurrentProdut ] = useState()
+
+  //------------------------------
+  const [modalIsOpen, setIsOpen] = useState(false)
+  function handleOpenModal(a) {
+    setIsOpen(true);
+    setCurrentProdut(a);
+  }
+  function handleCloseModal() {
+    setIsOpen(false);
+  }
+  //------------------------------
 
   const getRestaurantDetails = () => {
     axios.get(`${BASE_URL}/restaurants/${params.id}`, {
@@ -21,20 +39,16 @@ export default function RestaurantDetailsPage() {
       }
     })
       .then(res => {
-        // console.log('Detalhes do restaurante aparecem!', res);
         setRestaurantDetails(res.data.restaurant)
       })
       .catch(err => console.log("Deu errado pegar os detalhes do restaurante", err.response.data))
   }
-
   useEffect(() => {
     getRestaurantDetails()
   }, [])
 
   const restDet = restaurantDetails.products;
-  console.log('restDet=', restDet);
   const categoryDif = []
-
   if (restDet) {
     for (let i = 0; i < restDet.length; i++) {
       if (categoryDif.length === 0) {
@@ -51,9 +65,7 @@ export default function RestaurantDetailsPage() {
         }
       }
     }
-    // console.log(categoryDif);
   }
-
   for (let i = 0; i < categoryDif.length; i++) {
     <h2>{categoryDif[i]}</h2>
     for (let j = 0; j < restDet.length; j++) {
@@ -63,12 +75,66 @@ export default function RestaurantDetailsPage() {
     }
   }
 
+  const customStyles = {
+    content: {
+      display: 'flex',
+      top: '50%',
+      left: '50%',
+      right: '80%',
+      bottom: '30%',
+      marginRight: '-50%',
+      transform: 'translate(-50%, -50%)',
+    },
+  };
+
+  const updateCart = () => {
+    const novoProduto = {
+      photo: currentProduct.photo,
+      name: currentProduct.name,
+      description: currentProduct.description,
+      price: currentProduct.price,
+    }
+    const novoCarrinho = [...cart, novoProduto]
+    setCart(novoCarrinho);
+    handleCloseModal();
+  }
+
+  const onChangeSelect = (event) => {
+    setValueSelect(event.target.value);
+  }
+
+  console.log(cart)
+
   return (
     <s.General>
       <s.Grid>
+
+        <Modal
+          isOpen={modalIsOpen}
+          // onAfterOpen={afterOpenModal}
+          onRequestClose={handleCloseModal}
+          style={customStyles}
+        >
+          <s.Box>
+            <s.Texto>
+              Selecione a quantidade desejada
+            </s.Texto>
+            <s.Selecionar onChange={onChangeSelect}>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </s.Selecionar>
+            <s.Linha3>
+              <s.Adicionar onClick={updateCart}>Adicionar ao carrinho</s.Adicionar>
+            </s.Linha3>
+          </s.Box>
+        </Modal>
+
         <s.Line1>
           <s.BoxImg>
-            <s.ButtonBack src={img_buttonBack} onClick={()=>goToFeedPage(navigate)} alt="Botão voltar" />
+            <s.ButtonBack src={img_buttonBack} onClick={() => goToFeedPage(navigate)} alt="Botão voltar" />
           </s.BoxImg>
           <s.Title>Restaurante</s.Title>
         </s.Line1>
@@ -89,11 +155,12 @@ export default function RestaurantDetailsPage() {
 
         <s.Line4>
           {
-            categoryDif.map( cat => {
+            categoryDif.map(cat => {
               return (
                 <CardRestaurantDetail
                   cat={cat}
                   restDet={restDet}
+                  handleOpenModal={handleOpenModal}
                 />
               )
             })
