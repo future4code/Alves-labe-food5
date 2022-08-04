@@ -7,7 +7,6 @@ import CardRestaurantDetail from "../../components/cardRestaurantDetail/CardRest
 import img_buttonBack from "./../../assets/img/buttomBack.png"
 import { goToFeedPage } from "../../routes/coordinator";
 import { useNavigate } from "react-router-dom"
-import { GlobalContext } from "../../components/global/GlobalContext";
 
 //------------------------------
 import Modal from 'react-modal';
@@ -18,8 +17,8 @@ export default function RestaurantDetailsPage() {
   const params = useParams()
   const [restaurantDetails, setRestaurantDetails] = useState({})
   const [valueSelect, setValueSelect] = useState(1)
-  const { cart, setCart } = useContext(GlobalContext)
   const [currentProduct, setCurrentProdut] = useState()
+  let cart = JSON.parse(localStorage.getItem("cart")) || []
 
   //------------------------------
   const [modalIsOpen, setIsOpen] = useState(false)
@@ -34,8 +33,8 @@ export default function RestaurantDetailsPage() {
       const novoCarrinho = cart.filter((item) => {
         return item.name !== a.name
       })
-      setCart(novoCarrinho)
-      // localStorage.setItem("cart", JSON.stringify(novoCarrinho))
+      cart = novoCarrinho;
+      localStorage.setItem("cart", JSON.stringify(novoCarrinho))
     }
   }
 
@@ -108,8 +107,7 @@ export default function RestaurantDetailsPage() {
       qtd: valueSelect
     }
     const novoCarrinho = [...cart, novoProduto]
-    setCart(novoCarrinho);
-    // localStorage.setItem("cart", JSON.stringify(novoCarrinho))
+    localStorage.setItem("cart", JSON.stringify(novoCarrinho))
     handleCloseModal();
   }
 

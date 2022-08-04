@@ -1,10 +1,9 @@
 import React from "react";
 import * as s from './styled-CardRestaurantDetail';
-import { GlobalContext } from "../../components/global/GlobalContext";
-import { useContext } from 'react';
 
 export default function CardRestaurantDetail(props) {
-  const { cart, setCart } = useContext(GlobalContext)
+  let cart = JSON.parse(localStorage.getItem("cart")) || []
+  
   console.log("Cart dentro do card", cart)
   const list = props.restDet.filter(item => {
     return item.category === props.cat
