@@ -17,16 +17,28 @@ export default function RestaurantDetailsPage() {
   const token = localStorage.getItem('token')
   const params = useParams()
   const [restaurantDetails, setRestaurantDetails] = useState({})
-  const [valueSelect, setValueSelect] = useState()
+  const [valueSelect, setValueSelect] = useState(1)
   const { cart, setCart } = useContext(GlobalContext)
-  const [ currentProduct, setCurrentProdut ] = useState()
+  const [currentProduct, setCurrentProdut] = useState()
 
   //------------------------------
   const [modalIsOpen, setIsOpen] = useState(false)
-  function handleOpenModal(a) {
-    setIsOpen(true);
+  function handleOpenModal(a, qtd) {
     setCurrentProdut(a);
+    console.log(a)
+    console.log(qtd)
+    console.log(cart)
+    if (qtd === 0) {
+      setIsOpen(true);
+    } else {
+      const novoCarrinho = cart.filter((item) => {
+        return item.name !== a.name
+      })
+      setCart(novoCarrinho)
+      // localStorage.setItem("cart", JSON.stringify(novoCarrinho))
+    }
   }
+
   function handleCloseModal() {
     setIsOpen(false);
   }
@@ -93,17 +105,17 @@ export default function RestaurantDetailsPage() {
       name: currentProduct.name,
       description: currentProduct.description,
       price: currentProduct.price,
+      qtd: valueSelect
     }
     const novoCarrinho = [...cart, novoProduto]
     setCart(novoCarrinho);
+    // localStorage.setItem("cart", JSON.stringify(novoCarrinho))
     handleCloseModal();
   }
 
   const onChangeSelect = (event) => {
-    setValueSelect(event.target.value);
+    setValueSelect(Number(event.target.value));
   }
-
-  console.log(cart)
 
   return (
     <s.General>
@@ -158,6 +170,7 @@ export default function RestaurantDetailsPage() {
             categoryDif.map(cat => {
               return (
                 <CardRestaurantDetail
+                  key={cat}
                   cat={cat}
                   restDet={restDet}
                   handleOpenModal={handleOpenModal}
