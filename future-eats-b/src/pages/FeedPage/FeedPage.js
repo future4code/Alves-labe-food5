@@ -22,7 +22,6 @@ export default function FeedPage() {
       }
     })
       .then(res => {
-        console.log('Dados de restaurante aparecem!', res);
         setList(res.data.restaurants)
         
       })
@@ -46,7 +45,7 @@ export default function FeedPage() {
   })
   .map((element) => {
     return (
-    <div onClick={() => goToRestaurantDetailsPage(navigate, element.id)}>
+    <div onClick={() => goToRestaurantDetailsPage(navigate, element.id)} key={element.name}>
       <p>{element.name}</p>      
     </div>
     )

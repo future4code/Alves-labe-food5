@@ -20,21 +20,30 @@ export default function RestaurantDetailsPage() {
   const [currentProduct, setCurrentProdut] = useState()
   let cart = JSON.parse(localStorage.getItem("cart")) || []
 
+  // console.log('current product',currentProduct)
   //------------------------------
   const [modalIsOpen, setIsOpen] = useState(false)
-  function handleOpenModal(a, qtd) {
+  function handleOpenModal(a, qtd, id) {
     setCurrentProdut(a);
-    console.log(a)
-    console.log(qtd)
-    console.log(cart)
-    if (qtd === 0) {
-      setIsOpen(true);
+    let restRep = false;
+    for(let i=0 ; i<cart.length; i++){
+      if(id !== cart[i].idRestaurant){
+        restRep = true;
+      }
+    }
+
+    if(restRep === false){
+      if (qtd === 0) {
+        setIsOpen(true);
+      } else {
+        const novoCarrinho = cart.filter((item) => {
+          return item.name !== a.name
+        })
+        cart = novoCarrinho;
+        localStorage.setItem("cart", JSON.stringify(novoCarrinho))
+      }
     } else {
-      const novoCarrinho = cart.filter((item) => {
-        return item.name !== a.name
-      })
-      cart = novoCarrinho;
-      localStorage.setItem("cart", JSON.stringify(novoCarrinho))
+      alert('Não é possível adicionar produtos de restaurantes diferentes');
     }
   }
 
@@ -98,16 +107,21 @@ export default function RestaurantDetailsPage() {
     },
   };
 
+  // console.log(restaurantDetails)
   const updateCart = () => {
     const novoProduto = {
-      photo: currentProduct.photo,
+      photo: currentProduct.photoUrl,
       name: currentProduct.name,
       description: currentProduct.description,
       price: currentProduct.price,
-      qtd: valueSelect
+      qtd: valueSelect,
+      idRestaurant: Number(params.id),
+      nameRestaurant: restaurantDetails.name,
+      shippingRestaurant: restaurantDetails.shipping,
     }
     const novoCarrinho = [...cart, novoProduto]
-    localStorage.setItem("cart", JSON.stringify(novoCarrinho))
+    localStorage.setItem("cart", JSON.stringify(novoCarrinho));
+    setValueSelect(1);
     handleCloseModal();
   }
 
@@ -130,7 +144,7 @@ export default function RestaurantDetailsPage() {
               Selecione a quantidade desejada
             </s.Texto>
             <s.Selecionar onChange={onChangeSelect}>
-              <option>1</option>
+              <option default>1</option>
               <option>2</option>
               <option>3</option>
               <option>4</option>
@@ -172,6 +186,7 @@ export default function RestaurantDetailsPage() {
                   cat={cat}
                   restDet={restDet}
                   handleOpenModal={handleOpenModal}
+                  idRestaurant={Number(params.id)}
                 />
               )
             })

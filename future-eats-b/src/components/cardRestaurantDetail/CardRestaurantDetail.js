@@ -4,7 +4,6 @@ import * as s from './styled-CardRestaurantDetail';
 export default function CardRestaurantDetail(props) {
   let cart = JSON.parse(localStorage.getItem("cart")) || []
   
-  console.log("Cart dentro do card", cart)
   const list = props.restDet.filter(item => {
     return item.category === props.cat
   })
@@ -20,7 +19,6 @@ export default function CardRestaurantDetail(props) {
             list[i].qtd = cart[j].qtd
           }
         }
-
       }
     }
   }
@@ -44,7 +42,7 @@ export default function CardRestaurantDetail(props) {
               </s.LineMiddle>
               <s.LineBottom>
                 <s.Price>R${a.price}</s.Price>
-                <s.ButtonAddRemove onClick={() => props.handleOpenModal(a, a.qtd)}>{a.qtd === 0 ? 'adicionar' : 'remover'}</s.ButtonAddRemove>
+                <s.ButtonAddRemove onClick={() => props.handleOpenModal(a, a.qtd, props.idRestaurant)}>{a.qtd === 0 ? 'adicionar' : 'remover'}</s.ButtonAddRemove>
               </s.LineBottom>
             </s.Right>
           </s.CardInterno>
