@@ -5,9 +5,13 @@ import { BASE_URL } from "../../constants/BASE_URL";
 
 export default function GlobalState(props) {
   const token = localStorage.getItem("token")
-
+  // const listCart = localStorage.getItem("cart") || []
+  // console.log("GlobalState", listCart)
+  // const listCart = JSON.parse(localStorage.getItem("cart")) || []
+  // const [cart, setCart] = useState(localStorage.getItem("cart"))
   const [cart, setCart] = useState([])
   const [currentUser, setCurrentUser] = useState({})
+  // setCart(listCart)
 
   const getProfile = () => {
     axios.get(`${BASE_URL}/profile`, {
@@ -28,7 +32,7 @@ export default function GlobalState(props) {
     getProfile()
   }, [])
 
-  const values = { 
+  const values = {
     currentUser,
     setCurrentUser,
     cart,
