@@ -38,6 +38,37 @@ export const Line1 = styled.div`
   background-color: lightblue;
 `
 
+export const Box = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+`
+
+export const Texto = styled.div`
+`
+
+export const Selecionar = styled.select`
+  margin: 20px 0 0 0 ;
+  width: 75%;
+  height: 40px;
+  border: solid 1px gray;
+`
+
+export const Option = styled.option`
+`
+
+export const Linha3 = styled.div`
+  display: flex;
+  width: 75%;
+  justify-content: end;
+`
+
+export const Adicionar = styled.button`
+  margin: 30px 0 0 0;
+`
+
 export const BoxImg = styled.div`
   display: flex;
   justify-content: center;

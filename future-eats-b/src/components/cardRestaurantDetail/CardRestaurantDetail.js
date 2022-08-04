@@ -7,8 +7,6 @@ export default function CardRestaurantDetail(props) {
     return item.category === props.cat
   })
 
-  console.log('list=',list)
-
   return (
     <s.Card>
       <s.Title><h3>{props.cat}</h3></s.Title>
@@ -28,7 +26,7 @@ export default function CardRestaurantDetail(props) {
               </s.LineMiddle>
               <s.LineBottom>
                 <s.Price>R${a.price}</s.Price>
-                <s.ButtonAddRemove>Adicionar</s.ButtonAddRemove>
+                <s.ButtonAddRemove onClick={()=>props.handleOpenModal(a)}>Adicionar</s.ButtonAddRemove>
               </s.LineBottom>
             </s.Right>
           </s.CardInterno>

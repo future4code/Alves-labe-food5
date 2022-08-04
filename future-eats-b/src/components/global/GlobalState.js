@@ -6,6 +6,7 @@ import { BASE_URL } from "../../constants/BASE_URL";
 export default function GlobalState(props) {
   const token = localStorage.getItem("token")
 
+  const [cart, setCart] = useState([])
   const [currentUser, setCurrentUser] = useState({})
 
   const getProfile = () => {
@@ -15,7 +16,6 @@ export default function GlobalState(props) {
       }
     })
       .then((res) => {
-        // console.log("Deu certo o getProfile", res.data.user)
         setCurrentUser(res.data.user)
       })
       .catch((err) => {
@@ -28,7 +28,12 @@ export default function GlobalState(props) {
     getProfile()
   }, [])
 
-  const values = { currentUser, setCurrentUser }
+  const values = { 
+    currentUser,
+    setCurrentUser,
+    cart,
+    setCart
+  }
 
   const Provider = GlobalContext.Provider
 
