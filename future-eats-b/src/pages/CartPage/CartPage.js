@@ -1,13 +1,32 @@
-import React from "react";
+import React, {useState, useContext} from "react";
 import * as s from './styled-CartPage';
 import {goToFeedPage, goToProfilePage} from '../../routes/coordinator'
 import img_home from "./../../assets/img/home.png";
 import img_cart from "./../../assets/img/cart.png";
 import img_perfil from "./../../assets/img/perfil.png";
 import { useNavigate } from "react-router-dom";
+import { GlobalContext } from "./../../components/global/GlobalContext";
+import CardCart from "./../../components/cardCart/CardCart";
 
 export default function CartPage() {
   const navigate = useNavigate()
+  const { currentUser } = useContext(GlobalContext)
+  let cart = JSON.parse(localStorage.getItem("cart")) || []
+  const [ cart2, setCart2 ] = useState(true);
+
+  const changeCart = (name) => {
+    setCart2(!cart2);
+    let novoCarrinho = cart.filter( item => {
+      return item.name !== name
+    })
+    cart = novoCarrinho;
+    localStorage.setItem("cart", JSON.stringify(novoCarrinho));
+  }
+  
+  let soma = 0;
+  cart.forEach( item => {
+    soma = soma + item.qtd * item.price;
+  })
 
   return (
     <s.General>
@@ -20,24 +39,37 @@ export default function CartPage() {
             Endereço de entrega
           </div>
           <div>
-            Rua Alessandra Vieira, 42
+            {currentUser.address}
           </div>
         </s.Line2>
 
-
         <s.Line3>
-          Nome do restaurante
+          {cart.length === 0 ? "Carrinho Vazio" : cart[0].description}
         </s.Line3>
 
         <s.Line4>
-          Lista de produtos do carrinho
+          {
+            cart.map( item => {
+              return (
+                <CardCart key={item.name}
+                  name={item.name}
+                  photo={item.photo}
+                  qtd={item.qtd}
+                  description={item.description}
+                  price={item.price}
+                  changeCart={changeCart}
+                />
+              )
+            })
+          }
         </s.Line4>
 
         <s.Line5>
-          <s.Ship>Frete: R$3,99</s.Ship>
+        
+          <s.Ship>Frete R$: {cart.length === 0 ? "" : cart[0].shippingRestaurant}</s.Ship>
           <s.Total>
             <div>Subtotal</div>
-            <div>R$9,99</div>
+            <div>R$ {soma}</div>
           </s.Total>
           <div>Forma de pagamento</div>
           <hr></hr>

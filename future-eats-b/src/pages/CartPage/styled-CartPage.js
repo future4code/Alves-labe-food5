@@ -53,7 +53,7 @@ export const Category = styled.div`
 
 export const Line4 = styled.div`
   background-color: lightpink;
-
+  overflow-y: auto;
 `
 
 export const Line5 = styled.div`
