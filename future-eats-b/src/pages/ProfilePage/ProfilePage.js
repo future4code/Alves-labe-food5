@@ -1,4 +1,6 @@
-import React, { useContext } from "react";
+import React, {useState, useEffect, useContext } from "react";
+import axios from "axios";
+import { BASE_URL } from "../../constants/BASE_URL";
 import * as s from './styled-ProfilePage';
 import img_home from "./../../assets/img/home.png";
 import img_cart from "./../../assets/img/cart.png";
@@ -10,7 +12,21 @@ import { GlobalContext } from "../../components/global/GlobalContext";
 
 export default function ProfilePage() {
   const navigate = useNavigate()
+  const token = localStorage.getItem('token');
+  const [ordersHistory, setOrdersHistory] = useState()
   const { currentUser } = useContext(GlobalContext)
+
+  useEffect(() => {
+    axios.get(`${BASE_URL}/orders/history`, {
+      headers: {
+        auth: token
+      }
+    })
+    .then(res => {
+      setOrdersHistory(res.data.orders);
+    })
+    .catch(err => console.log("deu errado o history", err.response.data))
+  }, [])
 
   return (
     <s.General>
@@ -26,9 +42,7 @@ export default function ProfilePage() {
 
           </s.Left>
           <s.Img_edit onClick={() => goToEditPage(navigate)} src={img_edit} alt="imagem-editar" />
-
         </s.Line2>
-
 
         <s.Line3>
           <s.Left>
@@ -38,7 +52,18 @@ export default function ProfilePage() {
         </s.Line3>
 
         <s.Line4>
-          Histórico de Pedidos
+          {ordersHistory && 
+            ordersHistory.map( (order, index) => {
+              let date = new Date(order.createdAt);
+              return(
+                <s.History key={index}>
+                  <div>{order.restaurantName}</div>
+                  <div>{date.getDate()}/{date.getMonth()+1}/{date.getFullYear()}</div>
+                  <div>SUBTOTAL R${order.totalPrice.toFixed(2)}</div>
+                </s.History>
+              )
+            })
+          }
         </s.Line4>
 
         <s.Line5>

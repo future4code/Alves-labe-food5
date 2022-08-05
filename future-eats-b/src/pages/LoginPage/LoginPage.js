@@ -21,7 +21,6 @@ export default function LoginPage() {
     axios.post(`${BASE_URL}/login`, body)
     .then((res)=>{
       setCurrentUser(res.data)
-      console.log('retorno do login', res)
       localStorage.setItem("token", res.data.token)
       if (res.data.user.hasAddress) {
         goToFeedPage(navigate)

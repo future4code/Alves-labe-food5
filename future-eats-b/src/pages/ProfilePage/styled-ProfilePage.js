@@ -85,3 +85,7 @@ export const Left = styled.div`
 export const Img_edit = styled.img`
   width: 20px;
 `
+
+export const History = styled.div`
+  margin: 20px 0;
+`
