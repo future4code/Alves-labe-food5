@@ -8,6 +8,7 @@ export const General = styled.div`
   height: 100vh;
   overflow-x: hidden;
   box-sizing: border-box;
+  background-color: #FFFFFF;
 `
 
 export const Container = styled.div`
@@ -26,17 +27,50 @@ export const Form = styled.form`
   align-items: center;
 `
 
+export const Field = styled.fieldset`
+  width: 328px;
+  height: 56px;
+  margin: 10px 0;
+  border: solid 1px #b8b8b8;
+`
+export const Legend = styled.legend`
+  color: gray;
+  margin: 0 10px;
+  padding: 0 10px;
+  font-size: 12px;
+`
+
 export const Input = styled.input`
+  width: 328px;
+  height: 25px;
+  border: none;
+  margin: 5px 0;
+  padding: 0 20px;
+  font-size: 16px;
+  ::placeholder{
+    color:  #b8b8b8;
+  }
 `
 
 export const ButtonSave = styled.button`
+  width: 328px;
+  height: 42px;
+  padding: 12px 16px;
+  border-radius: 2px;
+  background-color: #65B153;
+  border: none;
+  margin-top: 10px;  font-family: Roboto;
+  font-size: 16px;
+  font-weight: bold;
 `
 
 export const Line1 = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: lightblue;
+  background-color: white;
+  font-size: 16px;
+  border: solid 1px #b8b8b8;
 `
 
 export const BoxImg = styled.div`
@@ -56,4 +90,6 @@ export const Title = styled.div`
   align-items: center;
   flex-basis: 90%;
   height: 100%;
+  font-size: 16px;
+  font-weight: bolder;
 `

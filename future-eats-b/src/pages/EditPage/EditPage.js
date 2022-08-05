@@ -5,7 +5,7 @@ import axios from "axios";
 import { GlobalContext } from "../../components/global/GlobalContext";
 import { BASE_URL } from "../../constants/BASE_URL";
 import img_buttonBack from "./../../assets/img/buttomBack.png"
-import {useNavigate} from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { goToProfilePage } from "../../routes/coordinator";
 
 export default function EditPage() {
@@ -45,44 +45,56 @@ export default function EditPage() {
       <s.Container>
         <s.Line1>
           <s.BoxImg>
-            <s.ButtonBack src={img_buttonBack} onClick={()=>goToProfilePage(navigate)} alt="Botão voltar" />
+            <s.ButtonBack src={img_buttonBack} onClick={() => goToProfilePage(navigate)} alt="Botão voltar" />
           </s.BoxImg>
           <s.Title>Editar</s.Title>
         </s.Line1>
-        
+
         {
           Object.keys(currentUser).length !== 0 ?
 
             <s.Form onSubmit={register}>
-              <s.Input
-                name={"name"}
-                value={form.name === "" ? form.name = currentUser.name : form.name}
-                onChange={onChange}
-                placeholder="Nome"
-                required
-                type={"text"}
-              />
-              <s.Input
-                name={"email"}
-                value={form.email === "" ? form.email = currentUser.email : form.email}
-                onChange={onChange}
-                placeholder="E-mail"
-                required
-                type={"email"}
-              />
-              <s.Input
-                name={"cpf"}
-                value={form.cpf === "" ? form.cpf = currentUser.cpf : form.cpf}
-                onChange={onChange}
-                placeholder="CPF"
-                required
-                type={"text"}
-              />
+              <s.Field>
+                <s.Legend>Nome*</s.Legend>
+                <s.Input
+                  name={"name"}
+                  value={form.name === "" ? form.name = currentUser.name : form.name}
+                  onChange={onChange}
+                  placeholder="Nome"
+                  required
+                  type={"text"}
+                />
+              </s.Field>
+              <s.Field>
+                <s.Legend>E-mail*</s.Legend>
+
+                <s.Input
+                  name={"email"}
+                  value={form.email === "" ? form.email = currentUser.email : form.email}
+                  onChange={onChange}
+                  placeholder="E-mail"
+                  required
+                  type={"email"}
+                />
+              </s.Field>
+              <s.Field>
+                <s.Legend>CPF*</s.Legend>
+                <s.Input
+                  name={"cpf"}
+                  value={form.cpf === "" ? form.cpf = currentUser.cpf : form.cpf}
+                  onChange={onChange}
+                  placeholder="CPF"
+                  required
+                  type={"text"}
+                />
+              </s.Field>
+
               <s.ButtonSave type={'submit'}>Salvar</s.ButtonSave>
             </s.Form>
+
             : <p>Carregando...</p>
         }
       </s.Container>
-    </s.General>
+    </s.General >
   )
 }

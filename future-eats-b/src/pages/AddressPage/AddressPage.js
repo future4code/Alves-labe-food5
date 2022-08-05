@@ -93,10 +93,10 @@ export default function AddressPage() {
           <s.BoxImg>
             <s.ButtonBack src={img_buttonBack} onClick={() => goToFeedPage(navigate)} alt="Botão voltar" />
           </s.BoxImg>
-        </s.Line1>
-        <div>
           <s.Title>Endereço</s.Title>
-        </div>
+        </s.Line1>
+        {/* <div>
+        </div> */}
         {/* { mostrarForm === true ? */}
         {Object.keys(currentUser).length !== 0 && (currentUser.hasAddress === true ? Object.keys(currentAddress).length !== 0 : true) ?
           <s.Form onSubmit={register}>

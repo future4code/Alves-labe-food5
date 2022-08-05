@@ -67,6 +67,7 @@ export const ButtonSave = styled.button`
 export const Line1 = styled.div`
   display: flex;
   border-bottom: solid 1px;
+  border: solid 1px #b8b8b8;
 `
 
 export const BoxImg = styled.div`
