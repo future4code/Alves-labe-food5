@@ -45,7 +45,6 @@ export default function FeedPage() {
           setCurrentOrder(true);
           setOpenOrder(res.data.order)
         }
-        console.log('deu certo verificar se existe pedido em andamento', res);
       })
       .catch(err => console.log("deu errado verificar se existe pedido em andamento", err.response.data))
   }
@@ -56,21 +55,26 @@ export default function FeedPage() {
   }, [])
 
   const newList = list
-    .filter((element) => {
+    .filter( element => {
       if (category === "Todos") {
         return true
       } else {
         return element.category === category
       }
     })
-    .filter((element) => {
+    .filter( element => {
       return element.name.toLowerCase().includes(search.toLowerCase())
     })
-    .map((element) => {
+    .map( element => {
       return (
-        <div onClick={() => goToRestaurantDetailsPage(navigate, element.id)} key={element.name}>
-          <s.Restaurant>{element.name}</s.Restaurant>
-        </div>
+        <s.CardFeed onClick={() => goToRestaurantDetailsPage(navigate, element.id)} key={element.name}>
+          <s.RestaurantPhoto src={element.logoUrl} />
+          <s.RestaurantName>{element.name}</s.RestaurantName>
+            <s.LastLine>
+              <s.RestaurantTime>{element.deliveryTime} min</s.RestaurantTime>
+              <s.RestaurantShipping>Frete R${element.shipping.toFixed(2)}</s.RestaurantShipping>
+            </s.LastLine>
+        </s.CardFeed>
       )
     })
 
@@ -91,33 +95,31 @@ export default function FeedPage() {
     <s.General>
       <s.Grid currentOrder={currentOrder}>
         <s.Line1>
-          <h3>Future Eats</h3>
+          <s.ProjectName>FutureEats</s.ProjectName>
         </s.Line1>
 
         <s.Line2>
-          <s.Search onChange={onChangeSearch} placeholder="Restaurante..."></s.Search>
+          <s.Search onChange={onChangeSearch} placeholder="Restaurante"></s.Search>
         </s.Line2>
 
         <s.Line3>
-          <s.Category onClick={() => onChangeCategory("Todos")}>Todos</s.Category>
-          <s.Category onClick={() => onChangeCategory("Árabe")}>Árabe</s.Category>
-          <s.Category onClick={() => onChangeCategory("Asiática")}>Asiática</s.Category>
-          <s.Category onClick={() => onChangeCategory("Hamburguer")}>Hamburguer</s.Category>
-          <s.Category onClick={() => onChangeCategory("Italiana")}>Italiana</s.Category>
-          <s.Category onClick={() => onChangeCategory("Sorvetes")}>Sorvetes</s.Category>
-          <s.Category onClick={() => onChangeCategory("Carnes")}>Carnes</s.Category>
-          <s.Category onClick={() => onChangeCategory("Baiana")}>Baiana</s.Category>
-          <s.Category onClick={() => onChangeCategory("Petiscos")}>Petiscos</s.Category>
-          <s.Category onClick={() => onChangeCategory("Mexicana")}>Mexicana</s.Category>
+          <s.BoxLine3>
+            <s.Category category={category} value="Todos" onClick={()=>onChangeCategory("Todos")}>Todos</s.Category>
+            <s.Category category={category} value="Árabe" onClick={()=>onChangeCategory("Árabe")}>Árabe</s.Category>
+            <s.Category category={category} value="Asiática" onClick={()=>onChangeCategory("Asiática")}>Asiática</s.Category>
+            <s.Category category={category} value="Hamburguer" onClick={()=>onChangeCategory("Hamburguer")}>Hamburguer</s.Category>
+            <s.Category category={category} value="Italiana" onClick={()=>onChangeCategory("Italiana")}>Italiana</s.Category>
+            <s.Category category={category} value="Sorvetes" onClick={()=>onChangeCategory("Sorvetes")}>Sorvetes</s.Category>
+            <s.Category category={category} value="Carnes" onClick={()=>onChangeCategory("Carnes")}>Carnes</s.Category>
+            <s.Category category={category} value="Baiana" onClick={()=>onChangeCategory("Baiana")}>Baiana</s.Category>
+            <s.Category category={category} value="Petiscos" onClick={()=>onChangeCategory("Petiscos")}>Petiscos</s.Category>
+            <s.Category category={category} value="Mexicana" onClick={()=>onChangeCategory("Mexicana")}>Mexicana</s.Category>
+          </s.BoxLine3>
         </s.Line3>
 
-        {/* <s.Line4> */}
-        <s.Espaco1>
+        <s.Line4>
           {newList}
-        </s.Espaco1>
-
-        {/* </s.Line4> */}
-
+        </s.Line4>
 
         <s.Ultima>
           <s.Espaco2>
@@ -149,7 +151,6 @@ export default function FeedPage() {
             <s.ImgFooter src={img_perfil} onClick={() => goToProfilePage(navigate)} alt="Home" />
           </s.Line5>
         </s.Ultima>
-
 
       </s.Grid>
     </s.General>
