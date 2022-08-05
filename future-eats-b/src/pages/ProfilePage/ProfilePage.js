@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { BASE_URL } from "../../constants/BASE_URL";
 import * as s from './styled-ProfilePage';
@@ -22,10 +22,10 @@ export default function ProfilePage() {
         auth: token
       }
     })
-    .then(res => {
-      setOrdersHistory(res.data.orders);
-    })
-    .catch(err => console.log("deu errado o history", err.response.data))
+      .then(res => {
+        setOrdersHistory(res.data.orders);
+      })
+      .catch(err => console.log("deu errado o history", err.response.data))
   }, [])
 
   return (
@@ -34,41 +34,50 @@ export default function ProfilePage() {
         <s.Line1>
           <h3>Meu Perfil</h3>
         </s.Line1>
-        <s.Line2>
-          <s.Left>
-            <s.NomeProfile>{currentUser.name}</s.NomeProfile>
-            <s.EmailProfile>{currentUser.email}</s.EmailProfile>
-            <s.CpfProfile>{currentUser.cpf}</s.CpfProfile>
 
-          </s.Left>
-          <s.Img_edit onClick={() => goToEditPage(navigate)} src={img_edit} alt="imagem-editar" />
+        <s.Line2>
+          <s.Line2Box>
+            <s.LeftOne>
+              <s.NomeProfile>{currentUser.name}</s.NomeProfile>
+              <s.EmailProfile>{currentUser.email}</s.EmailProfile>
+              <s.CpfProfile>{currentUser.cpf}</s.CpfProfile>
+            </s.LeftOne>
+            <s.Img_edit onClick={() => goToEditPage(navigate)} src={img_edit} alt="imagem-editar" />
+          </s.Line2Box>
         </s.Line2>
 
         <s.Line3>
-          <s.Left>
-            {currentUser.address}
-          </s.Left>
-          <s.Img_edit onClick={() => goToAddressPage(navigate)} src={img_edit} alt="imagem-editar" />
+          <s.Line3Box>
+            <s.LeftTwo>
+              <s.AddressTitle>Endereço Cadastrado</s.AddressTitle>
+              <s.AddressDiv>{currentUser.address}</s.AddressDiv>
+            </s.LeftTwo>
+            <s.Img_edit onClick={() => goToAddressPage(navigate)} src={img_edit} alt="imagem-editar" />
+          </s.Line3Box>
         </s.Line3>
 
         <s.Line4>
-          {ordersHistory && 
-            ordersHistory.map( (order, index) => {
+        <s.Line4Box>
+          <s.HistoryTitle>Histórico de Pedidos</s.HistoryTitle>
+          <s.Line/>        
+          {ordersHistory &&
+            ordersHistory.map((order, index) => {
               let date = new Date(order.createdAt);
-              return(
+              return (
                 <s.History key={index}>
-                  <div>{order.restaurantName}</div>
-                  <div>{date.getDate()}/{date.getMonth()+1}/{date.getFullYear()}</div>
-                  <div>SUBTOTAL R${order.totalPrice.toFixed(2)}</div>
+                  <s.RestaurantName>{order.restaurantName}</s.RestaurantName>
+                  <s.RestaurantDeadline>{date.getDate()}/{date.getMonth() + 1}/{date.getFullYear()}</s.RestaurantDeadline>
+                  <s.Subtotal>SUBTOTAL R${order.totalPrice.toFixed(2)}</s.Subtotal>
                 </s.History>
               )
             })
           }
+          </s.Line4Box>
         </s.Line4>
 
         <s.Line5>
-          <s.ImgFooter src={img_home} onClick={()=>goToFeedPage(navigate)} alt="Home" />
-          <s.ImgFooter src={img_cart} onClick={()=>goToCartPage(navigate)} alt="Home" />
+          <s.ImgFooter src={img_home} onClick={() => goToFeedPage(navigate)} alt="Home" />
+          <s.ImgFooter src={img_cart} onClick={() => goToCartPage(navigate)} alt="Home" />
           <s.ImgFooter src={img_perfil} alt="Home" />
         </s.Line5>
       </s.Grid>
