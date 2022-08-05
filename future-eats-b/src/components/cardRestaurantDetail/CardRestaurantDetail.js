@@ -3,7 +3,7 @@ import * as s from './styled-CardRestaurantDetail';
 
 export default function CardRestaurantDetail(props) {
   let cart = JSON.parse(localStorage.getItem("cart")) || []
-  
+
   const list = props.restDet.filter(item => {
     return item.category === props.cat
   })
@@ -26,23 +26,23 @@ export default function CardRestaurantDetail(props) {
   return (
     <s.Card>
       <s.Title><h3>{props.cat}</h3></s.Title>
-      {list.map((a, index) => {
+      {list.map((item, index) => {
         return (
           <s.CardInterno key={index}>
             <s.Left>
-              <s.ImageFood src={a.photoUrl} alt="Foto comida" />
+              <s.ImageFood src={item.photoUrl} alt="Foto comida" />
             </s.Left>
             <s.Right>
               <s.LineTop>
-                <s.Name>{a.name}</s.Name>
-                <s.Quantidade>{a.qtd === 0 ? '' : a.qtd}</s.Quantidade>
+                <s.Name>{item.name}</s.Name>
+                <s.Quantidade>{item.qtd === 0 ? '' : item.qtd}</s.Quantidade>
               </s.LineTop>
               <s.LineMiddle>
-                <p>{a.description}</p>
+                <p>{item.description}</p>
               </s.LineMiddle>
               <s.LineBottom>
-                <s.Price>R${a.price}</s.Price>
-                <s.ButtonAddRemove onClick={() => props.handleOpenModal(a, a.qtd, props.idRestaurant)}>{a.qtd === 0 ? 'adicionar' : 'remover'}</s.ButtonAddRemove>
+                <s.Price>R${item.price}</s.Price>
+                <s.ButtonAddRemove onClick={() => props.handleOpenModal(item, props.idRestaurant)}>{item.qtd === 0 ? 'adicionar' : 'remover'}</s.ButtonAddRemove>
               </s.LineBottom>
             </s.Right>
           </s.CardInterno>

@@ -18,26 +18,30 @@ export default function RestaurantDetailsPage() {
   const [restaurantDetails, setRestaurantDetails] = useState({})
   const [valueSelect, setValueSelect] = useState(1)
   const [currentProduct, setCurrentProdut] = useState()
+  const [updatecar, setUpdateCar] = useState(true)
   let cart = JSON.parse(localStorage.getItem("cart")) || []
 
-  // console.log('current product',currentProduct)
   //------------------------------
   const [modalIsOpen, setIsOpen] = useState(false)
-  function handleOpenModal(a, qtd, id) {
-    setCurrentProdut(a);
+  function handleOpenModal(item, id) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || []
+    setCurrentProdut(item);
+    console.log(item)
+
     let restRep = false;
-    for(let i=0 ; i<cart.length; i++){
-      if(id !== cart[i].idRestaurant){
+    for (let i = 0; i < cart.length; i++) {
+      if (id !== cart[i].idRestaurant) {
         restRep = true;
       }
     }
 
-    if(restRep === false){
-      if (qtd === 0) {
+    if (restRep === false) {
+      if (item.qtd === 0) {
         setIsOpen(true);
       } else {
-        const novoCarrinho = cart.filter((item) => {
-          return item.name !== a.name
+        setUpdateCar(!updatecar)
+        const novoCarrinho = cart.filter((carr) => {
+          return carr.name !== item.name
         })
         cart = novoCarrinho;
         localStorage.setItem("cart", JSON.stringify(novoCarrinho))
@@ -166,9 +170,10 @@ export default function RestaurantDetailsPage() {
         <s.Line2>
           <s.Img_edit src={restaurantDetails.logoUrl} alt="imagem-editar" />
         </s.Line2>
-
         <s.Line3>
-          <p>{restaurantDetails.name}</p>
+        <s.TituloLinha3>
+          {restaurantDetails.name}
+        </s.TituloLinha3>
           <p>{restaurantDetails.category}</p>
           <s.ShippingDiv>
             <p>{restaurantDetails.deliveryTime} min</p>

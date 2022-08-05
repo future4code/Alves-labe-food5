@@ -30,14 +30,15 @@ export const Grid = styled.div`
   box-sizing: border-box;
   box-shadow: 0 5px 5px 0 rgba(0,0,0,0.2), 0 10px 10px 0 rgba(0,0,0,0.15);
 `
-
+//container restaurante
 export const Line1 = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: lightblue;
+  background-color: #ffffff;
+  font-size: 16px;
 `
-
+//box modal
 export const Box = styled.div`
   display: flex;
   flex-direction: column;
@@ -45,8 +46,10 @@ export const Box = styled.div`
   align-items: center;
   width: 100%;
 `
-
+//texto modal
 export const Texto = styled.div`
+  font-size: 16px;
+  text-align: center;
 `
 
 export const Selecionar = styled.select`
@@ -65,10 +68,19 @@ export const Linha3 = styled.div`
   justify-content: end;
 `
 
-export const Adicionar = styled.button`
+export const Adicionar = styled.div`
   margin: 30px 0 0 0;
+  color: #5cb646;
+  font-size: 16px;
+  :hover{
+    cursor: pointer;
+  }
+  :active{
+    color: #3b722e;
+  }
 `
 
+// seta voltar
 export const BoxImg = styled.div`
   display: flex;
   justify-content: center;
@@ -79,7 +91,7 @@ export const BoxImg = styled.div`
 export const ButtonBack = styled.img`
   width: 25px;
 `
-
+// restaurante topo
 export const Title = styled.div`
   display: flex;
   justify-content: center;
@@ -88,14 +100,21 @@ export const Title = styled.div`
   height: 100%;
 `
 
+//container imagem topo
 export const Line2 = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background-color: lightgreen;
+  background-color: white;
 `
 
 export const Search = styled.input`
+`
+//nome do restaurante
+export const TituloLinha3 = styled.div`
+  color: #5cb646;
+  font-size: 16px;
 `
 
 export const Line3 = styled.div`
@@ -104,7 +123,9 @@ export const Line3 = styled.div`
   align-items: left;
   justify-content: space-between;
   overflow-x: auto;
-  background-color: lightcoral;
+  background-color: white;
+  color: #b8b8b8;
+  padding-left: 10px;
 `
 
 export const Category = styled.div`
