@@ -96,6 +96,8 @@ export const ButtonSignUp = styled.button`
   background-color: #65B153;
   border: none;
   margin-top: 10px;
+  font-size: 16px;
+  font-weight: bold;
 `
 export const TitleFuture = styled.p`
   font-size: 34px;
