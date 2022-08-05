@@ -17,13 +17,13 @@ export default createGlobalStyle`
     background-color: lightgray;
     /* background-image: url({img_fundo}); */
   }
-  ::-webkit-scrollbar {
+  /* ::-webkit-scrollbar {
      width: 2px
   }
   ::-webkit-scrollbar-thumb {
     background-color: lightgrey;
     border-radius: 3px;
-  }
+  } */
   body, input, textarea, button {
     font: 14px sans-serif;
   }

@@ -15,11 +15,8 @@ export const Grid = styled.div`
   height: 667px;
   display: grid;
   border-radius: 20px;
-  /* grid-template-rows: 60px 40px 80px 1fr 0.35fr 60px; */
-  grid-template-rows: 60px 40px 80px 1fr auto;
-  /* min-width: 100vw; */
-  /* min-width: 100%; */
-  /* min-height: 100vh; */
+  grid-template-rows: 60px 70px 42px 1fr auto;
+  background-color: white;
   box-sizing: border-box;
   box-shadow: 0 5px 5px 0 rgba(0,0,0,0.2), 0 10px 10px 0 rgba(0,0,0,0.15);
 `
@@ -28,7 +25,112 @@ export const Line1 = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: lightblue;
+  border-bottom: solid 1px lightgrey;
+`
+
+export const ProjectName = styled.div`
+  font-size: 19px;
+`
+
+export const Line2 = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+`
+
+export const Search = styled.input`
+  width: 90%;
+  height: 54px;
+  border: solid 1px #b8b8b8;
+  ::placeholder{
+    padding: 0 10px;
+    color: #b8b8b8;
+    font-size: 18px;
+  }
+`
+
+export const Line3 = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  overflow-x: auto;
+`
+
+export const Category = styled.div`
+  margin: 0 10px;
+  font-size: 18px;
+  cursor: pointer;
+  color: ${props => props.value === props.category ? "#5cb646" : "black"}
+`
+
+export const BoxLine3 = styled.div`
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  width: 90%;
+  ::-webkit-scrollbar {
+    width: 10px
+  }
+`
+
+export const Line4 = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+  width: 100%;
+  ::-webkit-scrollbar {
+    width: 2px
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: lightgrey;
+    border-radius: 3px;
+  }
+`
+
+export const CardFeed = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: 188px;
+  margin: 0 0 20px 0;
+  border-radius: 10px;
+  border: solid 1px #b8b8b8;
+  cursor: pointer;
+`
+
+export const RestaurantPhoto = styled.img`
+  width: 100%;
+  height: 120px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  object-fit: contain;
+  object-fit: fill;
+  object-fit: scale-down;
+  object-fit: cover;
+`
+
+export const RestaurantName = styled.div`
+  margin: 10px 0 5px 20px;
+  color: #5cb646;
+  font-size: 18px;
+`
+
+export const LastLine = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin: 0 10px 10px 20px;
+  font-size: 18px;
+`
+
+export const RestaurantTime = styled.div`
+  color: #b8b8b8;
+`
+
+export const RestaurantShipping = styled.div`
+  color: #b8b8b8;
 `
 
 export const Ultima = styled.div`
@@ -36,46 +138,6 @@ export const Ultima = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-`
-
-export const Line2 = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: lightgreen;
-`
-
-export const Search = styled.input`
-`
-
-export const Line3 = styled.div`
-  display: flex;
-  align-items: center;
-  overflow-x: auto;
-  background-color: lightcoral;
-`
-
-export const Category = styled.div`
-  margin: 0 10px;
-`
-
-export const Line4 = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background-color: lightpink;
-  overflow-y: auto;
-`
-
-export const Restaurant = styled.div`
-  margin: 50px 0;
-  background-color: lightblue;
-`
-
-export const Espaco1 = styled.div`
-  display: flex;
-  flex-direction: column;
-  overflow-y: auto;
 `
 
 export const Espaco2 = styled.div`
@@ -90,10 +152,12 @@ export const Line5 = styled.div`
   align-items: center;
   width: 100%;
   height: 60px;
+  border-top: 1px solid lightgray
 `
 
 export const ImgFooter = styled.img`
-  width: 30px
+  width: 30px;
+  cursor: pointer;
 `
 
 export const Left = styled.div`
