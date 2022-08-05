@@ -15,7 +15,8 @@ export const Grid = styled.div`
   height: 667px;
   display: grid;
   border-radius: 20px;
-  grid-template-rows: 60px 40px 80px 1fr 60px;
+  /* grid-template-rows: 60px 40px 80px 1fr 0.35fr 60px; */
+  grid-template-rows: 60px 40px 80px 1fr auto;
   /* min-width: 100vw; */
   /* min-width: 100%; */
   /* min-height: 100vh; */
@@ -28,6 +29,13 @@ export const Line1 = styled.div`
   justify-content: center;
   align-items: center;
   background-color: lightblue;
+`
+
+export const Ultima = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `
 
 export const Line2 = styled.div`
@@ -52,16 +60,67 @@ export const Category = styled.div`
 `
 
 export const Line4 = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: lightpink;
+  overflow-y: auto;
+`
+
+export const Restaurant = styled.div`
+  margin: 50px 0;
+  background-color: lightblue;
+`
+
+export const Espaco1 = styled.div`
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+`
+
+export const Espaco2 = styled.div`
+  display: flex;
+  width: 100%;
+  background-color: #5cb646;
 `
 
 export const Line5 = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  /* background-color: lightcyan; */
+  width: 100%;
+  height: 60px;
 `
 
 export const ImgFooter = styled.img`
   width: 30px
+`
+
+export const Left = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 40%;
+`
+
+export const Relogio = styled.img`
+  width: 30px
+`
+
+export const Right = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-basis: 60%;
+`
+
+export const Div1 = styled.div`
+  margin: 10px 0;
+`
+
+export const Div2 = styled.div`
+`
+
+export const Div3 = styled.div`
+  margin: 10px 0;
 `

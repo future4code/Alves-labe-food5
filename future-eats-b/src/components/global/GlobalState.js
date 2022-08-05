@@ -8,23 +8,27 @@ export default function GlobalState(props) {
   const [currentUser, setCurrentUser] = useState({})
 
   const getProfile = () => {
-    axios.get(`${BASE_URL}/profile`, {
-      headers: {
-        auth: token
-      }
-    })
-      .then((res) => {
-        setCurrentUser(res.data.user)
+    if (token) {
+      axios.get(`${BASE_URL}/profile`, {
+        headers: {
+          auth: token
+        }
       })
-      .catch((err) => {
-        console.log("Deu errrado o getProfile")
-        console.log(err)
-      })
+        .then((res) => {
+          setCurrentUser(res.data.user)
+        })
+        .catch((err) => {
+          console.log("Deu errrado o getProfile")
+          console.log(err)
+        })
+    } else{
+    }
   }
+
 
   useEffect(() => {
     getProfile()
-  }, [])
+  }, [token])
 
   const values = {
     currentUser,

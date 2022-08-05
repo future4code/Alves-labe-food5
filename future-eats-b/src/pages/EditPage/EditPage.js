@@ -27,7 +27,7 @@ export default function EditPage() {
       }
     })
       .then((res) => {
-        console.log("Deu certo o updateProfile", res)
+        // console.log("Deu certo o updateProfile", res)
       })
       .catch((err) => {
         console.log("Deu errado o updateProfile")
