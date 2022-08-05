@@ -13,19 +13,30 @@ export const General = styled.div`
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   width: 375px;
   height: 667px;
   border-radius: 20px;
-  background-color: lightcoral;
+  background-color: white;
   box-shadow: 0 5px 5px 0 rgba(0,0,0,0.2), 0 10px 10px 0 rgba(0,0,0,0.15);
 `
 
 export const Title = styled.div`
+  margin: 80px 0 20px 0;
 `
 
-export const Title2 = styled.div`
+export const Title1 = styled.p`
+  font-size: 34px;
+`
+
+export const Title2 = styled.h1`
+font-size: 32px;
+  color: #5cb646;
+`
+
+export const Title3 = styled.div`
+  margin: 20px;
 `
 
 export const Form = styled.form`
@@ -34,20 +45,54 @@ export const Form = styled.form`
   align-items: center;
 `
 
+export const Field = styled.fieldset`
+  width: 328px;
+  height: 56px;
+  border: solid 1px #b8b8b8;
+  margin: 10px 0;
+`
+
+export const Legend = styled.legend`
+  color: #b8b8b8;
+  margin: 0 10px;
+  padding: 0 10px;
+  font-size: 12px;
+`
+
 export const Input = styled.input`
+  width: 328px;
+  height: 25px;
+  border: none;
+  margin: 5px 0;
+  padding: 0 20px;
+  font-size: 16px;
+  ::placeholder{
+    color: #b8b8b8;
+  }
 `
 
 export const ButtonLogin = styled.button`
+  width: 328px;
+  height: 42px;
+  margin: 10px 0;
+  border: none;
+  font-weight: bold;
+  background-color: #5cb646;
+  cursor: pointer;
 `
 
 export const Cadastro = styled.div`
   display: flex;
+  margin: 20px;
 `
 
 export const Text = styled.div`
+  font-weight: bold;
 `
 
 export const DivCadastro = styled.div`
+  margin: 0 2px;
+  font-weight: bold;
   cursor: pointer;
   text-decoration: underline;
 `
