@@ -44,41 +44,49 @@ export default function LoginPage() {
     <s.General>
       <s.Container>
         <s.Title>
-          <h1>Future Eats</h1>
+          <s.Title1>Future</s.Title1>
+          <s.Title2>Eats</s.Title2>
         </s.Title>
 
-        <s.Title2>
+        <s.Title3>
           <h3>Entrar</h3>
-        </s.Title2>
+        </s.Title3>
 
         <s.Form onSubmit={register}>
-          <s.Input
-            name={"email"}
-            value={form.email}
-            onChange={onChange}
-            placeholder="E-mail"
-            required
-            type={"email"}
-          />
-          <s.Input
-            name={"password"}
-            value={form.password}
-            onChange={onChange}
-            placeholder="Senha"
-            required
-            type={"password"}
-          />
-          <s.ButtonLogin type={'submit'}>Continuar</s.ButtonLogin>
+          <s.Field>
+            <s.Legend>E-mail*</s.Legend>
+            <s.Input
+              name={"email"}
+              value={form.email}
+              onChange={onChange}
+              placeholder="email@email.com"
+              required
+              type={"email"}
+              />
+          </s.Field>
+          <s.Field>
+            <s.Legend>Senha*</s.Legend>
+            <s.Input
+              name={"password"}
+              value={form.password}
+              onChange={onChange}
+              placeholder="Mínimo 6 caracteres"
+              required
+              type={"password"}
+              pattern={"^.{6,}"}
+              title={"A senha deve possuir no mínimo 6 dígitos"}
+            />
+          </s.Field>
+          <s.ButtonLogin type={'submit'}>Entrar</s.ButtonLogin>
         </s.Form>
 
         <s.Cadastro>
           <s.Text>
-            Não possui cadastro?
+            Não possui cadastro? 
           </s.Text>
           <s.DivCadastro onClick={()=>goToSignUpPage(navigate)}>
             Clique aqui
           </s.DivCadastro>
-
         </s.Cadastro>
       </s.Container>
     </s.General>
