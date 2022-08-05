@@ -1,18 +1,16 @@
 import styled from 'styled-components';
 
 export const Card = styled.div`
-  /* border: solid 2px blue; */
-  margin: 10px 10px;
-  
+  margin: 10px 10px;  
 `
 
 export const Title = styled.div`
   border-bottom: solid 1px black;
 `
-
+//card produtos
 export const CardInterno = styled.div`
   display: flex;
-  height: 100px;
+  height: 120px;
   margin: 10px 0;
   border: solid 1px black;
   border-radius: 10px;
@@ -24,6 +22,7 @@ export const Left = styled.div`
 export const ImageFood = styled.img`
   width: 80px;
   height: 100%;
+  margin-right: 10px;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
 `
@@ -43,13 +42,17 @@ export const LineTop = styled.div`
 
 export const Name = styled.div`
   font-size: 16px;
-  color: green;
+  color: #5cb646;
 `
 
 export const Quantidade = styled.div`
+  font-size: 16px;
+  margin: 5px;
 `
 
 export const LineMiddle = styled.div`
+  color: #b8b8b8;
+
 `
 
 export const LineBottom = styled.div`
@@ -58,9 +61,23 @@ export const LineBottom = styled.div`
 `
 
 export const Price = styled.div`
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
 `
 
-export const ButtonAddRemove = styled.button`
+export const ButtonAddRemove = styled.div`
+  width: 90px;
+  height: 31px;
+  margin: 7px 0 0 8px;
+  padding: 8px 20.5px 9px 21.5px;
+  border-radius: 8px;
+  border: solid 1px #5cb646;
+  color: #5cb646;
+  :hover{
+    cursor: pointer;
+  }
+  :active{
+    color: white;
+    background-color: #5cb646;
+  }
 `
