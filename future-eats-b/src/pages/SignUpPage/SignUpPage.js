@@ -59,7 +59,7 @@ export default function SignUpPage() {
         </s.Title2>
         <s.Form onSubmit={register}>
           <s.Field>
-            <s.Legend>Nome</s.Legend>
+            <s.Legend>Nome*</s.Legend>
             <s.Input
               name={"name"}
               value={form.name}
@@ -70,7 +70,7 @@ export default function SignUpPage() {
             />
           </s.Field>
           <s.Field>
-            <s.Legend>E-mail</s.Legend>
+            <s.Legend>E-mail*</s.Legend>
             <s.Input
               name={"email"}
               value={form.email}
@@ -81,7 +81,7 @@ export default function SignUpPage() {
             />
           </s.Field>
           <s.Field>
-            <s.Legend>CPF</s.Legend>
+            <s.Legend>CPF*</s.Legend>
             <s.Input
               name={"cpf"}
               value={form.cpf}
@@ -94,7 +94,7 @@ export default function SignUpPage() {
             />
           </s.Field>
           <s.Field>
-            <s.Legend>Senha</s.Legend>
+            <s.Legend>Senha*</s.Legend>
             <s.Input
               name={"password"}
               value={form.password}
@@ -107,7 +107,7 @@ export default function SignUpPage() {
             />
           </s.Field>
           <s.Field>
-            <s.Legend>Confirmar Senha</s.Legend>
+            <s.Legend>Confirmar Senha*</s.Legend>
             <s.Input
               name={"confirmPassword"}
               value={form.confirmPassword}
