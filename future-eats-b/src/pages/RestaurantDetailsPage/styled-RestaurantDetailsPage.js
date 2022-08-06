@@ -137,7 +137,12 @@ export const Line4 = styled.div`
   overflow-y: auto;
 `
 export const Img_edit = styled.img`
-  width: 100px;
+  /* width: 100px; */
+    width: 100%;
+    height: 120px;
+    border-top-left-radius:8px;
+    border-top-right-radius:8px;
+    object-fit: auto;
 `
 
 export const ShippingDiv = styled.div`

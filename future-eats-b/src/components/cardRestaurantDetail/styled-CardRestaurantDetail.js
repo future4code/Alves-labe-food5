@@ -46,8 +46,17 @@ export const Name = styled.div`
 `
 
 export const Quantidade = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  color: #5cb646;
   font-size: 16px;
-  margin: 5px;
+  width: 33px;
+  height: 33px;
+  border: solid 1px #5cb646;
+  border-radius: 0px 8px 0px 8px;
+
 `
 
 export const LineMiddle = styled.div`
@@ -70,7 +79,7 @@ export const ButtonAddRemove = styled.div`
   height: 31px;
   margin: 7px 0 0 8px;
   padding: 8px 20.5px 9px 21.5px;
-  border-radius: 8px;
+  border-radius: 8px 0px 8px 0px;
   border: solid 1px #5cb646;
   color: #5cb646;
   :hover{
