@@ -16,37 +16,33 @@ export const Grid = styled.div`
   display: grid;
   border-radius: 20px;
   grid-template-rows: 60px 40px 80px 1fr 150px 40px 60px;
-  /* min-width: 100vw; */
-  /* min-width: 100%; */
-  /* min-height: 100vh; */
   box-sizing: border-box;
   box-shadow: 0 5px 5px 0 rgba(0,0,0,0.2), 0 10px 10px 0 rgba(0,0,0,0.15);
 `
-//Meu carrinho
+
 export const Line1 = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: white;
-  `
+`
 
 export const Line2 = styled.div`
-    background-color: #eee;
-    width: 100%;
-    height: 76px;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    div{
-    }
-    p{
-        color: #b8b8b8;
-        margin: 3px;
-    }
+  background-color: #eee;
+  width: 100%;
+  height: 76px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  p{
+    color: #b8b8b8;
+    margin: 3px;
+  }
 `
 
 export const Search = styled.input`
 `
+
 //Container carrinho vazio
 export const Line3 = styled.div`
   display: flex;
@@ -84,10 +80,12 @@ export const ButtonAddRemove = styled.div`
 export const Line5 = styled.div`
   background-color: white;
 `
+
 export const Ship = styled.div`
   display: flex;
   justify-content: end;
 `
+
 export const Total = styled.div`
   display: flex;
   justify-content: space-between;
@@ -102,11 +100,13 @@ export const Total = styled.div`
     margin-left: 10px;
   }
 `
+
 export const Payment = styled.div`
   /* display: flex;
   flex-direction: column; */
   margin-left: 10px;
 `
+
 export const PaymentInt = styled.div`
   /* display: flex;
   flex-direction: column; */
@@ -115,21 +115,24 @@ export const PaymentInt = styled.div`
     margin: 5px 0 5px 0;
   }
 `
+
 export const Money = styled.div`
   /* display: flex;
   flex-direction: column; */
 `
+
 export const Credit = styled.div`
   /* display: flex;
   flex-direction: column; */
-
 `
+
 export const Line6 = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
   background-color: white;
 `
+
 export const ButtonConfirmar = styled.button`
   width: 328px;
   height: 42px;
@@ -137,9 +140,13 @@ export const ButtonConfirmar = styled.button`
   border-radius: 2px;
   background-color: #5cb646;
   border: none;
-  font-family: Roboto;
   font-size: 16px;
   font-weight: bold;
+  &:hover {
+		cursor: pointer;
+    transform: scale(1.01);
+    transition: transform .2s;
+	}
 `
 
 export const Line7 = styled.div`
@@ -151,5 +158,10 @@ export const Line7 = styled.div`
 `
 
 export const ImgFooter = styled.img`
-  width: 30px
+  width: 30px;
+  &:hover {
+		cursor: pointer;
+    transform: scale(1.1);
+    transition: transform .2s;
+	}
 `

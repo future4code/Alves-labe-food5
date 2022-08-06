@@ -78,7 +78,11 @@ export const ButtonLogin = styled.button`
   border: none;
   font-weight: bold;
   background-color: #5cb646;
-  cursor: pointer;
+  &:hover {
+		cursor: pointer;
+    transform: scale(1.01);
+    transition: transform .2s;
+	}
 `
 
 export const Cadastro = styled.div`
@@ -95,4 +99,9 @@ export const DivCadastro = styled.div`
   font-weight: bold;
   cursor: pointer;
   text-decoration: underline;
+  &:hover {
+		cursor: pointer;
+    transform: scale(1.02);
+    transition: transform .1s;
+	}
 `

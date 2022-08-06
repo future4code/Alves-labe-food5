@@ -9,6 +9,7 @@ export const General = styled.div`
   overflow-x: hidden;
   box-sizing: border-box;
 `
+
 export const Grid = styled.div`
   width: 375px;
   height: 667px;
@@ -27,6 +28,10 @@ export const Line1 = styled.div`
   border-bottom: solid 1px lightgrey;
 `
 
+export const TitleLine1 = styled.div`
+  font-size: 19px;
+`
+
 export const Line2 = styled.div`
   display: flex;  
   justify-content: center;   
@@ -42,12 +47,14 @@ export const Line3 = styled.div`
   border: none; 
   width: 100%; 
 `
+
 export const Line4 = styled.div`
   display: flex;
   justify-content: center;   
   background-color: white; 
   width: 100%;  
 `
+
 export const Line4Box = styled.div`
   display: flex;  
   flex-direction: column;
@@ -59,30 +66,40 @@ export const Line5 = styled.div`
   justify-content: space-around;
   align-items: center;
   background-color: white;
-  border: solid 1px #eeeeee;
- `
+  border-top: solid 1px #eeeeee;
+`
 
 export const ImgFooter = styled.img`
-  width: 30px
+  width: 30px;
+  &:hover {
+		cursor: pointer;
+    transform: scale(1.1);
+    transition: transform .2s;
+	}
 `
 
 export const NomeProfile = styled.p`
-  font-size:16px;
+  font-size: 16px;
+  margin: 5px 0 0 0;
 `
+
 export const EmailProfile = styled.p`
-  font-size:16px;
+  font-size: 16px;
 `
+
 export const CpfProfile = styled.p`
-  font-size:16px;
+  font-size: 16px;
+  margin: 0 0 5px 0;
 `
+
 export const LeftOne = styled.div`
   display: flex;
   flex-direction: column; 
   justify-content: space-between;   
   margin: 10px 0 10px 0;
   height: 90%;
-  
 `
+
 export const LeftTwo = styled.div`
   display: flex;
   flex-direction: column;
@@ -90,8 +107,14 @@ export const LeftTwo = styled.div`
   margin: 10px 0 10px 0;
   height: 90%;
 `
+
 export const Img_edit = styled.img`
   width: 20px;
+  &:hover {
+		cursor: pointer;
+    transform: scale(1.1);
+    transition: transform .2s;
+	}
 `
 
 export const History = styled.div`
@@ -110,15 +133,18 @@ export const AddressTitle = styled.div`
   font-size:16px;
   color: #b8b8b8;
 `
+
 export const AddressDiv = styled.div`
   font-size:16px;
 `
+
 export const Line2Box = styled.div`
   display: flex;  
   width: 90%;
   justify-content: space-between;
   align-items: center;
 `
+
 export const Line3Box = styled.div`
   display: flex;  
   width: 90%;
@@ -131,13 +157,16 @@ export const HistoryTitle = styled.h3`
   letter-spacing: -0.39px;
   margin: 10px 0 0 0;
 `
+
 export const RestaurantName = styled.div`
   color: #5cb646;
   font-size: 16px;
 `
+
 export const RestaurantDeadline = styled.div`
   font-size: 12px;
 `
+
 export const Subtotal = styled.div`
   font-size: 16px;
   font-weight: bold;
@@ -148,7 +177,3 @@ export const Line = styled.hr`
   width: 100%;
   margin: 5px 0;
 `
-
-
-
-

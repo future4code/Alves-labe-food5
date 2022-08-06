@@ -8,8 +8,10 @@ import axios from 'axios'
 import { BASE_URL } from '../../constants/BASE_URL'
 import { goToRestaurantDetailsPage, goToCartPage, goToProfilePage } from '../../routes/coordinator'
 import { useNavigate } from "react-router-dom";
+import useProtectedPage from './../../hooks/useProtectedPage';
 
 export default function FeedPage() {
+  useProtectedPage();
   const token = localStorage.getItem('token')
   let cart = JSON.parse(localStorage.getItem("cart")) || []
   const [list, setList] = useState([])

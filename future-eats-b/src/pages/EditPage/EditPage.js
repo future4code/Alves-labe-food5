@@ -4,15 +4,16 @@ import useForm from "./../../hooks/useForm";
 import axios from "axios";
 import { GlobalContext } from "../../components/global/GlobalContext";
 import { BASE_URL } from "../../constants/BASE_URL";
-import img_buttonBack from "./../../assets/img/buttomBack.png"
-import { useNavigate } from "react-router-dom"
+import img_buttonBack from "./../../assets/img/buttomBack.png";
+import { useNavigate } from "react-router-dom";
 import { goToProfilePage } from "../../routes/coordinator";
+import useProtectedPage from './../../hooks/useProtectedPage';
 
 export default function EditPage() {
+  useProtectedPage();
   const navigate = useNavigate()
   const token = localStorage.getItem("token")
-  const { currentUser } = useContext(GlobalContext)
-  console.log("Console Edit Page:", currentUser)
+  const { currentUser, setCurrentUser } = useContext(GlobalContext)
 
   const { form, onChange, cleanFields } = useForm({
     name: "",
@@ -21,23 +22,24 @@ export default function EditPage() {
   })
 
   const updateProfile = (body) => {
-    axios.put(`${BASE_URL}/profile`, body, {
+    axios.put(`${BASE_URL}/profile`, body, 
+    {
       headers: {
         auth: token
       }
     })
-      .then((res) => {
-        // console.log("Deu certo o updateProfile", res)
-      })
-      .catch((err) => {
-        console.log("Deu errado o updateProfile")
-        console.log(err.response.data)
-      })
+    .then( res => alert('Dados alterados com sucesso!') )
+    .catch( err => console.log(err.response.data))
   }
 
   const register = (event) => {
     event.preventDefault();
-    updateProfile(form)
+    updateProfile(form);
+    setCurrentUser({
+      name: form.name,
+      email: form.email,
+      cpf: form.cpf,
+    })
   }
 
   return (

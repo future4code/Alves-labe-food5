@@ -21,6 +21,34 @@ export const Container = styled.div`
   box-shadow: 0 5px 5px 0 rgba(0,0,0,0.2), 0 10px 10px 0 rgba(0,0,0,0.15);
 `
 
+export const Line1 = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  font-size: 16px;
+  border-bottom: solid 1px #b8b8b8;
+`
+
+export const ButtonBack = styled.img`
+  width: 20px;
+  margin: 0 0 0 20px;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: transform .2s;
+  }
+`
+
+export const Title = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 90%;
+  height: 100%;
+  font-size: 19px;
+`
+
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
@@ -33,6 +61,7 @@ export const Field = styled.fieldset`
   margin: 10px 0;
   border: solid 1px #b8b8b8;
 `
+
 export const Legend = styled.legend`
   color: gray;
   margin: 0 10px;
@@ -59,18 +88,14 @@ export const ButtonSave = styled.button`
   border-radius: 2px;
   background-color: #65B153;
   border: none;
-  margin-top: 10px;  font-family: Roboto;
+  margin-top: 10px;
   font-size: 16px;
   font-weight: bold;
-`
-
-export const Line1 = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: white;
-  font-size: 16px;
-  border: solid 1px #b8b8b8;
+  &:hover {
+		cursor: pointer;
+    transform: scale(1.01);
+    transition: transform .2s;
+	}
 `
 
 export const BoxImg = styled.div`
@@ -80,16 +105,3 @@ export const BoxImg = styled.div`
   flex-basis: 10%;
 `
 
-export const ButtonBack = styled.img`
-  width: 25px;
-`
-
-export const Title = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-basis: 90%;
-  height: 100%;
-  font-size: 16px;
-  font-weight: bolder;
-`

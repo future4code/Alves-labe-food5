@@ -37,7 +37,12 @@ export default function SignUpPage() {
 
   const register = (event) => {
     event.preventDefault();
-    signUp(form)
+    console.log('botão enviar foi clicado')
+    if(form.password === form.confirmPassword) {
+      signUp(form);
+    } else {
+      alert('Erro! Os campos senha e confirmar devem ser iguais!')
+    }
   }
 
   return (

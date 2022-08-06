@@ -9,7 +9,7 @@ export const General = styled.div`
   overflow-x: hidden;
   box-sizing: border-box;
   background-color: #FFFFFF;
-  `
+`
 
 export const Container = styled.div`
   width: 375px;
@@ -24,6 +24,7 @@ export const Container = styled.div`
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   /* border: solid 1px red; */
   margin-bottom: 40px;
@@ -35,12 +36,14 @@ export const Field = styled.fieldset`
   margin: 10px 0;
   border: solid 1px #b8b8b8;
 `
+
 export const Legend = styled.legend`
   color: gray;
   margin: 0 10px;
   padding: 0 10px;
   font-size: 12px;
 `
+
 export const Input = styled.input`
   width: 328px;
   height: 25px;
@@ -51,7 +54,7 @@ export const Input = styled.input`
   ::placeholder{
     color:  #b8b8b8;
   }
-  `
+`
 
 export const ButtonSave = styled.button`
   width: 328px;
@@ -60,14 +63,20 @@ export const ButtonSave = styled.button`
   border-radius: 2px;
   background-color: #65B153;
   border: none;
-  margin-top: 10px;  font-family: Roboto;
+  margin-top: 10px;
   font-size: 16px;
   font-weight: bold;
+  &:hover {
+		cursor: pointer;
+    transform: scale(1.01);
+    transition: transform .2s;
+	}
 `
+
 export const Line1 = styled.div`
   display: flex;
   border-bottom: solid 1px;
-  border: solid 1px #b8b8b8;
+  border-bottom: solid 1px #b8b8b8;
 `
 
 export const BoxImg = styled.div`
@@ -79,6 +88,11 @@ export const BoxImg = styled.div`
 
 export const ButtonBack = styled.img`
   width: 25px;
+  &:hover {
+		cursor: pointer;
+    transform: scale(1.1);
+    transition: transform .2s;
+	}
 `
 
 export const Title = styled.div`

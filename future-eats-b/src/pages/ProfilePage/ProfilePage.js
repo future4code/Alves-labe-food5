@@ -9,12 +9,15 @@ import img_edit from "./../../assets/img/edit.png"
 import { useNavigate } from "react-router";
 import { goToAddressPage, goToEditPage, goToFeedPage, goToCartPage } from "../../routes/coordinator";
 import { GlobalContext } from "../../components/global/GlobalContext";
+import useProtectedPage from './../../hooks/useProtectedPage';
 
 export default function ProfilePage() {
+  useProtectedPage();
   const navigate = useNavigate()
   const token = localStorage.getItem('token');
   const [ordersHistory, setOrdersHistory] = useState()
   const { currentUser } = useContext(GlobalContext)
+  console.log('currentUser em profilePage =',currentUser);
 
   useEffect(() => {
     axios.get(`${BASE_URL}/orders/history`, {
@@ -31,8 +34,9 @@ export default function ProfilePage() {
   return (
     <s.General>
       <s.Grid>
+
         <s.Line1>
-          <h3>Meu Perfil</h3>
+          <s.TitleLine1>Meu Perfil</s.TitleLine1>
         </s.Line1>
 
         <s.Line2>

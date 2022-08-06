@@ -4,14 +4,16 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { BASE_URL } from '../../constants/BASE_URL';
 import CardRestaurantDetail from "../../components/cardRestaurantDetail/CardRestaurantDetail";
-import img_buttonBack from "./../../assets/img/buttomBack.png"
+import img_buttonBack from "./../../assets/img/buttomBack.png";
 import { goToFeedPage } from "../../routes/coordinator";
-import { useNavigate } from "react-router-dom"
-
+import { useNavigate } from "react-router-dom";
+import useProtectedPage from './../../hooks/useProtectedPage';
 //------------------------------
 import Modal from 'react-modal';
 //------------------------------
+
 export default function RestaurantDetailsPage() {
+  useProtectedPage();
   const navigate = useNavigate()
   const token = localStorage.getItem('token')
   const params = useParams()

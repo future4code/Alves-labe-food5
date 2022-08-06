@@ -61,8 +61,12 @@ export const Line3 = styled.div`
 export const Category = styled.div`
   margin: 0 10px;
   font-size: 18px;
-  cursor: pointer;
-  color: ${props => props.value === props.category ? "#5cb646" : "black"}
+  color: ${props => props.value === props.category ? "#5cb646" : "black"};
+  &:hover {
+		cursor: pointer;
+    transform: scale(1.05);
+    transition: transform .1s;
+	}
 `
 
 export const BoxLine3 = styled.div`
@@ -98,7 +102,11 @@ export const CardFeed = styled.div`
   margin: 0 0 20px 0;
   border-radius: 10px;
   border: solid 1px #b8b8b8;
-  cursor: pointer;
+  &:hover {
+		cursor: pointer;
+    transform: scale(1.01);
+    transition: transform .2s;
+	}
 `
 
 export const RestaurantPhoto = styled.img`
@@ -157,14 +165,18 @@ export const Line5 = styled.div`
 
 export const ImgFooter = styled.img`
   width: 30px;
-  cursor: pointer;
+  &:hover {
+		cursor: pointer;
+    transform: scale(1.1);
+    transition: transform .2s;
+	}
 `
 
 export const Left = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-basis: 40%;
+  flex-basis: 30%;
 `
 
 export const Relogio = styled.img`
@@ -175,16 +187,19 @@ export const Right = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  flex-basis: 60%;
+  flex-basis: 70%;
 `
 
 export const Div1 = styled.div`
   margin: 10px 0;
+  color: white;
 `
 
 export const Div2 = styled.div`
+  font-weight: bold;
 `
 
 export const Div3 = styled.div`
   margin: 10px 0;
+  font-weight: bold;
 `
