@@ -15,7 +15,7 @@ export const Grid = styled.div`
   height: 667px;
   display: grid;
   border-radius: 20px;
-  grid-template-rows: 60px 50px 70px 1fr 120px 60px 60px;
+  grid-template-rows: 60px 70px 80px 1fr 120px 60px 60px;
   box-sizing: border-box;
   box-shadow: 0 5px 5px 0 rgba(0,0,0,0.2), 0 10px 10px 0 rgba(0,0,0,0.15);
 `
@@ -34,6 +34,7 @@ export const Address = styled.div`
   display:flex;
   flex-direction: column;
   justify-content: start;
+  padding-top: 10px;
 `
 
 export const Line2 = styled.div`

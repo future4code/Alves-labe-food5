@@ -89,13 +89,16 @@ export const ButtonAddRemove = styled.div`
   margin: 7px 0 0 8px;
   padding: 8px 20.5px 9px 21.5px;
   border-radius: 8px 0px 8px 0px;
-  border: solid 1px #5cb646;
-  color: #5cb646;
+  /* border: solid 1px #5cb646; */
+  /* color: #5cb646; */
+  color: ${props => props.qtd === 0 ? "#5cb646" : "#e02020"};
+  border: ${props => props.qtd === 0 ? "solid 1px #5cb646" : "solid 1px #e02020"};
+
   :hover{
     cursor: pointer;
   }
   :active{
     color: white;
-    background-color: #5cb646;
+    background-color: ${props => props.qtd === 0 ? "#5cb646" : "#e02020"};
   }
 `

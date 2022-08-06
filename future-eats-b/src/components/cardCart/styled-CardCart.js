@@ -12,7 +12,7 @@ export const Title = styled.div`
 
 export const CardInterno = styled.div`
   display: flex;
-  height: 100px;
+  height: 120px;
   margin: 10px 0;
   border: solid 1px black;
   border-radius: 10px;
@@ -87,7 +87,7 @@ export const Price = styled.div`
 `
 
 export const ButtonAddRemove = styled.button`
-width: 90px;
+  width: 90px;
   height: 31px;
   margin: 7px 0 0 8px;
   padding: 8px 20.5px 9px 21.5px;

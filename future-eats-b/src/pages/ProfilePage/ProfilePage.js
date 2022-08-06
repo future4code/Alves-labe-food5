@@ -4,10 +4,11 @@ import { BASE_URL } from "../../constants/BASE_URL";
 import * as s from './styled-ProfilePage';
 import img_home from "./../../assets/img/home.png";
 import img_cart from "./../../assets/img/cart.png";
+import imgLogout from "./../../assets/img/logout.png";
 import img_perfil from "./../../assets/img/perfil.png";
 import img_edit from "./../../assets/img/edit.png"
 import { useNavigate } from "react-router";
-import { goToAddressPage, goToEditPage, goToFeedPage, goToCartPage } from "../../routes/coordinator";
+import { goToAddressPage, goToEditPage, goToFeedPage, goToCartPage, goToLoginPage } from "../../routes/coordinator";
 import { GlobalContext } from "../../components/global/GlobalContext";
 import useProtectedPage from './../../hooks/useProtectedPage';
 
@@ -17,7 +18,7 @@ export default function ProfilePage() {
   const token = localStorage.getItem('token');
   const [ordersHistory, setOrdersHistory] = useState()
   const { currentUser } = useContext(GlobalContext)
-  console.log('currentUser em profilePage =',currentUser);
+  console.log('currentUser em profilePage =', currentUser);
 
   useEffect(() => {
     axios.get(`${BASE_URL}/orders/history`, {
@@ -30,6 +31,11 @@ export default function ProfilePage() {
       })
       .catch(err => console.log("deu errado o history", err.response.data))
   }, [])
+
+  const Logout = () => {
+    localStorage.removeItem("token")
+    goToLoginPage(navigate)
+  }
 
   return (
     <s.General>
@@ -61,24 +67,26 @@ export default function ProfilePage() {
         </s.Line3>
 
         <s.Line4>
-        <s.Line4Box>
-          <s.HistoryTitle>Histórico de Pedidos</s.HistoryTitle>
-          <s.Line/>        
-          {ordersHistory &&
-            ordersHistory.map((order, index) => {
-              let date = new Date(order.createdAt);
-              return (
-                <s.History key={index}>
-                  <s.RestaurantName>{order.restaurantName}</s.RestaurantName>
-                  <s.RestaurantDeadline>{date.getDate()}/{date.getMonth() + 1}/{date.getFullYear()}</s.RestaurantDeadline>
-                  <s.Subtotal>SUBTOTAL R${order.totalPrice.toFixed(2)}</s.Subtotal>
-                </s.History>
-              )
-            })
-          }
+          <s.Line4Box>
+            <s.HistoryTitle>Histórico de Pedidos</s.HistoryTitle>
+            <s.Line />
+            {ordersHistory &&
+              ordersHistory.map((order, index) => {
+                let date = new Date(order.createdAt);
+                return (
+                  <s.History key={index}>
+                    <s.RestaurantName>{order.restaurantName}</s.RestaurantName>
+                    <s.RestaurantDeadline>{date.getDate()}/{date.getMonth() + 1}/{date.getFullYear()}</s.RestaurantDeadline>
+                    <s.Subtotal>SUBTOTAL R${order.totalPrice.toFixed(2)}</s.Subtotal>
+                  </s.History>
+                )
+              })
+            }
           </s.Line4Box>
         </s.Line4>
-
+        <s.Logout>
+          <s.BotaoLogout onClick={Logout} src={imgLogout} />
+        </s.Logout>
         <s.Line5>
           <s.ImgFooter src={img_home} onClick={() => goToFeedPage(navigate)} alt="Home" />
           <s.ImgFooter src={img_cart} onClick={() => goToCartPage(navigate)} alt="Home" />
