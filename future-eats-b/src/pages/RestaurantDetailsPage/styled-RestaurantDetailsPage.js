@@ -116,7 +116,7 @@ export const TituloLinha3 = styled.div`
   color: #5cb646;
   font-size: 16px;
 `
-
+//Descrição restaurante
 export const Line3 = styled.div`
   display: flex;
   flex-direction: column;

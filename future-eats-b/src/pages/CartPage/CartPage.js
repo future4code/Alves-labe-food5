@@ -91,9 +91,9 @@ export default function CartPage() {
         </s.Line1>
         <s.Line2>
           <div>
+          <p>
             Endereço de entrega
-          </div>
-          <div>
+          </p>
             {currentUser.address}
           </div>
         </s.Line2>
@@ -122,12 +122,13 @@ export default function CartPage() {
         <s.Line5>
           <s.Ship>Frete R$: {cart.length === 0 ? "" : cart[0].shippingRestaurant.toFixed(2)}</s.Ship>
           <s.Total>
-            <div>Subtotal</div>
+            <p>SUBTOTAL</p>
             <div>R$ {soma.toFixed(2)}</div>
           </s.Total>
-          <div>Forma de pagamento</div>
-          <hr></hr>
           <s.Payment onChange={onChangeMetPag}>
+          <s.PaymentInt>Forma de pagamento
+          <hr></hr>
+          </s.PaymentInt>
             <s.Money>
               <input checked="checked" name="metPag" value="money" type="radio" /> Dinheiro
               {/* <label>Dinheiro</label> */}
@@ -140,7 +141,7 @@ export default function CartPage() {
         </s.Line5>
 
         <s.Line6>
-          <button onClick={onClickPay}>Confirmar</button>
+          <s.ButtonConfirmar onClick={onClickPay}>Confirmar</s.ButtonConfirmar>
         </s.Line6>
 
         <s.Line7>
