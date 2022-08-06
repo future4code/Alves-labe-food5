@@ -15,7 +15,7 @@ export const Grid = styled.div`
   height: 667px;
   display: grid;
   border-radius: 20px;
-  grid-template-rows: 60px 90px 90px 1fr 60px;
+  grid-template-rows: 60px 90px 90px 1fr 60px 60px;
   box-sizing: border-box;
   box-shadow: 0 5px 5px 0 rgba(0,0,0,0.2), 0 10px 10px 0 rgba(0,0,0,0.15);
 `
@@ -62,19 +62,33 @@ export const Line4 = styled.div`
     border-radius: 3px;
   }   
 `
-  // ::-webkit-scrollbar {
-  //    width: 2px
-  // }
-  // ::-webkit-scrollbar-thumb {
-  //   background-color: lightgrey;
-  //   border-radius: 3px;
-  // } 
+// ::-webkit-scrollbar {
+//    width: 2px
+// }
+// ::-webkit-scrollbar-thumb {
+//   background-color: lightgrey;
+//   border-radius: 3px;
+// } 
 
 export const Line4Box = styled.div`
   display: flex;  
   flex-direction: column;
   /* overflow-y: auto; */
   width: 90%;    
+`
+export const Logout = styled.div`
+  display: flex;
+  justify-content: center;
+  background-color: #ffffff;
+`
+export const BotaoLogout = styled.img`
+  width: 40px;
+  height: 40px;
+  &:hover {
+		cursor: pointer;
+    transform: scale(1.1);
+    transition: transform .2s;
+	}
 `
 
 export const Line5 = styled.div`

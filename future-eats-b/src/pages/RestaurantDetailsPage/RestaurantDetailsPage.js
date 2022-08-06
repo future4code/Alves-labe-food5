@@ -159,7 +159,7 @@ export default function RestaurantDetailsPage() {
               <option>5</option>
             </s.Selecionar>
             <s.Linha3>
-              <s.Adicionar onClick={updateCart}>Adicionar ao carrinho</s.Adicionar>
+              <s.Adicionar onClick={updateCart}>ADICIONAR AO CARRINHO</s.Adicionar>
             </s.Linha3>
           </s.Box>
         </Modal>

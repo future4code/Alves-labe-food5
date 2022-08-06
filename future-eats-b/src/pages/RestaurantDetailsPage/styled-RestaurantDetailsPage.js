@@ -39,6 +39,7 @@ export const Line1 = styled.div`
   font-size: 16px;
 `
 //box modal
+
 export const Box = styled.div`
   display: flex;
   flex-direction: column;
@@ -71,7 +72,8 @@ export const Linha3 = styled.div`
 export const Adicionar = styled.div`
   margin: 30px 0 0 0;
   color: #5cb646;
-  font-size: 16px;
+  font-size: 12px;
+  text-align: center;
   :hover{
     cursor: pointer;
   }
@@ -115,6 +117,7 @@ export const Search = styled.input`
 export const TituloLinha3 = styled.div`
   color: #5cb646;
   font-size: 16px;
+  margin-top: 5px;
 `
 //Descrição restaurante
 export const Line3 = styled.div`
@@ -148,10 +151,10 @@ export const Img_edit = styled.img`
     height: 120px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    object-fit: contain;
-    object-fit: fill;
-    object-fit: scale-down;
-    object-fit: cover;
+    /* object-fit: contain; */
+    /* object-fit: fill; */
+    /* object-fit: scale-down; */
+    /* object-fit: cover; */
 `
 
 export const ShippingDiv = styled.div`
