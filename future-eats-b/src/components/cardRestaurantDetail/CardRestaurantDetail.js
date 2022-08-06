@@ -35,7 +35,7 @@ export default function CardRestaurantDetail(props) {
             <s.Right>
               <s.LineTop>
                 <s.Name>{item.name}</s.Name>
-                <s.Quantidade>{item.qtd === 0 ? '' : item.qtd}</s.Quantidade>
+                <s.Quantidade qtd={item.qtd}>{item.qtd === 0 ? '' : item.qtd}</s.Quantidade>
               </s.LineTop>
               <s.LineMiddle>
                 <s.Description>{item.description}</s.Description>
