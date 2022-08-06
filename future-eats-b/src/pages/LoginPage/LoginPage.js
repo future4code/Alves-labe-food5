@@ -49,7 +49,7 @@ export default function LoginPage() {
         </s.Title>
 
         <s.Title3>
-          <h3>Entrar</h3>
+          <s.TitleLogin>Entrar</s.TitleLogin>
         </s.Title3>
 
         <s.Form onSubmit={register}>

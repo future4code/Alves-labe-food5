@@ -16,6 +16,7 @@ export const CardInterno = styled.div`
   margin: 10px 0;
   border: solid 1px black;
   border-radius: 10px;
+  width: 94%;
 `
 
 export const Left = styled.div`
@@ -26,6 +27,10 @@ export const ImageFood = styled.img`
   height: 100%;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
+  object-fit: contain;
+  object-fit: fill;
+  object-fit: scale-down;
+  object-fit: cover;
 `
 
 export const Right = styled.div`
@@ -45,6 +50,7 @@ export const Name = styled.div`
   font-size: 16px;
   color: #5cb646;
   margin-top: 10px;
+  margin-left: 10px;
 `
 
 export const Quantidade = styled.div`
@@ -61,6 +67,11 @@ export const Quantidade = styled.div`
 `
 
 export const LineMiddle = styled.div`
+overflow-y: auto;
+`
+export const Description = styled.p`
+  margin-left: 10px;
+  font-size: 12px;
 `
 
 export const LineBottom = styled.div`
@@ -71,6 +82,8 @@ export const LineBottom = styled.div`
 export const Price = styled.div`
   font-size: 18px;
   font-weight: bold;
+  margin-left: 10px;
+  /* margin-left: 10px; */
 `
 
 export const ButtonAddRemove = styled.button`

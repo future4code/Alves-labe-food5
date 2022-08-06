@@ -25,6 +25,10 @@ export const ImageFood = styled.img`
   margin-right: 10px;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
+  object-fit: contain;
+  object-fit: fill;
+  object-fit: scale-down;
+  object-fit: cover;
 `
 
 export const Right = styled.div`
@@ -43,6 +47,7 @@ export const LineTop = styled.div`
 export const Name = styled.div`
   font-size: 16px;
   color: #5cb646;
+  margin-top: 12px;
 `
 
 export const Quantidade = styled.div`
@@ -59,6 +64,9 @@ export const Quantidade = styled.div`
 
 `
 
+export const Description = styled.p`
+  font-size: 12px;
+`
 export const LineMiddle = styled.div`
   color: #b8b8b8;
 

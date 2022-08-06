@@ -123,6 +123,8 @@ export default function RestaurantDetailsPage() {
       idRestaurant: Number(params.id),
       nameRestaurant: restaurantDetails.name,
       shippingRestaurant: restaurantDetails.shipping,
+      deliveryTimeRestaurant: restaurantDetails.deliveryTime,
+      addressRestaurant: restaurantDetails.address,
       idProduct: currentProduct.id,
     }
     const novoCarrinho = [...cart, novoProduto]
@@ -173,13 +175,13 @@ export default function RestaurantDetailsPage() {
           <s.Img_edit src={restaurantDetails.logoUrl} alt="imagem-editar" />
         </s.Line2>
         <s.Line3>
-        <s.TituloLinha3>
-          {restaurantDetails.name}
-        </s.TituloLinha3>
+          <s.TituloLinha3>
+            {restaurantDetails.name}
+          </s.TituloLinha3>
           <p>{restaurantDetails.category}</p>
           <s.ShippingDiv>
             <p>{restaurantDetails.deliveryTime} min</p>
-            <p>R${restaurantDetails.shipping}</p>
+            <p>Frete R${restaurantDetails.shipping}</p>
           </s.ShippingDiv>
           <p>{restaurantDetails.address}</p>
         </s.Line3>

@@ -60,7 +60,7 @@ export default function SignUpPage() {
         </s.DivLogo>
 
         <s.Title2>
-          <h3>Cadastrar</h3>
+          <s.Signup>Cadastrar</s.Signup>
         </s.Title2>
         <s.Form onSubmit={register}>
           <s.Field>

@@ -23,7 +23,7 @@ export default function CardRestaurantDetail(props) {
           <s.Quantidade>{props.qtd === 0 ? '' : props.qtd}</s.Quantidade>
         </s.LineTop>
         <s.LineMiddle>
-          <p>{props.description}</p>
+          <s.Description>{props.description}</s.Description>
         </s.LineMiddle>
         <s.LineBottom>
           <s.Price>R${props.price}</s.Price>

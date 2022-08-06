@@ -101,6 +101,6 @@ export const Title = styled.div`
   align-items: center;
   flex-basis: 90%;
   height: 100%;
-  font-size: 16px;
-  font-weight: bold;
+  font-size: 19px;
+  /* font-weight: bold; */
 `

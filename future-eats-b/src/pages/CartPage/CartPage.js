@@ -59,7 +59,7 @@ export default function CartPage() {
   })
 
   const onClickPay = () => {
-    if (cart.length !== 0){
+    if (cart.length !== 0) {
       if (!currentOrder) {
         const body = {
           products: arrayBody,
@@ -98,19 +98,30 @@ export default function CartPage() {
     <s.General>
       <s.Grid>
         <s.Line1>
-          <h3>Meu carrinho</h3>
+          <s.MyCart>Meu carrinho</s.MyCart>
         </s.Line1>
         <s.Line2>
-          <div>
-          <p>
-            Endereço de entrega
-          </p>
-            {currentUser.address}
-          </div>
+          <s.Address>
+            <s.Delivery>
+              Endereço de entrega
+            </s.Delivery>
+            <div>
+              {currentUser.address}
+            </div>
+          </s.Address>
         </s.Line2>
 
         <s.Line3>
-          {cart.length === 0 ? "Carrinho Vazio" : cart[0].description}
+          <s.Description>
+
+            {cart.length === 0 ? 'Carrinho Vazio' :
+              <s.RestaurantDetails>
+                <s.NameRestaurant>{cart[0].nameRestaurant}</s.NameRestaurant>
+                <s.AddressRestaurant>{cart[0].addressRestaurant}</s.AddressRestaurant>
+                <s.DeliveryTimeRestaurant>{cart[0].deliveryTimeRestaurant} min</s.DeliveryTimeRestaurant>
+              </s.RestaurantDetails>
+            }
+          </s.Description>
         </s.Line3>
 
         <s.Line4>
@@ -134,12 +145,12 @@ export default function CartPage() {
           <s.Ship>Frete R$: {cart.length === 0 ? "" : cart[0].shippingRestaurant.toFixed(2)}</s.Ship>
           <s.Total>
             <p>SUBTOTAL</p>
-            <div>R$ {soma.toFixed(2)}</div>
+            <s.TotalPrice>R$ {soma.toFixed(2)}</s.TotalPrice>
           </s.Total>
           <s.Payment onChange={onChangeMetPag}>
-          <s.PaymentInt>Forma de pagamento
-          <hr></hr>
-          </s.PaymentInt>
+            <s.PaymentInt>Forma de pagamento
+              <hr></hr>
+            </s.PaymentInt>
             <s.Money>
               <input checked="checked" name="metPag" value="money" type="radio" /> Dinheiro
             </s.Money>
