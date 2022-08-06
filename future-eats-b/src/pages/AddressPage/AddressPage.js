@@ -6,9 +6,11 @@ import { BASE_URL } from "../../constants/BASE_URL";
 import { GlobalContext } from "../../components/global/GlobalContext";
 import img_buttonBack from "./../../assets/img/buttomBack.png"
 import { goToFeedPage } from "../../routes/coordinator";
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
+import useProtectedPage from './../../hooks/useProtectedPage';
 
 export default function AddressPage() {
+  useProtectedPage();
   const navigate = useNavigate()
   const token = localStorage.getItem("token")
   const { currentUser } = useContext(GlobalContext)
@@ -95,9 +97,7 @@ export default function AddressPage() {
           </s.BoxImg>
           <s.Title>Endereço</s.Title>
         </s.Line1>
-        {/* <div>
-        </div> */}
-        {/* { mostrarForm === true ? */}
+
         {Object.keys(currentUser).length !== 0 && (currentUser.hasAddress === true ? Object.keys(currentAddress).length !== 0 : true) ?
           <s.Form onSubmit={register}>
             <s.Field>

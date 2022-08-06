@@ -9,15 +9,18 @@ import img_perfil from "./../../assets/img/perfil.png";
 import { useNavigate } from "react-router-dom";
 import { GlobalContext } from "./../../components/global/GlobalContext";
 import CardCart from "./../../components/cardCart/CardCart";
+import useProtectedPage from './../../hooks/useProtectedPage';
 
 export default function CartPage() {
+  useProtectedPage();
   const token = localStorage.getItem('token');
   const navigate = useNavigate()
   const { currentUser } = useContext(GlobalContext)
   let cart = JSON.parse(localStorage.getItem("cart")) || []
   const [cart2, setCart2] = useState(true);
   const [metPag, setMetPag] = useState('money');
-  const [currentOrder, setCurrentOrder] = useState(false)
+  const [currentOrder, setCurrentOrder] = useState(false);
+  const [atualizar, setAtualizar] = useState(true);
 
   const placeOrder = (body) => {
     axios.post(`${BASE_URL}/restaurants/${cart[0].idRestaurant}/order`, body,
@@ -27,7 +30,11 @@ export default function CartPage() {
           auth: token
         }
       })
-      .then(res => console.log('deu certo fazer pedido', res))
+      .then(res => {
+        alert('Pedido realizado com sucesso!');
+        setAtualizar(!atualizar);
+        localStorage.setItem("cart", JSON.stringify([]));
+      })
       .catch(err => console.log("deu errado fazer pedido", err.response.data))
   }
 
@@ -52,14 +59,18 @@ export default function CartPage() {
   })
 
   const onClickPay = () => {
-    if (!currentOrder) {
-      const body = {
-        products: arrayBody,
-        paymentMethod: metPag
+    if (cart.length !== 0){
+      if (!currentOrder) {
+        const body = {
+          products: arrayBody,
+          paymentMethod: metPag
+        }
+        placeOrder(body);
+      } else {
+        alert('Existem ordens abertas! Aguarde as mesmas finalizarem');
       }
-      placeOrder(body);
     } else {
-      alert('Existem ordens abertas! Aguarde as mesmas finalizarem');
+      alert('O carrinho está vazio!');
     }
   }
 
@@ -131,11 +142,9 @@ export default function CartPage() {
           </s.PaymentInt>
             <s.Money>
               <input checked="checked" name="metPag" value="money" type="radio" /> Dinheiro
-              {/* <label>Dinheiro</label> */}
             </s.Money>
             <s.Credit>
               <input name="metPag" value="creditcard" type="radio" /> Cartão de Crédito
-              {/* <label>Cartão de Crédito</label> */}
             </s.Credit>
           </s.Payment>
         </s.Line5>
