@@ -106,7 +106,7 @@ export default function AddressPage() {
                 name={"street"}
                 value={
                   currentUser.hasAddress === false ?
-                    form.street = ""
+                    form.street
                     :
                     (
                       form.street === "" ?
@@ -127,7 +127,7 @@ export default function AddressPage() {
                 name={"number"}
                 value={
                   currentUser.hasAddress === false ?
-                    form.number = ""
+                    form.number
                     :
                     (
                       form.number === "" ?
@@ -148,7 +148,7 @@ export default function AddressPage() {
                 name={"complement"}
                 value={
                   currentUser.hasAddress === false ?
-                    form.complement = ""
+                    form.complement
                     :
                     (
                       form.complement === "" ?
@@ -168,7 +168,7 @@ export default function AddressPage() {
                 name={"neighbourhood"}
                 value={
                   currentUser.hasAddress === false ?
-                    form.neighbourhood = ""
+                    form.neighbourhood
                     :
                     (
                       form.neighbourhood === "" ?
@@ -189,7 +189,7 @@ export default function AddressPage() {
                 name={"city"}
                 value={
                   currentUser.hasAddress === false ?
-                    form.city = ""
+                    form.city
                     :
                     (
                       form.city === "" ?
@@ -210,7 +210,7 @@ export default function AddressPage() {
                 name={"state"}
                 value={
                   currentUser.hasAddress === false ?
-                    form.state = ""
+                    form.state
                     :
                     (
                       form.state === "" ?
