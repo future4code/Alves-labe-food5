@@ -43,6 +43,7 @@ export const LineTop = styled.div`
 export const Name = styled.div`
   font-size: 16px;
   color: #5cb646;
+  margin-top: 12px;
 `
 
 export const Quantidade = styled.div`
@@ -59,6 +60,9 @@ export const Quantidade = styled.div`
 
 `
 
+export const Description = styled.p`
+  font-size: 12px;
+`
 export const LineMiddle = styled.div`
   color: #b8b8b8;
 

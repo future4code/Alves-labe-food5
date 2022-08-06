@@ -112,7 +112,7 @@ export default function RestaurantDetailsPage() {
       transform: 'translate(-50%, -50%)',
     },
   };
-
+  console.log(restaurantDetails)
   const updateCart = () => {
     const novoProduto = {
       photo: currentProduct.photoUrl,
@@ -123,6 +123,8 @@ export default function RestaurantDetailsPage() {
       idRestaurant: Number(params.id),
       nameRestaurant: restaurantDetails.name,
       shippingRestaurant: restaurantDetails.shipping,
+      deliveryTimeRestaurant: restaurantDetails.deliveryTime,
+      addressRestaurant: restaurantDetails.address,
       idProduct: currentProduct.id,
     }
     const novoCarrinho = [...cart, novoProduto]

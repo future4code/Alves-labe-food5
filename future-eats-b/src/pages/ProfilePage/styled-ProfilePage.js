@@ -52,12 +52,28 @@ export const Line4 = styled.div`
   display: flex;
   justify-content: center;   
   background-color: white; 
-  width: 100%;  
+  overflow-y: auto;
+  width: 100%;
+  ::-webkit-scrollbar {
+     width: 2px
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: lightgrey;
+    border-radius: 3px;
+  }   
 `
+  // ::-webkit-scrollbar {
+  //    width: 2px
+  // }
+  // ::-webkit-scrollbar-thumb {
+  //   background-color: lightgrey;
+  //   border-radius: 3px;
+  // } 
 
 export const Line4Box = styled.div`
   display: flex;  
   flex-direction: column;
+  /* overflow-y: auto; */
   width: 90%;    
 `
 

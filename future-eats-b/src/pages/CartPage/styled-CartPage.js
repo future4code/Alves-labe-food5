@@ -15,7 +15,7 @@ export const Grid = styled.div`
   height: 667px;
   display: grid;
   border-radius: 20px;
-  grid-template-rows: 60px 40px 80px 1fr 150px 40px 60px;
+  grid-template-rows: 60px 50px 70px 1fr 120px 60px 60px;
   box-sizing: border-box;
   box-shadow: 0 5px 5px 0 rgba(0,0,0,0.2), 0 10px 10px 0 rgba(0,0,0,0.15);
 `
@@ -25,6 +25,12 @@ export const Line1 = styled.div`
   justify-content: center;
   align-items: center;
   background-color: white;
+`
+export const Address = styled.div`
+  padding-left: 10px; 
+  display:flex;
+  flex-direction: column;
+  justify-content: start;
 `
 
 export const Line2 = styled.div`
@@ -40,6 +46,11 @@ export const Line2 = styled.div`
   }
 `
 
+export const Delivery = styled.span`
+  color: #b8b8b8;
+  margin-top: 5px;
+  margin-bottom: 5px;
+`
 export const Search = styled.input`
 `
 
@@ -49,8 +60,35 @@ export const Line3 = styled.div`
   align-items: center;
   overflow-x: auto;
   background-color: white;
+
 `
 
+export const Description = styled.div`
+  padding: 10px;
+`
+export const NameRestaurant = styled.p`
+  color: #5cb646;
+  font-size: 16px;
+  font-family: Roboto;
+  font-weight: bold;
+  `
+export const AddressRestaurant = styled.span`
+color: #b8b8b8;
+
+;
+/* padding: 10px; */
+`
+export const DeliveryTimeRestaurant = styled.span`
+color: #b8b8b8;
+
+;
+  /* padding: 10px; */
+`
+export const RestaurantDetails = styled.div`
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+`
 export const Category = styled.div`
   margin: 0 10px;
 `
@@ -58,6 +96,9 @@ export const Category = styled.div`
 export const Line4 = styled.div`
   background-color: white;
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `
 
 export const ButtonAddRemove = styled.div`
@@ -84,6 +125,10 @@ export const Line5 = styled.div`
 export const Ship = styled.div`
   display: flex;
   justify-content: end;
+  margin-right: 12px;
+`
+export const TotalPrice = styled.div`
+  margin-right: 10px;
 `
 
 export const Total = styled.div`
@@ -131,6 +176,7 @@ export const Line6 = styled.div`
   justify-content: space-around;
   align-items: center;
   background-color: white;
+  /* border: solid 1px red; */
 `
 
 export const ButtonConfirmar = styled.button`
