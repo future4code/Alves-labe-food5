@@ -14,7 +14,7 @@ export const Grid = styled.div`
   width: 375px;
   height: 667px;
   display: grid;
-  border-radius: 20px;
+  /* border-radius: 20px; */
   grid-template-rows: 60px 70px 42px 1fr auto;
   background-color: white;
   box-sizing: border-box;
