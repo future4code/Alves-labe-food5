@@ -59,7 +59,8 @@ export const Quantidade = styled.div`
   font-size: 16px;
   width: 33px;
   height: 33px;
-  border: solid 1px #5cb646;
+  /* border: solid 1px #5cb646; */
+  border: ${props => props.qtd === 0 ? "#FFFFFF" : "solid 1px #5cb646"};
   border-radius: 0px 8px 0px 8px;
 
 `
