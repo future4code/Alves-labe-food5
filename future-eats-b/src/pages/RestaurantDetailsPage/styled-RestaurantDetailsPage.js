@@ -135,17 +135,27 @@ export const Category = styled.div`
 export const Line4 = styled.div`
   background-color: white;
   overflow-y: auto;
+  ::-webkit-scrollbar {
+      width: 2px
+  }
+  ::-webkit-scrollbar-thumb {
+  background-color: lightgrey;
+  border-radius: 3px;
+  } 
 `
 export const Img_edit = styled.img`
-  /* width: 100px; */
     width: 100%;
     height: 120px;
-    border-top-left-radius:8px;
-    border-top-right-radius:8px;
-    object-fit: auto;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    object-fit: contain;
+    object-fit: fill;
+    object-fit: scale-down;
+    object-fit: cover;
 `
 
 export const ShippingDiv = styled.div`
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  width: 40%;
 `

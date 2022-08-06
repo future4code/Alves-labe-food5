@@ -41,6 +41,9 @@ export const Title = styled.div`
   display: flex;
   justify-content: center;
 `
+export const Signup = styled.div`
+  font-size: 19px;
+`
 
 export const DivLogo = styled.div`
   display: flex;

@@ -41,7 +41,7 @@ export default function CardRestaurantDetail(props) {
                 <s.Description>{item.description}</s.Description>
               </s.LineMiddle>
               <s.LineBottom>
-                <s.Price>R${item.price}</s.Price>
+                <s.Price>R${item.price.toFixed(2)}</s.Price>
                 <s.ButtonAddRemove onClick={() => props.handleOpenModal(item, props.idRestaurant)}>{item.qtd === 0 ? 'adicionar' : 'remover'}</s.ButtonAddRemove>
               </s.LineBottom>
             </s.Right>

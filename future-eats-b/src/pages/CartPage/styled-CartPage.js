@@ -26,6 +26,9 @@ export const Line1 = styled.div`
   align-items: center;
   background-color: white;
 `
+export const MyCart = styled.div`
+  font-size: 19px; 
+`
 export const Address = styled.div`
   padding-left: 10px; 
   display:flex;
@@ -69,7 +72,7 @@ export const Description = styled.div`
 export const NameRestaurant = styled.p`
   color: #5cb646;
   font-size: 16px;
-  font-family: Roboto;
+  /* font-family: Roboto; */
   font-weight: bold;
   `
 export const AddressRestaurant = styled.span`

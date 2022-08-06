@@ -25,6 +25,9 @@ export const Container = styled.div`
 export const Title = styled.div`
   margin: 80px 0 20px 0;
 `
+export const TitleLogin = styled.div`
+ font-size: 19px;
+`
 
 export const Title1 = styled.p`
   font-size: 34px;

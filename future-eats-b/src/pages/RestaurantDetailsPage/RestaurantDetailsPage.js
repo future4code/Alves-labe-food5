@@ -112,7 +112,7 @@ export default function RestaurantDetailsPage() {
       transform: 'translate(-50%, -50%)',
     },
   };
-  console.log(restaurantDetails)
+
   const updateCart = () => {
     const novoProduto = {
       photo: currentProduct.photoUrl,
@@ -175,13 +175,13 @@ export default function RestaurantDetailsPage() {
           <s.Img_edit src={restaurantDetails.logoUrl} alt="imagem-editar" />
         </s.Line2>
         <s.Line3>
-        <s.TituloLinha3>
-          {restaurantDetails.name}
-        </s.TituloLinha3>
+          <s.TituloLinha3>
+            {restaurantDetails.name}
+          </s.TituloLinha3>
           <p>{restaurantDetails.category}</p>
           <s.ShippingDiv>
             <p>{restaurantDetails.deliveryTime} min</p>
-            <p>R${restaurantDetails.shipping}</p>
+            <p>Frete R${restaurantDetails.shipping}</p>
           </s.ShippingDiv>
           <p>{restaurantDetails.address}</p>
         </s.Line3>

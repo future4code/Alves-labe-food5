@@ -98,7 +98,7 @@ export default function CartPage() {
     <s.General>
       <s.Grid>
         <s.Line1>
-          <h3>Meu carrinho</h3>
+          <s.MyCart>Meu carrinho</s.MyCart>
         </s.Line1>
         <s.Line2>
           <s.Address>

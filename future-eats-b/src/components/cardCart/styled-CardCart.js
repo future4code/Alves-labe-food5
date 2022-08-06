@@ -27,6 +27,10 @@ export const ImageFood = styled.img`
   height: 100%;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
+  object-fit: contain;
+  object-fit: fill;
+  object-fit: scale-down;
+  object-fit: cover;
 `
 
 export const Right = styled.div`
