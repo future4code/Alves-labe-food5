@@ -11,9 +11,7 @@ import useProtectedPage from './../../hooks/useProtectedPage';
 import img_home from "./../../assets/img/home.png";
 import img_cart from "./../../assets/img/cart.png";
 import img_perfil from "./../../assets/img/perfil.png";
-//------------------------------
 import Modal from 'react-modal';
-//------------------------------
 
 export default function RestaurantDetailsPage() {
   useProtectedPage();
@@ -25,8 +23,6 @@ export default function RestaurantDetailsPage() {
   const [currentProduct, setCurrentProdut] = useState()
   const [updatecar, setUpdateCar] = useState(true)
   let cart = JSON.parse(localStorage.getItem("cart")) || []
-
-  //------------------------------
   const [modalIsOpen, setIsOpen] = useState(false)
   function handleOpenModal(item, id) {
     let cart = JSON.parse(localStorage.getItem("cart")) || []
@@ -69,8 +65,9 @@ export default function RestaurantDetailsPage() {
       .then(res => {
         setRestaurantDetails(res.data.restaurant)
       })
-      .catch(err => console.log("Deu errado pegar os detalhes do restaurante", err.response.data))
+      .catch(err => alert("Ocorreu um erro no servidor, tente novamente mais tarde."))
   }
+
   useEffect(() => {
     getRestaurantDetails()
   }, [])
@@ -94,6 +91,7 @@ export default function RestaurantDetailsPage() {
       }
     }
   }
+
   for (let i = 0; i < categoryDif.length; i++) {
     <h2>{categoryDif[i]}</h2>
     for (let j = 0; j < restDet.length; j++) {

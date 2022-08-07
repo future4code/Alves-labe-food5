@@ -18,7 +18,7 @@ export default function AddressPage() {
   const [entrar, setEntrar] = useState(true)
   const [atualizar, setAtualizar] = useState(true)
 
-  let { form, onChange, cleanFields } = useForm({
+  let { form, onChange} = useForm({
     street: "",
     number: "",
     complement: "",
@@ -40,13 +40,14 @@ export default function AddressPage() {
           setCurrentAddress(res.data.address)
           setEntrar(false)
         })
-        .catch(err => console.log("Deu errrado o getFullAddress", err))
+        .catch(err => {
+            alert("Ocorreu um erro no servidor tente novamente mais tarde")
+          
+        })
     }
   }
 
   const addAddress = (body) => {
-    console.log(body.street)
-    console.log(body.city)
     axios.put(`${BASE_URL}/address`, body, {
       headers: {
         auth: token
@@ -58,13 +59,21 @@ export default function AddressPage() {
         alert('Dados de endereço enviados com sucesso!');
         goToFeedPage(navigate);
       })
-      .catch(err => console.log("Deu errado o addAddress", err.response.data))
+      .catch(err => {
+        const returnErr = err.response.status
+          if(returnErr >= 400 && returnErr <= 500){
+            alert("Ocorreu um erro, verifique os dados inseridos e tente novamente")
+          } else if(returnErr >= 500 && returnErr <= 600){
+            alert("Ocorreu um erro no servidor, tente novamete mais tarde")
+          } else {
+            alert("Ocorreu um erro, tente novamete mais tarde")
+          }
+      })
   }
 
   const register = (event) => {
     event.preventDefault();
     addAddress(form)
-    // cleanFields();
     setAtualizar(!atualizar);
   }
 

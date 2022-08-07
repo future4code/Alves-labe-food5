@@ -30,15 +30,20 @@ export default function LoginPage() {
       }
     })
     .catch((err)=>{
-      console.log("Deu errado o login")
-      console.log(err.response.data)
+      const returnErr = err.response.status
+        if (returnErr >= 400 && returnErr <= 500) {
+          alert("Ocorreu um erro, verifique os dados inseridos e tente novamente")
+        } else if (returnErr >= 500 && returnErr <= 600) {
+          alert("Ocorreu um erro no servidor, tente novamete mais tarde")
+        } else {
+          alert("Ocorreu um erro, tente novamete mais tarde")
+        }
     })
   }
 
   const register = (event) => {
     event.preventDefault();
     login(form)
-    
   }
 
   return (

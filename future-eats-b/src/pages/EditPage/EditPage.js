@@ -14,8 +14,6 @@ export default function EditPage() {
   const navigate = useNavigate()
   const token = localStorage.getItem("token")
   const { currentUser, setCurrentUser } = useContext(GlobalContext)
-  
-  console.log(currentUser)
 
   const { form, onChange, cleanFields } = useForm({
     name: "",
@@ -35,7 +33,16 @@ export default function EditPage() {
       alert('Dados alterados com sucesso!');
       goToProfilePage(navigate);
     })
-    .catch( err => console.log(err.response.data))
+    .catch( err =>{
+      const returnErr = err.response.status
+          if(returnErr >= 400 && returnErr <= 500){
+            alert("Ocorreu um erro, verifique os dados inseridos e tente novamente")
+          } else if(returnErr >= 500 && returnErr <= 600){
+            alert("Ocorreu um erro no servidor, tente novamete mais tarde")
+          } else {
+            alert("Ocorreu um erro, tente novamete mais tarde")
+          }
+    })
   }
 
   const register = (event) => {
