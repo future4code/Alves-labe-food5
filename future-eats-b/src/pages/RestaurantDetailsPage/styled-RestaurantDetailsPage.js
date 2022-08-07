@@ -140,9 +140,6 @@ export const Img_edit = styled.img`
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   object-fit: contain;
-  /* object-fit: fill; */
-  /* object-fit: scale-down; */
-  /* object-fit: cover; */
 `
 
 export const ShippingDiv = styled.div`

@@ -18,13 +18,11 @@ export default function GlobalState(props) {
           setCurrentUser(res.data.user)
         })
         .catch((err) => {
-          console.log("Deu errrado o getProfile")
-          console.log(err)
+            alert("Ocorreu um erro em localizar seus dados tente novamente")
         })
-    } else{
+    } else {
     }
   }
-
 
   useEffect(() => {
     getProfile()

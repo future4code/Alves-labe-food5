@@ -2,7 +2,6 @@ import React from "react";
 import * as s from './styled-CardCart';
 
 export default function CardRestaurantDetail(props) {
-  // let cart = JSON.parse(localStorage.getItem("cart")) || []
 
   return (
     <s.CardInterno>

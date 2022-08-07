@@ -26,7 +26,7 @@ export default function ProfilePage() {
       }
     })
     .then(res => setOrdersHistory(res.data.orders))
-    .catch(err => console.log("deu errado o history", err.response.data))
+    .catch(err => alert("Ocorreu um erro no servidor, tente novamente mais tarde."))
   }, [])
 
   const Logout = () => {
@@ -88,10 +88,6 @@ export default function ProfilePage() {
             }
           </s.Line4Box>
         </s.Line4>
-
-        {/* <s.Logout>
-          <s.BotaoLogout onClick={Logout} src={imgLogout} />
-        </s.Logout> */}
 
         <s.Line5>
           <s.ImgFooter src={img_home} onClick={() => goToFeedPage(navigate)} alt="Home" />

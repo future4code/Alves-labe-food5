@@ -11,9 +11,7 @@ import useProtectedPage from './../../hooks/useProtectedPage';
 import img_home from "./../../assets/img/home.png";
 import img_cart from "./../../assets/img/cart.png";
 import img_perfil from "./../../assets/img/perfil.png";
-//------------------------------
 import Modal from 'react-modal';
-//------------------------------
 
 export default function RestaurantDetailsPage() {
   useProtectedPage();
@@ -25,8 +23,6 @@ export default function RestaurantDetailsPage() {
   const [currentProduct, setCurrentProdut] = useState()
   const [updatecar, setUpdateCar] = useState(true)
   let cart = JSON.parse(localStorage.getItem("cart")) || []
-
-  //------------------------------
   const [modalIsOpen, setIsOpen] = useState(false)
   function handleOpenModal(item, id) {
     let cart = JSON.parse(localStorage.getItem("cart")) || []
@@ -69,8 +65,9 @@ export default function RestaurantDetailsPage() {
       .then(res => {
         setRestaurantDetails(res.data.restaurant)
       })
-      .catch(err => console.log("Deu errado pegar os detalhes do restaurante", err.response.data))
+      .catch(err => alert("Ocorreu um erro no servidor, tente novamente mais tarde."))
   }
+
   useEffect(() => {
     getRestaurantDetails()
   }, [])
@@ -94,6 +91,7 @@ export default function RestaurantDetailsPage() {
       }
     }
   }
+
   for (let i = 0; i < categoryDif.length; i++) {
     <h2>{categoryDif[i]}</h2>
     for (let j = 0; j < restDet.length; j++) {
@@ -110,21 +108,7 @@ export default function RestaurantDetailsPage() {
       left: '40vw',
       right: '40vw',
       bottom: '40%',
-      // marginRight: '-50%',
-      // transform: 'translate(-50%, -50%)',
-
-
-        // top: '350px',
-      // left: '400px',
-      // right: '400px',
       border: '1px solid #ccc',
-      // background: '#fff',
-      // overflow: 'auto',
-      // WebkitOverflowScrolling: 'touch',
-      // borderRadius: '4px',
-      // outline: 'none',
-      // padding: '20px'
-
     },
   };
 
@@ -158,7 +142,6 @@ export default function RestaurantDetailsPage() {
 
         <Modal
           isOpen={modalIsOpen}
-          // onAfterOpen={afterOpenModal}
           onRequestClose={handleCloseModal}
           style={customStyles}
         >
