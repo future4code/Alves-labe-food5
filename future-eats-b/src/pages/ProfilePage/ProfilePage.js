@@ -18,7 +18,6 @@ export default function ProfilePage() {
   const token = localStorage.getItem('token');
   const [ordersHistory, setOrdersHistory] = useState()
   const { currentUser } = useContext(GlobalContext)
-  console.log('currentUser em profilePage =', currentUser);
 
   useEffect(() => {
     axios.get(`${BASE_URL}/orders/history`, {
@@ -26,15 +25,13 @@ export default function ProfilePage() {
         auth: token
       }
     })
-      .then(res => {
-        setOrdersHistory(res.data.orders);
-      })
-      .catch(err => console.log("deu errado o history", err.response.data))
+    .then(res => setOrdersHistory(res.data.orders))
+    .catch(err => console.log("deu errado o history", err.response.data))
   }, [])
 
   const Logout = () => {
-    localStorage.removeItem("token")
-    goToLoginPage(navigate)
+    localStorage.removeItem("token");
+    goToLoginPage(navigate);
   }
 
   return (

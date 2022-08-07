@@ -13,10 +13,10 @@ export default function AddressPage() {
   useProtectedPage();
   const navigate = useNavigate()
   const token = localStorage.getItem("token")
-  const { currentUser } = useContext(GlobalContext)
+  const { currentUser, setCurrentUser } = useContext(GlobalContext)
   const [currentAddress, setCurrentAddress] = useState({})
   const [entrar, setEntrar] = useState(true)
-  // const [mostrarForm, setMostrarForm] = useState(false)
+  const [atualizar, setAtualizar] = useState(true)
 
   let { form, onChange, cleanFields } = useForm({
     street: "",
@@ -26,29 +26,6 @@ export default function AddressPage() {
     city: "",
     state: "",
   })
-
-  // if (Object.keys(currentUser).length !== 0) {
-  //   if(entrar){
-  //     if (currentUser.hasAddress === true) {
-  //       axios.get(`${BASE_URL}/profile/address`,
-  //         {
-  //           headers:
-  //           {
-  //             auth: token
-  //           }
-  //         })
-  //         .then(res => {
-  //           setCurrentAddress(res.data.address)
-  //           setEntrar(false)
-  //           setMostrarForm(true)
-  //         })
-  //         .catch(err => console.log("Deu errrado o getFullAddress", err))
-  //     } else {
-  //       setMostrarForm(true)
-  //       setEntrar(false)
-  //     }
-  //   } 
-  // }
 
   if (Object.keys(currentUser).length !== 0) {
     if (currentUser.hasAddress && entrar) {
@@ -62,13 +39,14 @@ export default function AddressPage() {
         .then(res => {
           setCurrentAddress(res.data.address)
           setEntrar(false)
-          // setMostrarForm(true)
         })
         .catch(err => console.log("Deu errrado o getFullAddress", err))
     }
   }
 
   const addAddress = (body) => {
+    console.log(body.street)
+    console.log(body.city)
     axios.put(`${BASE_URL}/address`, body, {
       headers: {
         auth: token
@@ -76,7 +54,9 @@ export default function AddressPage() {
     })
       .then(res => {
         localStorage.setItem("token", res.data.token);
+        setCurrentUser(res.data.user);
         alert('Dados de endereço enviados com sucesso!');
+        goToFeedPage(navigate);
       })
       .catch(err => console.log("Deu errado o addAddress", err.response.data))
   }
@@ -84,7 +64,8 @@ export default function AddressPage() {
   const register = (event) => {
     event.preventDefault();
     addAddress(form)
-    cleanFields();
+    // cleanFields();
+    setAtualizar(!atualizar);
   }
 
   return (

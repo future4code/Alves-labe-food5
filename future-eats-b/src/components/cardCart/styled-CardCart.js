@@ -1,9 +1,7 @@
 import styled from 'styled-components';
 
 export const Card = styled.div`
-  /* border: solid 2px blue; */
   margin: 10px 10px;
-  
 `
 
 export const Title = styled.div`
@@ -83,7 +81,6 @@ export const Price = styled.div`
   font-size: 18px;
   font-weight: bold;
   margin-left: 10px;
-  /* margin-left: 10px; */
 `
 
 export const ButtonAddRemove = styled.button`

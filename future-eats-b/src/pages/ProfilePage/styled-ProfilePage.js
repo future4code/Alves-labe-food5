@@ -14,10 +14,9 @@ export const Grid = styled.div`
   width: 375px;
   height: 667px;
   display: grid;
-  border-radius: 20px;
   grid-template-rows: 60px 90px 90px 1fr 60px 60px;
   box-sizing: border-box;
-  box-shadow: 0 5px 5px 0 rgba(0,0,0,0.2), 0 10px 10px 0 rgba(0,0,0,0.15);
+  border: solid 1px lightgray;
 `
 
 export const Line1 = styled.div`
@@ -62,13 +61,6 @@ export const Line4 = styled.div`
     border-radius: 3px;
   }   
 `
-// ::-webkit-scrollbar {
-//    width: 2px
-// }
-// ::-webkit-scrollbar-thumb {
-//   background-color: lightgrey;
-//   border-radius: 3px;
-// } 
 
 export const Line4Box = styled.div`
   display: flex;  
@@ -76,11 +68,13 @@ export const Line4Box = styled.div`
   /* overflow-y: auto; */
   width: 90%;    
 `
+
 export const Logout = styled.div`
   display: flex;
   justify-content: center;
   background-color: #ffffff;
 `
+
 export const BotaoLogout = styled.img`
   width: 40px;
   height: 40px;
@@ -159,8 +153,25 @@ export const History = styled.div`
   border: solid 1px #b8b8b8;  
 `
 
+export const RestaurantName = styled.div`
+  color: #5cb646;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0 0 10px 0;
+`
+
+export const RestaurantDeadline = styled.div`
+  font-size: 12px;
+  margin: 0 0 10px 0;
+`
+
+export const Subtotal = styled.div`
+  font-size: 16px;
+  font-weight: bold;
+`
+
 export const AddressTitle = styled.div`
-  font-size:16px;
+  font-size: 16px;
   color: #b8b8b8;
 `
 
@@ -186,20 +197,6 @@ export const HistoryTitle = styled.h3`
   font-size: 16px;
   letter-spacing: -0.39px;
   margin: 10px 0 0 0;
-`
-
-export const RestaurantName = styled.div`
-  color: #5cb646;
-  font-size: 16px;
-`
-
-export const RestaurantDeadline = styled.div`
-  font-size: 12px;
-`
-
-export const Subtotal = styled.div`
-  font-size: 16px;
-  font-weight: bold;
 `
 
 export const Line = styled.hr`

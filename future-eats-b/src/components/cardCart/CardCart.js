@@ -2,15 +2,7 @@ import React from "react";
 import * as s from './styled-CardCart';
 
 export default function CardRestaurantDetail(props) {
-  let cart = JSON.parse(localStorage.getItem("cart")) || []
-
-  // const changeCart = () => {
-  //   const novoCarrinho = cart.filter( item => {
-  //     return item.name !== props.name
-  //   })
-  //   cart = novoCarrinho;
-  //   localStorage.setItem("cart", JSON.stringify(novoCarrinho))
-  // }
+  // let cart = JSON.parse(localStorage.getItem("cart")) || []
 
   return (
     <s.CardInterno>
@@ -27,7 +19,6 @@ export default function CardRestaurantDetail(props) {
         </s.LineMiddle>
         <s.LineBottom>
           <s.Price>R${props.price}</s.Price>
-          {/* <s.ButtonAddRemove onClick={() => props.handleOpenModal(a, a.qtd, props.idRestaurant)}>{a.qtd === 0 ? 'adicionar' : 'remover'}</s.ButtonAddRemove> */}
           <s.ButtonAddRemove onClick={()=>props.changeCart(props.name)}>Remover</s.ButtonAddRemove>
         </s.LineBottom>
       </s.Right>

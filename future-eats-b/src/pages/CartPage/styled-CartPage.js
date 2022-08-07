@@ -14,10 +14,9 @@ export const Grid = styled.div`
   width: 375px;
   height: 667px;
   display: grid;
-  border-radius: 20px;
   grid-template-rows: 60px 70px 80px 1fr 120px 60px 60px;
   box-sizing: border-box;
-  box-shadow: 0 5px 5px 0 rgba(0,0,0,0.2), 0 10px 10px 0 rgba(0,0,0,0.15);
+  border: solid 1px lightgray;
 `
 
 export const Line1 = styled.div`
@@ -26,9 +25,11 @@ export const Line1 = styled.div`
   align-items: center;
   background-color: white;
 `
+
 export const MyCart = styled.div`
   font-size: 19px; 
 `
+
 export const Address = styled.div`
   padding-left: 10px; 
   display:flex;
@@ -44,55 +45,69 @@ export const Line2 = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  p{
-    color: #b8b8b8;
-    margin: 3px;
-  }
 `
 
-export const Delivery = styled.span`
+export const Delivery = styled.p`
+  font-size: 16px;
+  margin-top: 5px;
+  margin-bottom: 5px;
   color: #b8b8b8;
+`
+
+export const Address2 = styled.p`
+  font-size: 16px;
   margin-top: 5px;
   margin-bottom: 5px;
 `
+
 export const Search = styled.input`
 `
 
-//Container carrinho vazio
 export const Line3 = styled.div`
   display: flex;
   align-items: center;
   overflow-x: auto;
   background-color: white;
-
 `
 
 export const Description = styled.div`
   padding: 10px;
+  width: 100%;
+  height: 100%;
 `
+
+export const EmptyCart = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
+export const TextEmpty = styled.div`
+  font-size: 16px;
+`
+
 export const NameRestaurant = styled.p`
   color: #5cb646;
   font-size: 16px;
-  /* font-family: Roboto; */
   font-weight: bold;
-  `
+`
+
 export const AddressRestaurant = styled.span`
-color: #b8b8b8;
-
-;
-/* padding: 10px; */
+  color: #b8b8b8;
 `
+
 export const DeliveryTimeRestaurant = styled.span`
-color: #b8b8b8;
+  color: #b8b8b8;
+`
 
-;
-  /* padding: 10px; */
-`
 export const RestaurantDetails = styled.div`
-display: flex;
-flex-direction: column;
-align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 `
+
 export const Category = styled.div`
   margin: 0 10px;
 `
@@ -103,6 +118,13 @@ export const Line4 = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  ::-webkit-scrollbar {
+      width: 2px
+  }
+  ::-webkit-scrollbar-thumb {
+  background-color: lightgrey;
+  border-radius: 3px;
+  } 
 `
 
 export const ButtonAddRemove = styled.div`
@@ -123,7 +145,6 @@ export const ButtonAddRemove = styled.div`
 `
 
 export const Line5 = styled.div`
-  background-color: white;
 `
 
 export const Ship = styled.div`
@@ -131,8 +152,9 @@ export const Ship = styled.div`
   justify-content: end;
   margin-right: 12px;
 `
+
 export const TotalPrice = styled.div`
-  margin-right: 10px;
+  margin-right: 12px;
 `
 
 export const Total = styled.div`
@@ -151,14 +173,10 @@ export const Total = styled.div`
 `
 
 export const Payment = styled.div`
-  /* display: flex;
-  flex-direction: column; */
   margin-left: 10px;
 `
 
 export const PaymentInt = styled.div`
-  /* display: flex;
-  flex-direction: column; */
   margin: 5px 0 5px 0;
   hr{
     margin: 5px 0 5px 0;
@@ -166,13 +184,9 @@ export const PaymentInt = styled.div`
 `
 
 export const Money = styled.div`
-  /* display: flex;
-  flex-direction: column; */
 `
 
 export const Credit = styled.div`
-  /* display: flex;
-  flex-direction: column; */
 `
 
 export const Line6 = styled.div`
@@ -180,15 +194,14 @@ export const Line6 = styled.div`
   justify-content: space-around;
   align-items: center;
   background-color: white;
-  /* border: solid 1px red; */
 `
 
 export const ButtonConfirmar = styled.button`
-  width: 328px;
+  width: 350px;
   height: 42px;
   padding: 12px 16px;
   border-radius: 2px;
-  background-color: #5cb646;
+  background-color: ${props => props.qtd === 0 ? "rgba(92, 182, 70, 0.5)" : "#5cb646"};
   border: none;
   font-size: 16px;
   font-weight: bold;
@@ -203,7 +216,6 @@ export const Line7 = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: white;
   border: solid 1px #eeeeee;
 `
 
