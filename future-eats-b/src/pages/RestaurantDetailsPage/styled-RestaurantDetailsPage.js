@@ -30,19 +30,21 @@ export const Line1 = styled.div`
 export const Box = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
+  height: 100%;
 `
 
 export const Texto = styled.div`
   font-size: 16px;
   text-align: center;
+  width: 100%;
 `
 
 export const Selecionar = styled.select`
   margin: 20px 0 0 0 ;
-  width: 75%;
+  width: 100%;
   height: 40px;
 `
 
@@ -51,14 +53,14 @@ export const Option = styled.option`
 
 export const Add = styled.div`
   display: flex;
-  width: 75%;
   justify-content: end;
+  width: 100%;
 `
 
 export const Adicionar = styled.div`
   margin: 30px 0 0 0;
   color: #5cb646;
-  font-size: 12px;
+  font-size: 16px;
   text-align: center;
   :hover{
     cursor: pointer;
@@ -134,9 +136,11 @@ export const Line4 = styled.div`
   border-radius: 3px;
   } 
 `
+
 export const Img_edit = styled.img`
   width: 100%;
   height: 120px;
+  margin: 5px 0;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   object-fit: contain;

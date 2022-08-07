@@ -103,13 +103,16 @@ export default function RestaurantDetailsPage() {
 
   const customStyles = {
     content: {
-      position: 'fixed',
-      top: '40%',
-      left: '40vw',
-      right: '40vw',
-      bottom: '40%',
+      width: '352px',
+      height: '200px',
+      left: 'calc(50% - 177px)',
+      top: 'calc(50% - 100px)',
       border: '1px solid #ccc',
-    },
+      background: '#fff',
+      overflow: 'auto',
+      WebkitOverflowScrolling: 'touch',
+      outline: 'none',
+    }
   };
 
   const updateCart = () => {

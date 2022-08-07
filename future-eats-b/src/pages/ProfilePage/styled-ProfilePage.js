@@ -89,7 +89,6 @@ export const Line4 = styled.div`
 export const Line4Box = styled.div`
   display: flex;  
   flex-direction: column;
-  /* overflow-y: auto; */
   width: 90%;    
 `
 

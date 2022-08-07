@@ -1,27 +1,27 @@
 # `Projeto`
-Projeto LabeFood
+Projeto LabeFoods
 
 # `Link`
-https://labefood-alves5.surge.sh
+https://labefoods-alves5.surge.sh
 
 
 # `Descrição`
-O Projeto Pokédex foi desenvolvido como uma atividade dentro do curso Full-Stack Web Developer da Labenu, o qual consiste em requisições (via axios) para a PokéApi, que é uma API pública* com informações relacionadas aos Pokémons.
-Trata-se de uma ferramenta onde o usuário pode verificar os detalhes de todos os Pokémons, adicionar os mesmos a sua Pokédex e também criar batalhas entre Pokémons para ver qual é o vencedor.
-*a API pode ser encontrada [aqui](https://pokeapi.co/)
+O Projeto LabeFoods foi desenvolvido como projeto final de Front End dentro do curso Full-Stack Web Developer da Labenu, o qual consiste em requisições (via axios) para a API labeFoods, que contém informações relacionadas ao desenvolvimento de uma aplicação que simula um aplicativo semelhante ao conhecido app iFood. Este projeto foi baseado no layout layout FutureEats.
 </br>
-O repositório do projeto pode ser encontrado [aqui](https://github.com/future4code/Alves-pokedex1)
+A documentação da API pode ser encontrada [aqui](https://documenter.getpostman.com/view/7549981/SWTEdGtT)
+</br>
+O repositório do projeto pode ser encontrado [aqui](https://github.com/future4code/Alves-labe-food5)
 
 # `Modo de usar`
-Ao iniciar a ferramenta o usuário pode ver uma lista com vinte cards de Pokémons, e, na parte inferior da lista existe uma paginação, onde o usuário pode clicar em outras páginas para carregar mais Pokémons. Nestes cards, o usuário pode clicar em "Detalhes" ou em "Capturar!".
+Ao iniciar a aplicação o usuário é direcionado para a tela de Login. Nesta tela, o usuário pode efetuar seu login ou então se inscrever na plataforma, criando um usuário com nome, email, senha e dados de endereço.
 </br>
-Caso o usuário, no card, clicar em "Detalhes", ele será redirecionado para outra página, onde encontrará alguns detalhes do Pokémon selecionado: uma foto de frente e outra de costas, os valores de Base Stats que são: HP, Attack, Defense, Sp. Atk, Sp. Def e Speed, também o ID, Nome, os Tipos do Pokémon e seus Moves.
+Após efetuar login, o usuário é redirecionado para a página de feed, onde poderá escolher entre diferentes tipos de restaurantes, podendo filtrar por palavras chave (utilizando para o tal o campo de buscas) ou por tipos de comidas, na barra superior. Dentre as opções estão por exemplo comida Asiática, Hamburgueres, Italiana, Sorvetes entre outros.
 </br>
-Caso o usuário, no card, clicar em "Capturar!", este Pokémon automaticamente será adicionado na Pokédex, que é uma lista com os Pokémons adicionados pelo usuário.
+Clicando sobre a imagem de um restaurante no feed, o usuário é redicionado para a página de detalhes detes, onde são listados todos os alimentos fornecidos pelo estabelecimento, podendo o usuário adicionar e remover produtos para o seu carrinho.
 </br>
-No canto superior direito da tela, existe uma botão chamado "Pokédex". Ao clicar neste o usuário é redirecionado para a página onde estão os cards de todos aqueles adicionados à Pokédex.
+Na parte inferior existe um menu, onde o usuário pode acessar a página de carrinho e verificar todos os itens que adicionou ao mesmo, valor do frente e total da compra, além de selecionar um método de pagamento. Também é possível remover itens da lista. Ao clicar em confirmar, será exibida uma mensagem de pedido realizado com sucesso.
 </br>
-No canto superior direito da página Pokédex existe um botão chamado "Criar Batalha". Ao clicar neste botão o usuário é redirecionado para uma página onde ele pode selecionar dois Pokémons. As opções que aparecem nesta seleção são apenas os Pokémons que já estão adicionados à Pokédex. Ao selecionar os Pokémons, suas imagens são exibidas abaixo do nome e também um botão chamado "Batalhar!", que, ao ser clicado exibe na tela os valores de "Base stats" de cada Pokémon, assim como a soma total destes. O Pokémon vencedor é aquele que possuir o maior valor total e uma mensagem na tela informa quem o é.
+No menu inferior, o usuário pode clicar no ícone de perfil e então será redirecionado para a página de perfil do usuário, onde pode alterar seus dados cadastrais e de endereço, e ainda verificar o seu histórico de pedidos. No canto superior direito da página, é possível também fazer o logout da conta, sendo então redirecionado para a página de login.
 
 # `Instalando e rodando o projeto`
 Fazer o clone do projeto:
@@ -47,18 +47,52 @@ Rodar o projeto:
 </div>
 
 # `Autores`
-José Robinaldo Ramos da Silva; Leonardo José Silva Lopes de Souza; Olavo Marques do Nascimento; Márleo Piber da Rosa; Evandro Paulo Folletto.
+
+Evandro Paulo Folletto
+</br>
+<a href="https://www.linkedin.com/in/evandrofolletto/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> <a href="https://github.com/epfolletto"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> 
+</br>
+
+José Robinaldo Ramos da Silva
+</br>
+<a href="https://www.linkedin.com/in/jose-robinaldo-ramos-da-silva-junior-50182113a/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> <a href="https://github.com/leonardojcsl"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a>
+</br>
+
+Leonardo José Silva Lopes de Souza
+</br>
+<a href="https://www.linkedin.com/in/leonardojcsl91/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> <a href="https://github.com/marleopr"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a>
+</br>
+
+Márleo Piber da Rosa
+</br>
+<a href="https://www.linkedin.com/in/marleopiber/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> <a href="https://github.com/Joserobinaldo"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a>
+</br>
+
+Olavo Marques do Nascimento
+</br>
+<a href="https://www.linkedin.com/in/olavo-marques-6421ab123/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> <a href="https://github.com/Olavo-marques"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a>
 
 # `Imagens`
-### Página Home
-<img src="./src/assets/img_readme/site1.png"/>
-### Página Home
-<img src="./src/assets/img_readme/site2.png"/>
-### Página Detalhe
-<img src="./src/assets/img_readme/site3.png"/>
-### Página Pokédex
-<img src="./src/assets/img_readme/site4.png"/>
-### Página Batalha
-<img src="./src/assets/img_readme/site5.png"/>
-### Página Batalha
-<img src="./src/assets/img_readme/site6.png"/>
+### Página Login
+<img src="./src/assets/img_readme/login.png"/>
+
+### Página SignUp (Cadastro)
+<img src="./src/assets/img_readme/signup.png"/>
+
+### Página Feed
+<img src="./src/assets/img_readme/feed.png"/>
+
+### Página detalhes
+<img src="./src/assets/img_readme/restaurant.png"/>
+
+### Página Carrinho
+<img src="./src/assets/img_readme/cart.png"/>
+
+### Página Perfil
+<img src="./src/assets/img_readme/profile.png"/>
+
+### Página Editar perfil
+<img src="./src/assets/img_readme/profile_edit.png"/>
+
+### Página Editar Endereço
+<img src="./src/assets/img_readme/profile_address.png"/>
