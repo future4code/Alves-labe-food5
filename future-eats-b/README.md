@@ -6,26 +6,22 @@ https://labefoods-alves5.surge.sh
 
 
 # `Descrição`
-O Projeto LabeFoods foi desenvolvido como projeto final de Front End dentro do curso Full-Stack Web Developer da Labenu, o qual consiste em requisições (via axios) para a API labeFoods, que é uma API da Labenu com informações relacionadas ao desenvolvimento de uma aplicação que simula um aplicativo semelhante ao conhecido app iFood.
-O tema que recebemos foi do layout FutureEats.
-*a API pode ser encontrada [aqui]https://documenter.getpostman.com/view/7549981/SWTEdGtT)
+O Projeto LabeFoods foi desenvolvido como projeto final de Front End dentro do curso Full-Stack Web Developer da Labenu, o qual consiste em requisições (via axios) para a API labeFoods, que contém informações relacionadas ao desenvolvimento de uma aplicação que simula um aplicativo semelhante ao conhecido app iFood. Este projeto foi baseado no layout layout FutureEats.
+</br>
+A documentação da API pode ser encontrada [aqui](https://documenter.getpostman.com/view/7549981/SWTEdGtT)
 </br>
 O repositório do projeto pode ser encontrado [aqui](https://github.com/future4code/Alves-labe-food5)
 
 # `Modo de usar`
-Ao iniciar a aplicação o usuário se deparará com uma tela para efetuar Login, caso tenha, ou se inscrever na plataforma, criando um usuário com nome, email, senha e dados de endereço.
+Ao iniciar a aplicação o usuário é direcionado para a tela de Login. Nesta tela, o usuário pode efetuar seu login ou então se inscrever na plataforma, criando um usuário com nome, email, senha e dados de endereço.
 </br>
-Após efetuar login, o usuário poderá escolher entre diferentes tipos de restaurantes, como comida Asiática, Hamburgueres, Italiana, Sorvetes, Carnes, Baiana, Petiscos e Mexicana.
+Após efetuar login, o usuário é redirecionado para a página de feed, onde poderá escolher entre diferentes tipos de restaurantes, podendo filtrar por palavras chave (utilizando para o tal o campo de buscas) ou por tipos de comidas, na barra superior. Dentre as opções estão por exemplo comida Asiática, Hamburgueres, Italiana, Sorvetes entre outros.
 </br>
-Entrando em um restaurante, será listado todos os alimentos fornecidos pelo estabelecimento em questão, podendo adicionar e remover produtos, escolher a quantidade, forma de pagamento e ser informado do custo do frete e do valor de cada produto.
+Clicando sobre a imagem de um restaurante no feed, o usuário é redicionado para a página de detalhes detes, onde são listados todos os alimentos fornecidos pelo estabelecimento, podendo o usuário adicionar e remover produtos para o seu carrinho.
 </br>
-Após escolher o seu pedido, o usuário deve ir até a tela de carrinho de compras, na qual se encontra no botão central no rodapé da página, nele, o usuário terá informações do endereço de entrega, informações sobre o restaurante escolhido com o prazo para a entrega.
+Na parte inferior existe um menu, onde o usuário pode acessar a página de carrinho e verificar todos os itens que adicionou ao mesmo, valor do frente e total da compra, além de selecionar um método de pagamento. Também é possível remover itens da lista. Ao clicar em confirmar, será exibida uma mensagem de pedido realizado com sucesso.
 </br>
-Também nesta mesma página, terá a lista dos alimentos, assim como sua quantidade e opção de remover do carrinho caso o usuário desista de algo.
-</br>
-Ao final da página, tem os custos do pedido, as opções de pagamento e confirmação do pedido, que ao clicar em confirmar, será exibida uma mensagem de pedido realizado com sucesso.
-</br>
-No botão da direita, no rodapé, existe um botão para ir para o perfil do usuário, na qual podemos modificar informações de cadastro.
+No menu inferior, o usuário pode clicar no ícone de perfil e então será redirecionado para a página de perfil do usuário, onde pode alterar seus dados cadastrais e de endereço, e ainda verificar o seu histórico de pedidos. No canto superior direito da página, é possível também fazer o logout da conta, sendo então redirecionado para a página de login.
 
 # `Instalando e rodando o projeto`
 Fazer o clone do projeto:
@@ -51,27 +47,47 @@ Rodar o projeto:
 </div>
 
 # `Autores`
-Evandro Paulo Folletto;
-José Robinaldo Ramos da Silva; 
-Leonardo José Silva Lopes de Souza; 
-Márleo Piber da Rosa; 
-Olavo Marques do Nascimento.
 
+Evandro Paulo Folletto 
+<a href="https://www.linkedin.com/in/evandrofolletto/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> <a href="https://github.com/epfolletto"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> 
+</br>
+
+José Robinaldo Ramos da Silva
+<a href="https://www.linkedin.com/in/jose-robinaldo-ramos-da-silva-junior-50182113a/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> <a href="https://github.com/leonardojcsl"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a>
+</br>
+
+Leonardo José Silva Lopes de Souza
+<a href="https://www.linkedin.com/in/leonardojcsl91/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> <a href="https://github.com/marleopr"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a>
+</br>
+
+Márleo Piber da Rosa
+<a href="https://www.linkedin.com/in/marleopiber/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> <a href="https://github.com/Joserobinaldo"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a>
+</br>
+
+Olavo Marques do Nascimento
+<a href="https://www.linkedin.com/in/olavo-marques-6421ab123/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> <a href="https://github.com/Olavo-marques"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a>
 
 # `Imagens`
 ### Página Login
 <img src="./src/assets/img_readme/login.png"/>
+
 ### Página SignUp (Cadastro)
 <img src="./src/assets/img_readme/signup.png"/>
+
 ### Página Feed
 <img src="./src/assets/img_readme/feed.png"/>
-### Página Restaurante escolhido
+
+### Página detalhes
 <img src="./src/assets/img_readme/restaurant.png"/>
+
 ### Página Carrinho
 <img src="./src/assets/img_readme/cart.png"/>
+
 ### Página Perfil
 <img src="./src/assets/img_readme/profile.png"/>
+
 ### Página Editar perfil
 <img src="./src/assets/img_readme/profile_edit.png"/>
+
 ### Página Editar Endereço
 <img src="./src/assets/img_readme/profile_address.png"/>
