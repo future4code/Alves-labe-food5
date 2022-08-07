@@ -40,7 +40,6 @@ export default function ProfilePage() {
 
         <s.Line1>
           <s.Left>
-            
           </s.Left>
           <s.TitleLine1>Meu Perfil</s.TitleLine1>
           <s.Right>
@@ -56,7 +55,7 @@ export default function ProfilePage() {
               <s.EmailProfile>{currentUser.email}</s.EmailProfile>
               <s.CpfProfile>{currentUser.cpf}</s.CpfProfile>
             </s.LeftOne>
-            <s.Img_edit onClick={() => goToEditPage(navigate)} src={img_edit} alt="imagem-editar" />
+            <s.Img_edit onClick={() => goToEditPage(navigate)} src={img_edit} alt="imagem-editar" title="Editar perfil"/>
           </s.Line2Box>
         </s.Line2>
 
@@ -66,7 +65,7 @@ export default function ProfilePage() {
               <s.AddressTitle>Endereço Cadastrado</s.AddressTitle>
               <s.AddressDiv>{currentUser.address}</s.AddressDiv>
             </s.LeftTwo>
-            <s.Img_edit onClick={() => goToAddressPage(navigate)} src={img_edit} alt="imagem-editar" />
+            <s.Img_edit onClick={() => goToAddressPage(navigate)} src={img_edit} alt="imagem-editar" title="Editar endereço"/>
           </s.Line3Box>
         </s.Line3>
 
@@ -89,14 +88,10 @@ export default function ProfilePage() {
           </s.Line4Box>
         </s.Line4>
 
-        {/* <s.Logout>
-          <s.BotaoLogout onClick={Logout} src={imgLogout} />
-        </s.Logout> */}
-
         <s.Line5>
-          <s.ImgFooter src={img_home} onClick={() => goToFeedPage(navigate)} alt="Home" />
-          <s.ImgFooter src={img_cart} onClick={() => goToCartPage(navigate)} alt="Home" />
-          <s.ImgFooter src={img_perfil} alt="Home" />
+          <s.ImgFooter src={img_home} onClick={() => goToFeedPage(navigate)} alt="Home" title="Home"/>
+          <s.ImgFooter src={img_cart} onClick={() => goToCartPage(navigate)} alt="Home" title="Carrinho" />
+          <s.ImgFooter src={img_perfil} alt="Home" title="Perfil"/>
         </s.Line5>
 
       </s.Grid>

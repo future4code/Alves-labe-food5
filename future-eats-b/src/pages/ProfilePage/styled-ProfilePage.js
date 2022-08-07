@@ -89,25 +89,8 @@ export const Line4 = styled.div`
 export const Line4Box = styled.div`
   display: flex;  
   flex-direction: column;
-  /* overflow-y: auto; */
   width: 90%;    
 `
-
-// export const Logout = styled.div`
-//   display: flex;
-//   justify-content: center;
-//   background-color: #ffffff;
-// `
-
-// export const BotaoLogout = styled.img`
-//   width: 40px;
-//   height: 40px;
-//   &:hover {
-// 		cursor: pointer;
-//     transform: scale(1.1);
-//     transition: transform .2s;
-// 	}
-// `
 
 export const Line5 = styled.div`
   display: flex;
