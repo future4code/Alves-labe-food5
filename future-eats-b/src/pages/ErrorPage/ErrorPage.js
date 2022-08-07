@@ -6,7 +6,7 @@ export default function ErrorPage() {
   return (
     <s.General>
       <s.Container>
-        <h1>Página de erro</h1>
+        <h2>Página não encontrada :(</h2>
       </s.Container>
     </s.General>
   )

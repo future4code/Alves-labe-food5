@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import * as s from './styled-FeedPage';
-import img_home from "./../../assets/img/home.png";
+import img_home from "./../../assets/img/home_green.png";
 import img_cart from "./../../assets/img/cart.png";
 import img_perfil from "./../../assets/img/perfil.png";
 import img_relogio from "./../../assets/img/relogio.png"

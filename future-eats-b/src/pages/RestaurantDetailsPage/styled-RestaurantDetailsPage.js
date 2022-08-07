@@ -14,7 +14,7 @@ export const Grid = styled.div`
   width: 375px;
   height: 667px;
   display: grid;
-  grid-template-rows: 60px 120px 100px 1fr;
+  grid-template-rows: 60px 120px 100px 1fr 60px;
   border: 1px solid lightgray;
   box-sizing: border-box;
 `
@@ -91,6 +91,7 @@ export const Title = styled.div`
   align-items: center;
   flex-basis: 95%;
   height: 100%;
+  font-size: 19px;
 `
 
 export const Line2 = styled.div`
@@ -148,4 +149,21 @@ export const ShippingDiv = styled.div`
   display: flex;
   justify-content: space-between;
   width: 40%;
+`
+
+export const Line5 = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  border-top: solid 1px #eeeeee;
+`
+
+export const ImgFooter = styled.img`
+  width: 30px;
+  &:hover {
+		cursor: pointer;
+    transform: scale(1.1);
+    transition: transform .2s;
+	}
 `

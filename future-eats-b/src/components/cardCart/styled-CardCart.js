@@ -12,7 +12,7 @@ export const CardInterno = styled.div`
   display: flex;
   height: 120px;
   margin: 10px 0;
-  border: solid 1px black;
+  border: solid 1px #b8b8b8;
   border-radius: 10px;
   width: 94%;
 `

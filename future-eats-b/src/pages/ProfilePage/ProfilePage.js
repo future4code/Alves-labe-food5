@@ -5,7 +5,7 @@ import * as s from './styled-ProfilePage';
 import img_home from "./../../assets/img/home.png";
 import img_cart from "./../../assets/img/cart.png";
 import imgLogout from "./../../assets/img/logout.png";
-import img_perfil from "./../../assets/img/perfil.png";
+import img_perfil from "./../../assets/img/perfil_green.png";
 import img_edit from "./../../assets/img/edit.png"
 import { useNavigate } from "react-router";
 import { goToAddressPage, goToEditPage, goToFeedPage, goToCartPage, goToLoginPage } from "../../routes/coordinator";
@@ -39,7 +39,14 @@ export default function ProfilePage() {
       <s.Grid>
 
         <s.Line1>
+          <s.Left>
+            
+          </s.Left>
           <s.TitleLine1>Meu Perfil</s.TitleLine1>
+          <s.Right>
+            Olá, {currentUser.name}
+            <s.BotaoLogout2 onClick={Logout} src={imgLogout} title="Logout" />
+          </s.Right>
         </s.Line1>
 
         <s.Line2>
@@ -81,14 +88,17 @@ export default function ProfilePage() {
             }
           </s.Line4Box>
         </s.Line4>
-        <s.Logout>
+
+        {/* <s.Logout>
           <s.BotaoLogout onClick={Logout} src={imgLogout} />
-        </s.Logout>
+        </s.Logout> */}
+
         <s.Line5>
           <s.ImgFooter src={img_home} onClick={() => goToFeedPage(navigate)} alt="Home" />
           <s.ImgFooter src={img_cart} onClick={() => goToCartPage(navigate)} alt="Home" />
           <s.ImgFooter src={img_perfil} alt="Home" />
         </s.Line5>
+
       </s.Grid>
     </s.General>
   )
