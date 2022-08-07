@@ -35,7 +35,16 @@ export default function CartPage() {
         setAtualizar(!atualizar);
         localStorage.setItem("cart", JSON.stringify([]));
       })
-      .catch(err => console.log("deu errado fazer pedido", err.response.data))
+      .catch(err => {
+        const returnErr = err.response.status
+        if (returnErr >= 400 && returnErr <= 500) {
+          alert("Ocorreu um erro, verifique os dados inseridos e tente novamente")
+        } else if (returnErr >= 500 && returnErr <= 600) {
+          alert("Ocorreu um erro no servidor, tente novamete mais tarde")
+        } else {
+          alert("Ocorreu um erro, tente novamete mais tarde")
+        }
+      })
   }
 
   const changeCart = (name) => {
@@ -91,7 +100,7 @@ export default function CartPage() {
           setCurrentOrder(true);
         }
       })
-      .catch(err => console.log("deu errado verificar se existe pedido em andamento", err.response.data))
+      .catch(err => alert("Ocorreu um erro no servidor, tente novamente mais tarde"))
   }, [])
 
   return (
@@ -113,16 +122,16 @@ export default function CartPage() {
 
         <s.Line3>
           <s.Description>
-            {cart.length === 0 ? 
-                <s.EmptyCart>
-                    <s.TextEmpty>Carrinho Vazio</s.TextEmpty>
-                </s.EmptyCart>
+            {cart.length === 0 ?
+              <s.EmptyCart>
+                <s.TextEmpty>Carrinho Vazio</s.TextEmpty>
+              </s.EmptyCart>
               :
-                <s.RestaurantDetails>
-                  <s.NameRestaurant>{cart[0].nameRestaurant}</s.NameRestaurant>
-                  <s.AddressRestaurant>{cart[0].addressRestaurant}</s.AddressRestaurant>
-                  <s.DeliveryTimeRestaurant>{cart[0].deliveryTimeRestaurant} min</s.DeliveryTimeRestaurant>
-                </s.RestaurantDetails>
+              <s.RestaurantDetails>
+                <s.NameRestaurant>{cart[0].nameRestaurant}</s.NameRestaurant>
+                <s.AddressRestaurant>{cart[0].addressRestaurant}</s.AddressRestaurant>
+                <s.DeliveryTimeRestaurant>{cart[0].deliveryTimeRestaurant} min</s.DeliveryTimeRestaurant>
+              </s.RestaurantDetails>
             }
           </s.Description>
         </s.Line3>

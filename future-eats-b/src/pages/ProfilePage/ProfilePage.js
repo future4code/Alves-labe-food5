@@ -26,7 +26,7 @@ export default function ProfilePage() {
       }
     })
     .then(res => setOrdersHistory(res.data.orders))
-    .catch(err => console.log("deu errado o history", err.response.data))
+    .catch(err => alert("Ocorreu um erro no servidor, tente novamente mais tarde."))
   }, [])
 
   const Logout = () => {

@@ -114,10 +114,6 @@ export const RestaurantPhoto = styled.img`
   height: 120px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  /* object-fit: contain;
-  object-fit: fill;
-  object-fit: scale-down;
-  object-fit: cover; */
 `
 
 export const RestaurantName = styled.div`

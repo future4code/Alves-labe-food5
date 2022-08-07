@@ -19,7 +19,7 @@ export default function FeedPage() {
   const [search, setSearch] = useState("")
   const [currentOrder, setCurrentOrder] = useState(false)
   const [openOrder, setOpenOrder] = useState()
-  
+
   const navigate = useNavigate()
 
   const openFeed = () => {
@@ -31,7 +31,7 @@ export default function FeedPage() {
       .then(res => {
         setList(res.data.restaurants)
       })
-      .catch(err => console.log("Deu errado pegar o restaurante", err.response.data))
+      .catch(err => alert("Ocorreu um erro no servidor, tente novamente mais tarde"))
   }
 
   const getActiveOrder = () => {
@@ -48,7 +48,16 @@ export default function FeedPage() {
           setOpenOrder(res.data.order)
         }
       })
-      .catch(err => console.log("deu errado verificar se existe pedido em andamento", err.response.data))
+      .catch(err => {
+        const returnErr = err.response.status
+        if (returnErr >= 400 && returnErr <= 500) {
+          alert("Ocorreu um erro, verificar se existe pedido em andamento")
+        } else if (returnErr >= 500 && returnErr <= 600) {
+          alert("Ocorreu um erro no servidor, tente novamete mais tarde")
+        } else {
+          alert("Ocorreu um erro, tente novamete mais tarde")
+        }
+      })
   }
 
   useEffect(() => {
@@ -57,25 +66,25 @@ export default function FeedPage() {
   }, [])
 
   const newList = list
-    .filter( element => {
+    .filter(element => {
       if (category === "Todos") {
         return true
       } else {
         return element.category === category
       }
     })
-    .filter( element => {
+    .filter(element => {
       return element.name.toLowerCase().includes(search.toLowerCase())
     })
-    .map( element => {
+    .map(element => {
       return (
         <s.CardFeed onClick={() => goToRestaurantDetailsPage(navigate, element.id)} key={element.name}>
           <s.RestaurantPhoto src={element.logoUrl} />
           <s.RestaurantName>{element.name}</s.RestaurantName>
-            <s.LastLine>
-              <s.RestaurantTime>{element.deliveryTime} min</s.RestaurantTime>
-              <s.RestaurantShipping>Frete R${element.shipping.toFixed(2)}</s.RestaurantShipping>
-            </s.LastLine>
+          <s.LastLine>
+            <s.RestaurantTime>{element.deliveryTime} min</s.RestaurantTime>
+            <s.RestaurantShipping>Frete R${element.shipping.toFixed(2)}</s.RestaurantShipping>
+          </s.LastLine>
         </s.CardFeed>
       )
     })
@@ -106,16 +115,16 @@ export default function FeedPage() {
 
         <s.Line3>
           <s.BoxLine3>
-            <s.Category category={category} value="Todos" onClick={()=>onChangeCategory("Todos")}>Todos</s.Category>
-            <s.Category category={category} value="Árabe" onClick={()=>onChangeCategory("Árabe")}>Árabe</s.Category>
-            <s.Category category={category} value="Asiática" onClick={()=>onChangeCategory("Asiática")}>Asiática</s.Category>
-            <s.Category category={category} value="Hamburguer" onClick={()=>onChangeCategory("Hamburguer")}>Hamburguer</s.Category>
-            <s.Category category={category} value="Italiana" onClick={()=>onChangeCategory("Italiana")}>Italiana</s.Category>
-            <s.Category category={category} value="Sorvetes" onClick={()=>onChangeCategory("Sorvetes")}>Sorvetes</s.Category>
-            <s.Category category={category} value="Carnes" onClick={()=>onChangeCategory("Carnes")}>Carnes</s.Category>
-            <s.Category category={category} value="Baiana" onClick={()=>onChangeCategory("Baiana")}>Baiana</s.Category>
-            <s.Category category={category} value="Petiscos" onClick={()=>onChangeCategory("Petiscos")}>Petiscos</s.Category>
-            <s.Category category={category} value="Mexicana" onClick={()=>onChangeCategory("Mexicana")}>Mexicana</s.Category>
+            <s.Category category={category} value="Todos" onClick={() => onChangeCategory("Todos")}>Todos</s.Category>
+            <s.Category category={category} value="Árabe" onClick={() => onChangeCategory("Árabe")}>Árabe</s.Category>
+            <s.Category category={category} value="Asiática" onClick={() => onChangeCategory("Asiática")}>Asiática</s.Category>
+            <s.Category category={category} value="Hamburguer" onClick={() => onChangeCategory("Hamburguer")}>Hamburguer</s.Category>
+            <s.Category category={category} value="Italiana" onClick={() => onChangeCategory("Italiana")}>Italiana</s.Category>
+            <s.Category category={category} value="Sorvetes" onClick={() => onChangeCategory("Sorvetes")}>Sorvetes</s.Category>
+            <s.Category category={category} value="Carnes" onClick={() => onChangeCategory("Carnes")}>Carnes</s.Category>
+            <s.Category category={category} value="Baiana" onClick={() => onChangeCategory("Baiana")}>Baiana</s.Category>
+            <s.Category category={category} value="Petiscos" onClick={() => onChangeCategory("Petiscos")}>Petiscos</s.Category>
+            <s.Category category={category} value="Mexicana" onClick={() => onChangeCategory("Mexicana")}>Mexicana</s.Category>
           </s.BoxLine3>
         </s.Line3>
 

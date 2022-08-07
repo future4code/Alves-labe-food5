@@ -23,21 +23,26 @@ export default function SignUpPage() {
   const signUp = (body) => {
     axios.post(`${BASE_URL}/signup`, body)
       .then((res) => {
-        console.log("Deu certo o cadastro")
-        console.log(res)
+       alert("Conta criada com sucesso!")
+       alert("Preencha seus dados de endereço a seguir.")
         setCurrentUser(res.data)
         localStorage.setItem("token", res.data.token)
         goToAddressPage(navigate)
       })
       .catch((err) => {
-        console.log("Deu errado o cadastro")
-        console.log(err.response.data)
+        const returnErr = err.response.status
+        if(returnErr >= 400 && returnErr <= 500){
+          alert("Ocorreu um erro, verifique os dados inseridos e tente novamente")
+        } else if(returnErr >= 500 && returnErr <= 600){
+          alert("Ocorreu um erro no servidor, tente novamete mais tarde")
+        } else {
+          alert("Ocorreu um erro, tente novamete mais tarde")
+        }
       })
   }
 
   const register = (event) => {
     event.preventDefault();
-    console.log('botão enviar foi clicado')
     if(form.password === form.confirmPassword) {
       signUp(form);
     } else {
