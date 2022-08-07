@@ -77,22 +77,22 @@ Olavo Marques do Nascimento
 <img src="./future-eats-b/src/assets/img_readme/login.png"/>
 
 ### Página SignUp (Cadastro)
-<img src="./src/assets/img_readme/signup.png"/>
+<img src="./future-eats-b/src/assets/img_readme/signup.png"/>
 
 ### Página Feed
-<img src="./src/assets/img_readme/feed.png"/>
+<img src="./future-eats-b/src/assets/img_readme/feed.png"/>
 
 ### Página detalhes
-<img src="./src/assets/img_readme/restaurant.png"/>
+<img src="./future-eats-b/src/assets/img_readme/restaurant.png"/>
 
 ### Página Carrinho
-<img src="./src/assets/img_readme/cart.png"/>
+<img src="./future-eats-b/src/assets/img_readme/cart.png"/>
 
 ### Página Perfil
-<img src="./src/assets/img_readme/profile.png"/>
+<img src="./future-eats-b/src/assets/img_readme/profile.png"/>
 
 ### Página Editar perfil
-<img src="./src/assets/img_readme/profile_edit.png"/>
+<img src="./future-eats-b/src/assets/img_readme/profile_edit.png"/>
 
 ### Página Editar Endereço
-<img src="./src/assets/img_readme/profile_address.png"/>
+<img src="./future-eats-b/src/assets/img_readme/profile_address.png"/>
