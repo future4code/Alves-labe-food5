@@ -1,27 +1,31 @@
 # `Projeto`
-Projeto LabeFood
+Projeto LabeFoods
 
 # `Link`
-https://labefood-alves5.surge.sh
+https://labefoods-alves5.surge.sh
 
 
 # `Descrição`
-O Projeto Pokédex foi desenvolvido como uma atividade dentro do curso Full-Stack Web Developer da Labenu, o qual consiste em requisições (via axios) para a PokéApi, que é uma API pública* com informações relacionadas aos Pokémons.
-Trata-se de uma ferramenta onde o usuário pode verificar os detalhes de todos os Pokémons, adicionar os mesmos a sua Pokédex e também criar batalhas entre Pokémons para ver qual é o vencedor.
-*a API pode ser encontrada [aqui](https://pokeapi.co/)
+O Projeto LabeFoods foi desenvolvido como projeto final de Front End dentro do curso Full-Stack Web Developer da Labenu, o qual consiste em requisições (via axios) para a API labeFoods, que é uma API da Labenu com informações relacionadas ao desenvolvimento de uma aplicação que simula um aplicativo semelhante ao conhecido app iFood.
+O tema que recebemos foi do layout FutureEats.
+*a API pode ser encontrada [aqui]https://documenter.getpostman.com/view/7549981/SWTEdGtT)
 </br>
-O repositório do projeto pode ser encontrado [aqui](https://github.com/future4code/Alves-pokedex1)
+O repositório do projeto pode ser encontrado [aqui](https://github.com/future4code/Alves-labe-food5)
 
 # `Modo de usar`
-Ao iniciar a ferramenta o usuário pode ver uma lista com vinte cards de Pokémons, e, na parte inferior da lista existe uma paginação, onde o usuário pode clicar em outras páginas para carregar mais Pokémons. Nestes cards, o usuário pode clicar em "Detalhes" ou em "Capturar!".
+Ao iniciar a aplicação o usuário se deparará com uma tela para efetuar Login, caso tenha, ou se inscrever na plataforma, criando um usuário com nome, email, senha e dados de endereço.
 </br>
-Caso o usuário, no card, clicar em "Detalhes", ele será redirecionado para outra página, onde encontrará alguns detalhes do Pokémon selecionado: uma foto de frente e outra de costas, os valores de Base Stats que são: HP, Attack, Defense, Sp. Atk, Sp. Def e Speed, também o ID, Nome, os Tipos do Pokémon e seus Moves.
+Após efetuar login, o usuário poderá escolher entre diferentes tipos de restaurantes, como comida Asiática, Hamburgueres, Italiana, Sorvetes, Carnes, Baiana, Petiscos e Mexicana.
 </br>
-Caso o usuário, no card, clicar em "Capturar!", este Pokémon automaticamente será adicionado na Pokédex, que é uma lista com os Pokémons adicionados pelo usuário.
+Entrando em um restaurante, será listado todos os alimentos fornecidos pelo estabelecimento em questão, podendo adicionar e remover produtos, escolher a quantidade, forma de pagamento e ser informado do custo do frete e do valor de cada produto.
 </br>
-No canto superior direito da tela, existe uma botão chamado "Pokédex". Ao clicar neste o usuário é redirecionado para a página onde estão os cards de todos aqueles adicionados à Pokédex.
+Após escolher o seu pedido, o usuário deve ir até a tela de carrinho de compras, na qual se encontra no botão central no rodapé da página, nele, o usuário terá informações do endereço de entrega, informações sobre o restaurante escolhido com o prazo para a entrega.
 </br>
-No canto superior direito da página Pokédex existe um botão chamado "Criar Batalha". Ao clicar neste botão o usuário é redirecionado para uma página onde ele pode selecionar dois Pokémons. As opções que aparecem nesta seleção são apenas os Pokémons que já estão adicionados à Pokédex. Ao selecionar os Pokémons, suas imagens são exibidas abaixo do nome e também um botão chamado "Batalhar!", que, ao ser clicado exibe na tela os valores de "Base stats" de cada Pokémon, assim como a soma total destes. O Pokémon vencedor é aquele que possuir o maior valor total e uma mensagem na tela informa quem o é.
+Também nesta mesma página, terá a lista dos alimentos, assim como sua quantidade e opção de remover do carrinho caso o usuário desista de algo.
+</br>
+Ao final da página, tem os custos do pedido, as opções de pagamento e confirmação do pedido, que ao clicar em confirmar, será exibida uma mensagem de pedido realizado com sucesso.
+</br>
+No botão da direita, no rodapé, existe um botão para ir para o perfil do usuário, na qual podemos modificar informações de cadastro.
 
 # `Instalando e rodando o projeto`
 Fazer o clone do projeto:
@@ -47,18 +51,27 @@ Rodar o projeto:
 </div>
 
 # `Autores`
-José Robinaldo Ramos da Silva; Leonardo José Silva Lopes de Souza; Olavo Marques do Nascimento; Márleo Piber da Rosa; Evandro Paulo Folletto.
+Evandro Paulo Folletto;
+José Robinaldo Ramos da Silva; 
+Leonardo José Silva Lopes de Souza; 
+Márleo Piber da Rosa; 
+Olavo Marques do Nascimento.
+
 
 # `Imagens`
-### Página Home
-<img src="./src/assets/img_readme/site1.png"/>
-### Página Home
-<img src="./src/assets/img_readme/site2.png"/>
-### Página Detalhe
-<img src="./src/assets/img_readme/site3.png"/>
-### Página Pokédex
-<img src="./src/assets/img_readme/site4.png"/>
-### Página Batalha
-<img src="./src/assets/img_readme/site5.png"/>
-### Página Batalha
-<img src="./src/assets/img_readme/site6.png"/>
+### Página Login
+<img src="./src/assets/img_readme/login.png"/>
+### Página SignUp (Cadastro)
+<img src="./src/assets/img_readme/signup.png"/>
+### Página Feed
+<img src="./src/assets/img_readme/feed.png"/>
+### Página Restaurante escolhido
+<img src="./src/assets/img_readme/restaurant.png"/>
+### Página Carrinho
+<img src="./src/assets/img_readme/cart.png"/>
+### Página Perfil
+<img src="./src/assets/img_readme/profile.png"/>
+### Página Editar perfil
+<img src="./src/assets/img_readme/profile_edit.png"/>
+### Página Editar Endereço
+<img src="./src/assets/img_readme/profile_address.png"/>
