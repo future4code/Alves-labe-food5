@@ -143,7 +143,6 @@ export const Img_edit = styled.img`
   margin: 5px 0;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  object-fit: contain;
 `
 
 export const ShippingDiv = styled.div`
