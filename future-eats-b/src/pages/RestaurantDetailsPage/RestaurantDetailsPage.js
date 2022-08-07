@@ -105,27 +105,16 @@ export default function RestaurantDetailsPage() {
 
   const customStyles = {
     content: {
-      position: 'fixed',
-      top: '40%',
-      left: '40vw',
-      right: '40vw',
-      bottom: '40%',
-      // marginRight: '-50%',
-      // transform: 'translate(-50%, -50%)',
-
-
-        // top: '350px',
-      // left: '400px',
-      // right: '400px',
+      width: '352px',
+      height: '200px',
+      left: 'calc(50% - 177px)',
+      top: 'calc(50% - 100px)',
       border: '1px solid #ccc',
-      // background: '#fff',
-      // overflow: 'auto',
-      // WebkitOverflowScrolling: 'touch',
-      // borderRadius: '4px',
-      // outline: 'none',
-      // padding: '20px'
-
-    },
+      background: '#fff',
+      overflow: 'auto',
+      WebkitOverflowScrolling: 'touch',
+      outline: 'none',
+    }
   };
 
   const updateCart = () => {
@@ -158,7 +147,6 @@ export default function RestaurantDetailsPage() {
 
         <Modal
           isOpen={modalIsOpen}
-          // onAfterOpen={afterOpenModal}
           onRequestClose={handleCloseModal}
           style={customStyles}
         >
