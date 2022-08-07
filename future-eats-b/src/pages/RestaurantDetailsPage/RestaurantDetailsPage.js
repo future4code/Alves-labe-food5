@@ -69,7 +69,9 @@ export default function RestaurantDetailsPage() {
   }
 
   useEffect(() => {
+  if(token){
     getRestaurantDetails()
+  }
   }, [])
 
   const restDet = restaurantDetails.products;

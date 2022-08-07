@@ -40,9 +40,9 @@ export default function CartPage() {
         if (returnErr >= 400 && returnErr <= 500) {
           alert("Ocorreu um erro, verifique os dados inseridos e tente novamente")
         } else if (returnErr >= 500 && returnErr <= 600) {
-          alert("Ocorreu um erro no servidor, tente novamete mais tarde")
+          alert("Ocorreu um erro no servidor, tente novamente mais tarde")
         } else {
-          alert("Ocorreu um erro, tente novamete mais tarde")
+          alert("Ocorreu um erro, tente novamente mais tarde")
         }
       })
   }
@@ -88,19 +88,21 @@ export default function CartPage() {
   }
 
   useEffect(() => {
-    axios.get(`${BASE_URL}/active-order`, {
-      headers: {
-        auth: token
-      }
-    })
-      .then(res => {
-        if (res.data.order === null) {
-          setCurrentOrder(false);
-        } else {
-          setCurrentOrder(true);
+    if(token){
+      axios.get(`${BASE_URL}/active-order`, {
+        headers: {
+          auth: token
         }
       })
-      .catch(err => alert("Ocorreu um erro no servidor, tente novamente mais tarde"))
+        .then(res => {
+          if (res.data.order === null) {
+            setCurrentOrder(false);
+          } else {
+            setCurrentOrder(true);
+          }
+        })
+        .catch(err => alert("Ocorreu um erro no servidor, tente novamente mais tarde"))
+    }
   }, [])
 
   return (

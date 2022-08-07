@@ -53,16 +53,18 @@ export default function FeedPage() {
         if (returnErr >= 400 && returnErr <= 500) {
           alert("Ocorreu um erro, verificar se existe pedido em andamento")
         } else if (returnErr >= 500 && returnErr <= 600) {
-          alert("Ocorreu um erro no servidor, tente novamete mais tarde")
+          alert("Ocorreu um erro no servidor, tente novamente mais tarde")
         } else {
-          alert("Ocorreu um erro, tente novamete mais tarde")
+          alert("Ocorreu um erro, tente novamente mais tarde")
         }
       })
   }
 
   useEffect(() => {
-    openFeed()
-    getActiveOrder()
+    if(token){
+      openFeed()
+      getActiveOrder()
+    }
   }, [])
 
   const newList = list

@@ -20,13 +20,15 @@ export default function ProfilePage() {
   const { currentUser } = useContext(GlobalContext)
 
   useEffect(() => {
-    axios.get(`${BASE_URL}/orders/history`, {
-      headers: {
-        auth: token
-      }
-    })
-    .then(res => setOrdersHistory(res.data.orders))
-    .catch(err => alert("Ocorreu um erro no servidor, tente novamente mais tarde."))
+    if(token){
+      axios.get(`${BASE_URL}/orders/history`, {
+        headers: {
+          auth: token
+        }
+      })
+      .then(res => setOrdersHistory(res.data.orders))
+      .catch(err => alert("Ocorreu um erro no servidor, tente novamente mais tarde."))
+    }
   }, [])
 
   const Logout = () => {
