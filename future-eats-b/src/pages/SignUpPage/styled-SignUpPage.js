@@ -14,10 +14,9 @@ export const Container = styled.div`
   width: 375px;
   height: 667px;
   display: grid;
-  border-radius: 20px;
   grid-template-rows: 60px 60px 80px 1fr;
   background-color: white;
-  box-shadow: 0 5px 5px 0 rgba(0,0,0,0.2), 0 10px 10px 0 rgba(0,0,0,0.15);
+  border: solid 1px lightgrey;
 `
 
 export const Header = styled.div`

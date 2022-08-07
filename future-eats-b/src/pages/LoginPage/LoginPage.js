@@ -5,12 +5,13 @@ import axios from "axios";
 import { BASE_URL } from "../../constants/BASE_URL";
 import { goToAddressPage, goToFeedPage, goToSignUpPage } from "../../routes/coordinator";
 import {useNavigate} from "react-router-dom"
-
+import useUnprotectedPage from './../../hooks/useUnprotectedPage';
 import { GlobalContext } from "../../components/global/GlobalContext";
 
 export default function LoginPage() {
+  useUnprotectedPage();
   const navigate = useNavigate()
-  const { currentUser, setCurrentUser } = useContext(GlobalContext)
+  const { setCurrentUser } = useContext(GlobalContext)
 
   const { form, onChange, cleanFields } = useForm({
     email: "",

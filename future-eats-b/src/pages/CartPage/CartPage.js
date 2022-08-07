@@ -4,7 +4,7 @@ import * as s from './styled-CartPage';
 import { BASE_URL } from "../../constants/BASE_URL";
 import { goToFeedPage, goToProfilePage } from '../../routes/coordinator'
 import img_home from "./../../assets/img/home.png";
-import img_cart from "./../../assets/img/cart.png";
+import img_cart from "./../../assets/img/cart_green.png";
 import img_perfil from "./../../assets/img/perfil.png";
 import { useNavigate } from "react-router-dom";
 import { GlobalContext } from "./../../components/global/GlobalContext";

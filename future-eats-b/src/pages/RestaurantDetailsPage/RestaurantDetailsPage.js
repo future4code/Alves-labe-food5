@@ -5,9 +5,12 @@ import axios from 'axios';
 import { BASE_URL } from '../../constants/BASE_URL';
 import CardRestaurantDetail from "../../components/cardRestaurantDetail/CardRestaurantDetail";
 import img_buttonBack from "./../../assets/img/buttomBack.png";
-import { goToFeedPage } from "../../routes/coordinator";
+import { goToFeedPage, goToProfilePage, goToCartPage } from "../../routes/coordinator";
 import { useNavigate } from "react-router-dom";
 import useProtectedPage from './../../hooks/useProtectedPage';
+import img_home from "./../../assets/img/home.png";
+import img_cart from "./../../assets/img/cart.png";
+import img_perfil from "./../../assets/img/perfil.png";
 //------------------------------
 import Modal from 'react-modal';
 //------------------------------
@@ -214,6 +217,12 @@ export default function RestaurantDetailsPage() {
             })
           }
         </s.Line4>
+
+        <s.Line5>
+          <s.ImgFooter src={img_home} onClick={() => goToFeedPage(navigate)} alt="Home" />
+          <s.ImgFooter src={img_cart} onClick={() => goToCartPage(navigate)} alt="Home" />
+          <s.ImgFooter src={img_perfil} onClick={() => goToProfilePage(navigate)} alt="Home" />
+        </s.Line5>
 
       </s.Grid>
     </s.General>

@@ -16,7 +16,5 @@ export const Container = styled.div`
   align-items: center;
   width: 375px;
   height: 667px;
-  border-radius: 20px;
-  background-color: lightsteelblue;
-  box-shadow: 0 5px 5px 0 rgba(0,0,0,0.2), 0 10px 10px 0 rgba(0,0,0,0.15);
+  border: solid 1px lightgray;
 `

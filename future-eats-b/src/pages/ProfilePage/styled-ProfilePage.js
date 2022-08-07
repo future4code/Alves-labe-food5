@@ -14,14 +14,14 @@ export const Grid = styled.div`
   width: 375px;
   height: 667px;
   display: grid;
-  grid-template-rows: 60px 90px 90px 1fr 60px 60px;
+  grid-template-rows: 60px 90px 90px 1fr 60px;
   box-sizing: border-box;
   border: solid 1px lightgray;
 `
 
 export const Line1 = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   background-color: white;
   border-bottom: solid 1px lightgrey;
@@ -29,6 +29,30 @@ export const Line1 = styled.div`
 
 export const TitleLine1 = styled.div`
   font-size: 19px;
+`
+
+export const Left = styled.div`
+  width: 125px;
+  height: 50px;
+`
+
+export const Right = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 125px;
+  height: 50px;
+`
+
+export const BotaoLogout2 = styled.img`
+  width: 20px;
+  margin: 5px 0 0 0;
+  &:hover {
+		cursor: pointer;
+    transform: scale(1.1);
+    transition: transform .2s;
+	}
 `
 
 export const Line2 = styled.div`
@@ -69,21 +93,21 @@ export const Line4Box = styled.div`
   width: 90%;    
 `
 
-export const Logout = styled.div`
-  display: flex;
-  justify-content: center;
-  background-color: #ffffff;
-`
+// export const Logout = styled.div`
+//   display: flex;
+//   justify-content: center;
+//   background-color: #ffffff;
+// `
 
-export const BotaoLogout = styled.img`
-  width: 40px;
-  height: 40px;
-  &:hover {
-		cursor: pointer;
-    transform: scale(1.1);
-    transition: transform .2s;
-	}
-`
+// export const BotaoLogout = styled.img`
+//   width: 40px;
+//   height: 40px;
+//   &:hover {
+// 		cursor: pointer;
+//     transform: scale(1.1);
+//     transition: transform .2s;
+// 	}
+// `
 
 export const Line5 = styled.div`
   display: flex;

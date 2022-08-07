@@ -10,7 +10,7 @@ import { GlobalContext } from "../../components/global/GlobalContext";
 
 export default function SignUpPage() {
   const navigate = useNavigate()
-  const { currentUser, setCurrentUser } = useContext(GlobalContext)
+  const { setCurrentUser } = useContext(GlobalContext)
 
   const { form, onChange, cleanFields } = useForm({
     name: "",
