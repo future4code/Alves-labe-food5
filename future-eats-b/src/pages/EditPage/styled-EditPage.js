@@ -15,10 +15,9 @@ export const Container = styled.div`
   width: 375px;
   height: 667px;
   display: grid;
-  border-radius: 20px;
   grid-template-rows: 60px 1fr;
   box-sizing: border-box;
-  box-shadow: 0 5px 5px 0 rgba(0,0,0,0.2), 0 10px 10px 0 rgba(0,0,0,0.15);
+  border: solid 1px lightgray;
 `
 
 export const Line1 = styled.div`
@@ -30,9 +29,16 @@ export const Line1 = styled.div`
   border-bottom: solid 1px #b8b8b8;
 `
 
+export const BoxImg = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 5%;
+`
+
 export const ButtonBack = styled.img`
   width: 20px;
-  margin: 0 0 0 20px;
+  margin: 0 0 0 10px;
   &:hover {
     cursor: pointer;
     transform: scale(1.1);
@@ -44,7 +50,7 @@ export const Title = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-basis: 90%;
+  flex-basis: 95%;
   height: 100%;
   font-size: 19px;
 `
@@ -97,11 +103,3 @@ export const ButtonSave = styled.button`
     transition: transform .2s;
 	}
 `
-
-export const BoxImg = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-basis: 10%;
-`
-

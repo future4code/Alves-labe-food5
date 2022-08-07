@@ -105,21 +105,24 @@ export default function CartPage() {
             <s.Delivery>
               Endereço de entrega
             </s.Delivery>
-            <div>
+            <s.Address2>
               {currentUser.address}
-            </div>
+            </s.Address2>
           </s.Address>
         </s.Line2>
 
         <s.Line3>
           <s.Description>
-
-            {cart.length === 0 ? 'Carrinho Vazio' :
-              <s.RestaurantDetails>
-                <s.NameRestaurant>{cart[0].nameRestaurant}</s.NameRestaurant>
-                <s.AddressRestaurant>{cart[0].addressRestaurant}</s.AddressRestaurant>
-                <s.DeliveryTimeRestaurant>{cart[0].deliveryTimeRestaurant} min</s.DeliveryTimeRestaurant>
-              </s.RestaurantDetails>
+            {cart.length === 0 ? 
+                <s.EmptyCart>
+                    <s.TextEmpty>Carrinho Vazio</s.TextEmpty>
+                </s.EmptyCart>
+              :
+                <s.RestaurantDetails>
+                  <s.NameRestaurant>{cart[0].nameRestaurant}</s.NameRestaurant>
+                  <s.AddressRestaurant>{cart[0].addressRestaurant}</s.AddressRestaurant>
+                  <s.DeliveryTimeRestaurant>{cart[0].deliveryTimeRestaurant} min</s.DeliveryTimeRestaurant>
+                </s.RestaurantDetails>
             }
           </s.Description>
         </s.Line3>
@@ -161,7 +164,7 @@ export default function CartPage() {
         </s.Line5>
 
         <s.Line6>
-          <s.ButtonConfirmar onClick={onClickPay}>Confirmar</s.ButtonConfirmar>
+          <s.ButtonConfirmar qtd={cart.length} onClick={onClickPay}>Confirmar</s.ButtonConfirmar>
         </s.Line6>
 
         <s.Line7>

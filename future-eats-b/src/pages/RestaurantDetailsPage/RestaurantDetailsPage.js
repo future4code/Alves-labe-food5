@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState } from "react";
 import * as s from './styled-RestaurantDetailsPage';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
@@ -28,7 +28,6 @@ export default function RestaurantDetailsPage() {
   function handleOpenModal(item, id) {
     let cart = JSON.parse(localStorage.getItem("cart")) || []
     setCurrentProdut(item);
-    console.log(item)
 
     let restRep = false;
     for (let i = 0; i < cart.length; i++) {
@@ -103,13 +102,26 @@ export default function RestaurantDetailsPage() {
 
   const customStyles = {
     content: {
-      display: 'flex',
-      top: '50%',
-      left: '50%',
-      right: '80%',
-      bottom: '30%',
-      marginRight: '-50%',
-      transform: 'translate(-50%, -50%)',
+      position: 'fixed',
+      top: '40%',
+      left: '40vw',
+      right: '40vw',
+      bottom: '40%',
+      // marginRight: '-50%',
+      // transform: 'translate(-50%, -50%)',
+
+
+        // top: '350px',
+      // left: '400px',
+      // right: '400px',
+      border: '1px solid #ccc',
+      // background: '#fff',
+      // overflow: 'auto',
+      // WebkitOverflowScrolling: 'touch',
+      // borderRadius: '4px',
+      // outline: 'none',
+      // padding: '20px'
+
     },
   };
 
@@ -158,9 +170,9 @@ export default function RestaurantDetailsPage() {
               <option>4</option>
               <option>5</option>
             </s.Selecionar>
-            <s.Linha3>
+            <s.Add>
               <s.Adicionar onClick={updateCart}>ADICIONAR AO CARRINHO</s.Adicionar>
-            </s.Linha3>
+            </s.Add>
           </s.Box>
         </Modal>
 
@@ -174,6 +186,7 @@ export default function RestaurantDetailsPage() {
         <s.Line2>
           <s.Img_edit src={restaurantDetails.logoUrl} alt="imagem-editar" />
         </s.Line2>
+
         <s.Line3>
           <s.TituloLinha3>
             {restaurantDetails.name}
@@ -201,6 +214,7 @@ export default function RestaurantDetailsPage() {
             })
           }
         </s.Line4>
+
       </s.Grid>
     </s.General>
   )

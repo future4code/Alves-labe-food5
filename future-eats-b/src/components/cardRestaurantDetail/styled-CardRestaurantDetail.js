@@ -7,7 +7,6 @@ export const Card = styled.div`
 export const Title = styled.div`
   border-bottom: solid 1px black;
 `
-//card produtos
 export const CardInterno = styled.div`
   display: flex;
   height: 120px;
@@ -59,7 +58,6 @@ export const Quantidade = styled.div`
   font-size: 16px;
   width: 33px;
   height: 33px;
-  /* border: solid 1px #5cb646; */
   border: ${props => props.qtd === 0 ? "#FFFFFF" : "solid 1px #5cb646"};
   border-radius: 0px 8px 0px 8px;
 
@@ -70,7 +68,6 @@ export const Description = styled.p`
 `
 export const LineMiddle = styled.div`
   color: #b8b8b8;
-
 `
 
 export const LineBottom = styled.div`
@@ -89,11 +86,8 @@ export const ButtonAddRemove = styled.div`
   margin: 7px 0 0 8px;
   padding: 8px 20.5px 9px 21.5px;
   border-radius: 8px 0px 8px 0px;
-  /* border: solid 1px #5cb646; */
-  /* color: #5cb646; */
   color: ${props => props.qtd === 0 ? "#5cb646" : "#e02020"};
   border: ${props => props.qtd === 0 ? "solid 1px #5cb646" : "solid 1px #e02020"};
-
   :hover{
     cursor: pointer;
   }

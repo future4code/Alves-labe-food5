@@ -15,7 +15,7 @@ export default createGlobalStyle`
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: lightgray;
+    background-color: white;
     /* background-image: url({img_fundo}); */
   }
   /* ::-webkit-scrollbar {

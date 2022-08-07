@@ -14,6 +14,8 @@ export default function EditPage() {
   const navigate = useNavigate()
   const token = localStorage.getItem("token")
   const { currentUser, setCurrentUser } = useContext(GlobalContext)
+  
+  console.log(currentUser)
 
   const { form, onChange, cleanFields } = useForm({
     name: "",
@@ -28,7 +30,11 @@ export default function EditPage() {
         auth: token
       }
     })
-    .then( res => alert('Dados alterados com sucesso!') )
+    .then( res => {
+      setCurrentUser(res.data.user);
+      alert('Dados alterados com sucesso!');
+      goToProfilePage(navigate);
+    })
     .catch( err => console.log(err.response.data))
   }
 
@@ -45,6 +51,7 @@ export default function EditPage() {
   return (
     <s.General>
       <s.Container>
+
         <s.Line1>
           <s.BoxImg>
             <s.ButtonBack src={img_buttonBack} onClick={() => goToProfilePage(navigate)} alt="Botão voltar" />
