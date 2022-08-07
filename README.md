@@ -74,7 +74,7 @@ Olavo Marques do Nascimento
 
 # `Imagens`
 ### Página Login
-<img src="./src/assets/img_readme/login.png"/>
+<img src="./future-eats-b/src/assets/img_readme/login.png"/>
 
 ### Página SignUp (Cadastro)
 <img src="./src/assets/img_readme/signup.png"/>
