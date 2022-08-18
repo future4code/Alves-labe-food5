@@ -4,7 +4,6 @@ Projeto LabeFoods
 # `Link`
 https://labefoods-alves5.surge.sh
 
-
 # `Descrição`
 O Projeto LabeFoods foi desenvolvido como projeto final de Front End dentro do curso Full-Stack Web Developer da Labenu, o qual consiste em requisições (via axios) para a API labeFoods, que contém informações relacionadas ao desenvolvimento de uma aplicação que simula um aplicativo semelhante ao conhecido app iFood. Este projeto foi baseado no layout layout FutureEats.
 </br>
